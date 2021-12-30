@@ -1,0 +1,128 @@
+@import './themes/mixins.scss';
+
+.App {
+  text-align: center;
+}
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  // height: 100vh;
+  background: rgba(0, 0, 0, 0.979);
+  // filter: blur(8px);
+  // -webkit-filter: blur(8px);
+  z-index: 102;
+  display: flex;
+  justify-content: center;
+
+  &__Logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    justify-content: center;
+
+    p {
+      font-family: NicoMoji-Regular;
+      font-size: 2.8rem;
+      color: white;
+      margin: 0 -0.5rem;
+    }
+
+    &--App-logo {
+      margin: auto 0.1rem;
+      padding-bottom: 8rem;
+      height: 1.2rem;
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: App-logo-spin infinite 3s linear;
+        -webkit-animation: App-logo-spin infinite 3s linear;
+      }
+    }
+
+  }
+}
+
+.Logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+    -webkit-animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+.active>span {
+  background-color: var(--color-secondary) !important;
+}
+
+#fp-nav ul li,
+.fp-slidesNav ul li {
+  text-transform: capitalize !important;
+}
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+.App-link {
+  color: #61dafb;
+}
+
+.scroll-down {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 10rem;
+  right: 0rem;
+  z-index: 2;
+  color: var(--color-secondary);
+  font-family: Comfortaa-Light;
+  font-size: 0.8rem;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+
+.scroll-down p {
+  margin-right: -4rem;
+  margin-left: 0rem;
+
+  @include respond(phone) {
+    font-size: 0.7rem;
+    margin-right: -3rem;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#fp-nav.fp-right {
+  right: 10px !important;
+}

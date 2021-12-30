@@ -1,0 +1,187 @@
+@import '../../themes/mixins.scss';
+
+.testimony {
+  width: 90%;
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  // padding-top: 5rem;
+
+  &__top {
+
+    margin-bottom: 3rem;
+    // width: 35%;
+
+    h1 {
+      font-size: 1.6rem;
+      color: var(--color-secondary);
+      font-family: Comfortaa-Bold;
+      margin: 1rem 0.5rem;
+
+      @include respond(tabLand) {
+        font-size: 1.6rem;
+        margin: 0.5rem 0;
+      }
+
+      @include respond(phone) {
+        font-size: 1.1rem;
+        margin: 0.3;
+      }
+
+    }
+
+    p {
+      color: white;
+      margin: 0 0.5rem;
+      font-family: Comfortaa-Light;
+
+      @include respond(phone) {
+        font-size: 0.8rem;
+        margin: 0;
+      }
+    }
+  }
+
+  &__content {
+    // flex-direction: row;
+    // align-items: center;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // width: 80%;
+    // justify-content: space-between;
+    // margin-bottom: 5rem;
+
+    &--box {
+      height: 18rem;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+
+      // @include respond(tabLand) {
+
+      //   width: 19rem;
+      // }
+
+      h4 {
+        color: white;
+        font-size: 4rem;
+        margin: 0;
+        font-family: Comfortaa-Bold;
+        text-align: right;
+
+        @include respond(tabLand) {
+          font-size: 2.8rem;
+        }
+      }
+
+      p {
+        color: white;
+        font-family: Comfortaa-Regular;
+        margin-top: 0;
+
+        @include respond(tabLand) {
+          font-size: 1rem;
+        }
+      }
+
+      &__user {
+        display: flex;
+        flex-direction: row;
+
+        img {
+          border-radius: 50%;
+          height: 3rem;
+          width: 3rem;
+          //background-color: white;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-left: 1rem;
+
+          h3 {
+            color: var(--color-secondary);
+            margin: 0;
+            font-size: 1rem;
+            text-align: left;
+          }
+
+          p {
+            margin: 0;
+            font-size: 0.8rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    &--scroll {
+      display: none;
+      flex-direction: row;
+      justify-content: center;
+      color: var(--color-secondary);
+      align-items: center;
+
+      @include respond(phone) {
+        display: flex;
+      }
+
+      i {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+
+  }
+}
+
+.ldTBTR {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+.hzJOec {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+.li-chevron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  &:hover {
+    cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFTSURBVHgBrZS9UsJAFIWPjC1OrCnc0k4stM4M9vAEArUFWFqJFaVxxNrEF4hvEGobtNLONNZEeID1bFbCXxICyZk5k+xN8u3duzcLJMugBQqSoMe0pJ9RgCzzDNJzQqDEFpmWEuKGqJBSwdYqoWBlBQroTSoM6NHftEk3cgPdAVCvhRl6RhkuryO6Qzd3AlaPgcMyU6uR5OoQN8wi3OZ9Nw5Yhe63ZhqYgHnWj3oC6mQVqJbi8mGLs9rQtTrCBhkH8fH9f6C4vdIv9QYQzqtuZDXuXOrM6hfA72Q5libPPIeUn9rcBMlaReMktxrrv+ashu3hGwJHFzysjdqIXTQD+vRDtw8EE+TSYttYwRT+3RNyaREY0G3rBeDyM2k8TQcqDWnnuo+N8n+Aj6/om0h7Me+qNhqxJ8X9TXx7KJgqDa/vHJ4igwRtY35qr1rFe4g5gf4ApeZ0dUcd+qUAAAAASUVORK5CYII="),
+      pointer;
+  }
+
+}
+
+.grBOFc {
+  width: 60%;
+}

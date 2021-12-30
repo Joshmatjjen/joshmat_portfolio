@@ -1,0 +1,206 @@
+@import '../../themes/mixins.scss';
+
+.home {
+  width: 80%;
+  // height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // justify-content: center;
+  align-items: center;
+  margin: auto 0;
+
+
+  // align-items: center;
+
+  &__section-left {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    // justify-content: space-between;
+
+    @include respond(tabPort) {
+      width: 70%;
+    }
+
+    &--social {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90%;
+      width: 40rem;
+
+      @include respond(tabLand) {
+        width: 20rem;
+      }
+
+      &--content {
+        margin-top: auto;
+
+        @include respond(tabLand) {
+          display: flex;
+          flex-direction: column;
+          margin: auto;
+        }
+
+        a {
+          color: white;
+          font-size: 1.3rem;
+          margin-right: 2rem;
+
+          @include respond(tabLand) {
+            margin-right: 1rem;
+            margin: 2rem 0;
+          }
+
+          @include respond(phone) {
+            font-size: 1rem;
+          }
+
+          &:hover {
+            color: var(--color-secondary);
+          }
+        }
+      }
+    }
+
+    &--intro {
+      align-items: flex-start;
+
+      &__top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        div {
+          width: 1.6rem;
+          height: 0.1rem;
+          background-color: var(--color-secondary);
+          margin-right: 1rem;
+        }
+
+        p {
+          color: var(--color-secondary) !important;
+
+          @include respond(phone) {
+            font-size: 0.7rem;
+          }
+        }
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: white;
+        font-family: Comfortaa-Bold;
+        text-align: left;
+
+        @include respond(tabPort) {
+          font-size: 2rem;
+        }
+
+        @include respond(phone) {
+          font-size: 1.6rem;
+        }
+
+        span {
+          color: var(--color-secondary)
+        }
+      }
+
+      .brief {
+        font-size: 1rem;
+        line-height: 2rem;
+        color: white;
+        font-family: Comfortaa-Light;
+        text-align: left;
+
+        @include respond(tabPort) {
+          font-size: 0.9rem;
+        }
+
+        @include respond(phone) {
+          font-size: 0.8rem;
+        }
+
+        span {
+          color: var(--color-secondary)
+        }
+      }
+    }
+  }
+
+  &__section-right {
+    margin-top: auto;
+    width: 35%;
+
+    @include respond(tabPort) {
+      margin: auto;
+      width: 20%;
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+
+    img {
+      height: 45rem;
+
+      @include respond(tabPort) {
+        height: 25rem;
+      }
+
+      @include respond(phone) {
+        height: 15rem;
+      }
+    }
+  }
+
+  &__c-container {
+    width: 600px;
+    height: 400px;
+    display: none;
+    // align-items: center;
+    justify-content: center;
+    // overflow: hidden;
+    position: relative;
+
+    &__item {
+      z-index: 100;
+      padding: 5px;
+
+      img {
+        width: 150px;
+      }
+    }
+
+    @include respond(phone) {
+      display: flex;
+    }
+
+    &__circle {
+      border-radius: 50%;
+      background-color: var(--color-secondary);
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      opacity: 0;
+      animation: scaleIn 3s infinite cubic-bezier(.36, .11, .89, .32);
+      -webkit-animation: scaleIn 3s infinite cubic-bezier(.36, .11, .89, .32);
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(.5, .5);
+        opacity: .5;
+      }
+
+      to {
+        transform: scale(2.5, 2.5);
+        opacity: 0;
+      }
+    }
+  }
+}
