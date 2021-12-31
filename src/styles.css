@@ -17,3 +17,8 @@ body {
 .fp-section {
   text-align: center;
 }
+
+.fullpage {
+  width: 95%;
+  margin: auto;
+}

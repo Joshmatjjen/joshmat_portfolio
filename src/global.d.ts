@@ -1,3 +1,4 @@
+declare module "react-elastic-carousel";
 declare module '@fullpage/react-fullpage' {
 
   type Item = {

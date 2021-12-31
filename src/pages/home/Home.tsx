@@ -80,23 +80,23 @@ const Home = () => {
           <img src={HomeImage} alt="" />
         </section>
         <section className="home__c-container">
-          <div class="home__c-container__item">
+          <div className="home__c-container__item">
             <img src={HomeImage} alt="" />
           </div>
           {/* <div
-            class="home__c-container__circle"
+            className="home__c-container__circle"
             style={{ animationDelay: "0s" }}
           ></div>
           <div
-            class="home__c-container__circle"
+            className="home__c-container__circle"
             style={{ animationDelay: "1s" }}
           ></div>
           <div
-            class="home__c-container__circle"
+            className="home__c-container__circle"
             style={{ animationDelay: "2s" }}
           ></div>
           <div
-            class="home__c-container__circle"
+            className="home__c-container__circle"
             style={{ animationDelay: "3s" }}
           ></div> */}
         </section>

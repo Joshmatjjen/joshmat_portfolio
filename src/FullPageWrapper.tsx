@@ -6,8 +6,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import "./styles.css";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
-// import About from "./pages/about/About";
-// import Achievement from "./pages/achievement/Achievement";
+import Achievement from "./pages/achievement/Achievement";
 // import Testimony from "./pages/testimony/Testimony";
 // import Contact from "./pages/contact/Contact";
 
@@ -18,12 +17,12 @@ const pluginWrapper = () => {
 const FullPageWrapper = () => (
   <ReactFullpage
     lazyLoading={true}
-    scrollBar={true}
-    pluginWrapper={pluginWrapper}
+    // scrollBar={true}
+    // pluginWrapper={pluginWrapper}
     anchors={anchors}
     navigation
     navigationTooltips={anchors}
-    // sectionsColor={["#04070e", "#03060c", "#04070e", "#03060c", "#03060c"]}
+    sectionsColor={["#04070e", "#03060c", "#04070e", "#03060c", "#03060c"]}
     onLeave={(origin, destination, direction) => {
       console.log("onLeave event", { origin, destination, direction });
     }}
@@ -33,12 +32,12 @@ const FullPageWrapper = () => (
       // console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
 
       return (
-        <div>
+        <div className="fullpage">
           <Home />
           <About />
-          {/* <Achievement />
-          <Testimony />
-          <Contact /> */}
+          <Achievement />
+          {/* <Testimony /> */}
+          {/* <Contact /> */}
         </div>
       );
     }}

@@ -13,7 +13,7 @@ import FullPageWrapper from "./FullPageWrapper";
 
 const  App: React.FC = () =>  {
   const location = useLocation();
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   // console.log(location.hash);
   useEffect(() => {
     // document.documentElement.webkitRequestFullscreen();

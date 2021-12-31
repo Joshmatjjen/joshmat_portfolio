@@ -3,9 +3,8 @@ import "./Contact.scss";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Contact = () => {
-  const notify = (message) => {
-    console.log("Hello logs");
+const Contact: React.FC =  () => {
+  const notify = (message: string | {} | null | undefined) => {
     toast.dark(message, {
       position: "bottom-center",
       autoClose: 5000,
@@ -17,7 +16,7 @@ const Contact = () => {
     });
   };
   const [status, setStatus] = useState("");
-  const submitForm = (ev) => {
+  const submitForm = (ev: { preventDefault: () => void; target: any; }) => {
     ev.preventDefault();
     const form = ev.target;
     const data = new FormData(form);

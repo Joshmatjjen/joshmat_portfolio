@@ -10,6 +10,10 @@
   align-items: center;
   margin: auto 0;
 
+  @include respond(tabPort) {
+    flex-direction: column;
+    width: 100%;
+  }
 
   // align-items: center;
 
@@ -26,19 +30,23 @@
     }
 
     &--social {
+      // flex: 1;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 90%;
-      width: 40rem;
+      width: 10rem;
+      align-items: center;
 
       @include respond(tabLand) {
-        width: 20rem;
+        width: 10rem;
       }
 
       &--content {
-        margin-top: auto;
+        display: flex;
+         flex-direction: column;
+         margin: auto 0;
 
         @include respond(tabLand) {
           display: flex;
@@ -50,6 +58,7 @@
           color: white;
           font-size: 1.3rem;
           margin-right: 2rem;
+          margin: 2rem 0;
 
           @include respond(tabLand) {
             margin-right: 1rem;
@@ -68,6 +77,7 @@
     }
 
     &--intro {
+      flex: 7;
       align-items: flex-start;
 
       &__top {
