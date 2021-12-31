@@ -3,7 +3,7 @@ import React from "react";
 // import "../node_modules/fullpage.js/vendors/scrolloverflow"; // Optional. When usi/ng scrollOverflow:true
 import ReactFullpage from "@fullpage/react-fullpage";
 
-import "./styles.css";
+import "./styles.scss";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Achievement from "./pages/achievement/Achievement";

@@ -8,35 +8,45 @@ const Home = () => {
   const location = useLocation();
   return (
     <div className="section">
+      {/* <div className="social">
+        <div className="social--content">
+          <a
+            className="social--content--link"
+            href="https://www.facebook.com/kayode.a.joshua.3"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a
+            className="social--content--link"
+            href="https://www.instagram.com/thejoshuakayode/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a
+            className="social--content--link"
+            href="https://www.facebook.com/kayode.a.joshua.3"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a
+            className="social--content--link"
+            href="https://twitter.com/TheJoshuaKayode"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div> */}
       <div className="home" style={{ height: window.innerHeight }}>
         {/* Left Section */}
         <section className="home__section-left">
-          <div className="home__section-left--social">
-            <></>
-            <div className="home__section-left--social--content">
-              <a
-                href="https://www.instagram.com/thejoshuakayode/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/kayode.a.joshua.3"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a
-                href="https://twitter.com/TheJoshuaKayode"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
           <div className="home__section-left--intro">
             <div className="home__section-left--intro__top">
               <div></div>
