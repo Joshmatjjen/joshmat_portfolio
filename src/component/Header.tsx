@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/svg/logo-2.svg";
+import logoWhite from "../assets/svg/logo-white.svg";
+import logoBlack from "../assets/svg/logo-black.svg";
 
 // interface BoxProps {
 //   styles?: React.CSSProperties;
@@ -38,31 +40,27 @@ const Header: React.FC<any | null> = ({}) => {
     <>
       {/* DESKTOP */}
       <header className="App-header">
-        <Link to="" className="Logo">
-          <p>J</p>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>K</p>
-        </Link>
-        <div className="App-header__main-nav">
-          <a href="/#home">
-            <p
-              style={
-                Homestyle
-              }
-            >
-              Home
-            </p>
-          </a>
-          <a href="/#about">
-            <p
+        <div className="App-header--container">
+          <Link to="" className="Logo">
+            {/* <p>J</p> */}
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            <img src={logoWhite} className="App-logo-header" alt="logo" />
+            {/* <p>K</p> */}
+          </Link>
+          <div className="App-header--container__main-nav">
+            <a href="/#home">
+              <p style={Homestyle}>Home</p>
+            </a>
+            <a href="/#about">
+              <p
               // style={
               //   Aboutstyle
               // }
-            >
-              About
-            </p>
-          </a>
-          {/* <a href="/#achievements">
+              >
+                About
+              </p>
+            </a>
+            {/* <a href="/#achievements">
             <p
               style={
                 location.hash === "#achievements"
@@ -95,6 +93,7 @@ const Header: React.FC<any | null> = ({}) => {
               Contact
             </p>
           </a> */}
+          </div>
         </div>
       </header>
 

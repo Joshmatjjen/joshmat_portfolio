@@ -1,10 +1,10 @@
 import React from "react";
 import "./Home.scss";
-import HomeImage from "../../assets/img/jProfiles.png";
+import HomeImage from "../../assets/img/Profile.png";
 import Typist from "react-typist";
 import { useLocation } from "react-router-dom";
 
-const Home = () => {
+const Home: React.FC = () => {
   const location = useLocation();
   return (
     <div className="section">
@@ -53,7 +53,7 @@ const Home = () => {
               <p>HELLO</p>
             </div>
             {/* <Typist.Delay ms={500} /> */}
-            {location.hash === "#home" ? (
+            {location.hash === "#home" || location.hash === "/" ? (
               <>
                 <Typist>
                   <h1>
@@ -63,22 +63,22 @@ const Home = () => {
                 <Typist>
                   <Typist.Delay ms={2000} />
                   <p className="brief">
-                    An <span>Innovative Entrepreneur</span>, using the skills
-                    and initiative necessary to anticipate needs and bring good
-                    new ideas to market
+                    An <span>Innovative Software Developer</span>, using the
+                    skills and initiative necessary to anticipate needs and
+                    bring good new ideas to the world of technology
                   </p>
                 </Typist>
               </>
             ) : (
               <>
                 <h1>
-                  I'm <span>Joshua</span> Kayode
+                  I'm <span>Joshua</span> Nwakwuo
                 </h1>
 
                 <p className="brief">
-                  An <span>Innovative Entrepreneur</span>, using the skills and
-                  initiative necessary to anticipate needs and bring good new
-                  ideas to market
+                  An <span>Innovative Software Developer</span>, using the
+                  skills and initiative necessary to anticipate needs and bring
+                  good new ideas to the world of technology
                 </p>
               </>
             )}
@@ -93,7 +93,7 @@ const Home = () => {
           <div className="home__c-container__item">
             <img src={HomeImage} alt="" />
           </div>
-          {/* <div
+          <div
             className="home__c-container__circle"
             style={{ animationDelay: "0s" }}
           ></div>
@@ -108,7 +108,7 @@ const Home = () => {
           <div
             className="home__c-container__circle"
             style={{ animationDelay: "3s" }}
-          ></div> */}
+          ></div>
         </section>
       </div>
     </div>
