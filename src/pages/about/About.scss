@@ -115,7 +115,7 @@
 
       h1 {
         font-size: 3rem;
-        color: white;
+        color: var(--color-text);
         font-family: Comfortaa-Bold;
         text-align: left;
 
@@ -135,7 +135,7 @@
       .brief {
         font-size: 1rem;
         line-height: 2rem;
-        color: white;
+        color: var(--color-text);
         font-family: Comfortaa-Light;
         text-align: left;
 
@@ -148,7 +148,8 @@
         }
 
         span {
-          color: var(--color-secondary)
+          color: var(--color-secondary);
+          font-weight: bold;
         }
       }
     }

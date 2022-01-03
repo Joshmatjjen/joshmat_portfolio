@@ -1,12 +1,11 @@
 import React from "react";
-import "./Home.scss";
+import "./About.scss";
 import HomeImage from "../../assets/img/Profile.png";
-import circleImg from "../../assets/svg/roundCircle.svg";
 import Typist from "react-typist";
 import { useLocation } from "react-router-dom";
 import Snowfall from "react-snowfall";
 
-const Home: React.FC = () => {
+const About: React.FC = () => {
   const location = useLocation();
   return (
     <div className="section">
@@ -149,4 +148,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default About;

@@ -1,4 +1,5 @@
-import logo from "./assets/svg/logo-2.svg";
+import logo from "./assets/svg/ball.svg";
+import logoWhite from "./assets/svg/logo-white.svg";
 import "./App.scss";
 import "./Header.scss";
 import "./themes/mixins.scss";
@@ -8,12 +9,12 @@ import { Route, useLocation, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Header from "./component/Header";
-import Home from "./pages/home/Home";
+import About from "./pages/about/About";
 import FullPageWrapper from "./FullPageWrapper";
 import Snowfall from "react-snowfall";
 
 const  App: React.FC = () =>  {
-  const location = useLocation();
+  // const location = useLocation();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   // console.log(location.hash);
   useEffect(() => {
@@ -28,9 +29,12 @@ const  App: React.FC = () =>  {
       {isLoading && (
         <div className="loader" style={{ height: window.innerHeight }}>
           <div className="loader__Logo">
-            <p>J</p>
+            <img
+              src={logoWhite}
+              className="loader__Logo--main-logo"
+              alt="logo"
+            />
             <img src={logo} className="loader__Logo--App-logo" alt="logo" />
-            <p>K</p>
           </div>
         </div>
       )}
@@ -48,7 +52,7 @@ const  App: React.FC = () =>  {
       />
       <Header />
 
-      {/* <Home /> */}
+      {/* <About /> */}
       {/* <FullPageWrapper /> */}
       <Routes>
         <Route index={true} element={<FullPageWrapper />} />
