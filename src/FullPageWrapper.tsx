@@ -5,12 +5,12 @@ import ReactFullpage from "@fullpage/react-fullpage";
 
 import "./styles.scss";
 import Home from "./pages/home/Home";
-import About from "./pages/about/About";
+import Skills from "./pages/skills/Skills";
 import Achievement from "./pages/achievement/Achievement";
 // import Testimony from "./pages/testimony/Testimony";
 // import Contact from "./pages/contact/Contact";
 
-const anchors = ["home", "about", "achievements", "testimony", "contact"];
+const anchors = ["home", "skills", "achievements", "testimony", "contact"];
 const pluginWrapper = () => {
   require("./extension/fullpage.extensions.min");
 };
@@ -22,7 +22,7 @@ const FullPageWrapper = () => (
     anchors={anchors}
     navigation
     navigationTooltips={anchors}
-    sectionsColor={["#04070e", "#03060c", "#04070e", "#03060c", "#03060c"]}
+    // sectionsColor={["#04070e", "#03060c", "#04070e", "#03060c", "#03060c"]}
     onLeave={(origin, destination, direction) => {
       console.log("onLeave event", { origin, destination, direction });
     }}
@@ -34,7 +34,7 @@ const FullPageWrapper = () => (
       return (
         <div className="fullpage">
           <Home />
-          <About />
+          <Skills />
           <Achievement />
           {/* <Testimony /> */}
           {/* <Contact /> */}

@@ -1,0 +1,130 @@
+@import '../../themes/mixins.scss';
+
+.skills {
+  width: 100%;
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  @include respond(tabLand) {
+    justify-content: space-around;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__section-left {
+      // margin-top: auto;
+      width: 25%;
+
+      @include respond(tabLand) {
+        width: none;
+        // margin-right: 10rem;
+      }
+
+      @include respond(tabPort) {
+        display: none;
+      }
+    }
+
+    img {
+      height: 25rem;
+
+      @include respond(tabLand) {
+        height: 25rem;
+      }
+
+
+    }
+
+    &__section-right {
+      max-height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 40%;
+
+      // justify-content: space-between;
+      @include respond(tabLand) {
+        width: 60%;
+      }
+
+      @include respond(tabPort) {
+        width: 70%;
+        max-height: 80vh;
+      }
+
+      @include respond(phone) {
+        width: 90%;
+      }
+
+
+      &--intro {
+        align-items: flex-start;
+        min-height: 25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include respond(phone) {
+          // height: 80vh;
+          padding-top: 2rem;
+          overflow: hidden;
+        }
+
+        &__top {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          div {
+            width: 1.6rem;
+            height: 0.1rem;
+            background-color: var(--color-secondary);
+            margin-right: 1rem;
+          }
+
+          h1 {
+            font-size: 2rem;
+            color: var(--color-secondary) !important;
+            font-family: Comfortaa-Bold;
+            text-align: left;
+
+            @include respond(tabLand) {
+              font-size: 1.6rem;
+              margin: 0.5rem 0;
+            }
+
+            @include respond(phone) {
+              font-size: 1.1rem;
+              margin: 0.3;
+            }
+          }
+        }
+
+        .brief {
+          font-size: 1rem;
+          line-height: 2rem;
+          color: white;
+          font-family: Comfortaa-Light;
+          text-align: left;
+
+          @include respond(phone) {
+            font-size: 0.8rem;
+            margin: 0;
+          }
+
+          span {
+            color: var(--color-secondary)
+          }
+        }
+      }
+    }
+  }
+}

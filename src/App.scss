@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  background-color: #04070e;
+  background-color: var(--color-bg);
   align-items: center;
   width: 100%;
 }
@@ -47,6 +47,23 @@
   }
 }
 
+.scrollText {
+  font-size: 0.9rem;
+  color: white;
+  position: absolute;
+  bottom: 12rem;
+  right: 0;
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+
+  p {
+    margin: 0;
+  }
+}
+
 .Logo {
   display: flex;
   flex-direction: row;
@@ -60,13 +77,13 @@
   -o-transition: transform .7s ease-in-out;
 
 
-   &:hover {
+  &:hover {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
-}
+  }
 
 }
 
@@ -121,25 +138,34 @@
 }
 
 .scroll-down {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
+  // display: flex;
+  // flex-direction: row;
+  position: fixed;
   bottom: 10rem;
-  right: 0rem;
-  z-index: 2;
+  right: -0.5em;
+  // left: 0;
+  z-index: 0;
   color: var(--color-secondary);
   font-family: Comfortaa-Light;
   font-size: 0.8rem;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
 }
 
 .scroll-down p {
-  margin-right: -4rem;
-  margin-left: 0rem;
+  margin-right: -3rem;
+  display: none;
+
+  // margin: 0;
+  // padding: 0;
+  @include respond(tabPort) {
+    display: block;
+    font-size: 0.7rem;
+    margin-right: -2rem;
+  }
 
   @include respond(phone) {
     font-size: 0.7rem;
