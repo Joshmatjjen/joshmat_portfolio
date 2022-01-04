@@ -12,6 +12,7 @@ import Header from "./component/Header";
 import About from "./pages/about/About";
 import FullPageWrapper from "./FullPageWrapper";
 import Snowfall from "react-snowfall";
+import "react-tippy/dist/tippy.css";
 
 const  App: React.FC = () =>  {
   // const location = useLocation();
@@ -31,7 +32,7 @@ const  App: React.FC = () =>  {
         // Changes the snowflake color
         color={currentMode === "light" ? "#242424" : "#ffffff"}
         // Applied to the canvas element
-        style={{ zIndex: 200}}
+        style={{ zIndex: 200 }}
         // Controls the number of snowflakes that are created (default 150)
         snowflakeCount={15}
         radius={[0.5, 1.0]}
@@ -57,7 +58,10 @@ const  App: React.FC = () =>  {
       {/* <About /> */}
       {/* <FullPageWrapper /> */}
       <Routes>
-        <Route index={true} element={<FullPageWrapper />} />
+        <Route
+          index={true}
+          element={<FullPageWrapper currentMode={currentMode === "light" ? "light" : "dark"} />}
+        />
       </Routes>
 
       {/* <div className="scrollText">

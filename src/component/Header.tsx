@@ -26,6 +26,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       const toggle = document.querySelector<any>(".toggle");
       toggle.classList.add("dark-mode");
 
+      root.style.setProperty("--mode", "light");
       root.style.setProperty("--color-mode-icon", "#242424");
       root.style.setProperty("--color-mode-bg", "#00000021");
       root.style.setProperty("--color-secondary", "#ffbb00");
@@ -53,6 +54,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
     // const bgColor = root.style.getPropertyValue('--bg-color')
     if (mode === "dark") {
       setCurrentMode("light");
+      root.style.setProperty("--mode", "light");
       root.style.setProperty("--color-mode-icon", "#242424");
       root.style.setProperty("--color-mode-bg", "#00000021");
       root.style.setProperty("--color-secondary", "#ffbb00");
@@ -75,6 +77,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
     } else {
       setCurrentMode("dark");
       // root.style.setProperty("--color-bg", "#0c1d13"); // Sweet Green dark
+      root.style.setProperty("--mode", "dark");
       root.style.setProperty("--color-mode-icon", "#FFD700");
       root.style.setProperty("--color-mode-bg", "#ffffff21");
       root.style.setProperty("--color-bg", "#04070e");

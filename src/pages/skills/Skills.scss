@@ -16,7 +16,11 @@
 
 
   &__header {
-    margin-top: 5.5rem
+    margin-top: 5.5rem;
+
+    h1 {
+      color: var(--color-text);
+    }
   }
 
   &__section {

@@ -14,7 +14,12 @@ const anchors = ["about", "skills", "portfolio", "testimony", "contact"];
 const pluginWrapper = () => {
   require("./extension/fullpage.extensions.min");
 };
-const FullPageWrapper = () => (
+
+interface Props {
+  currentMode?: string
+}
+
+const FullPageWrapper: React.FC<Props> = ({currentMode}) => (
   <ReactFullpage
     lazyLoading={true}
     // scrollBar={true}
@@ -26,15 +31,13 @@ const FullPageWrapper = () => (
     onLeave={(origin, destination, direction) => {
       console.log("onLeave event", { origin, destination, direction });
     }}
-    
-    
     render={() => {
       // console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
 
       return (
         <div className="fullpage">
           <About />
-          <Skills />
+          <Skills currentMode={currentMode} />
           <Achievement />
           {/* <Testimony /> */}
           {/* <Contact /> */}
