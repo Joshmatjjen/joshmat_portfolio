@@ -15,6 +15,7 @@ import Snowfall from "react-snowfall";
 
 const  App: React.FC = () =>  {
   // const location = useLocation();
+  const [currentMode, setCurrentMode] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   // console.log(location.hash);
   useEffect(() => {
@@ -43,14 +44,14 @@ const  App: React.FC = () =>  {
       </div>
       <Snowfall
         // Changes the snowflake color
-        // color="red"
+        color={currentMode === "light" ? "#242424" : "#ffffff"}
         // Applied to the canvas element
         // style={{ background: "#fff" }}
         // Controls the number of snowflakes that are created (default 150)
         snowflakeCount={10}
         radius={[0.5, 1.0]}
       />
-      <Header />
+      <Header setCurrentMode={setCurrentMode} />
 
       {/* <About /> */}
       {/* <FullPageWrapper /> */}

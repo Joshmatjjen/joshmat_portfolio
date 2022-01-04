@@ -2,35 +2,47 @@
 
 .skills {
   width: 100%;
-  // height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   // justify-content: center;
-  align-items: center;
-  margin: auto;
+  // align-items: center;
+  // margin: auto;
+
 
   @include respond(tabLand) {
-    justify-content: space-around;
+    // justify-content: space-around;
+  }
+
+
+  &__header {
+    margin-top: 7rem
   }
 
   &__section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
+    width: 100%;
 
-    &__section-left {
+    &--left {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      flex-wrap: wrap;
+      // background: gray;
       // margin-top: auto;
-      width: 25%;
+      width: 40%;
 
-      @include respond(tabLand) {
-        width: none;
-        // margin-right: 10rem;
-      }
+      // @include respond(tabLand) {
+      //   width: none;
+      //   // margin-right: 10rem;
+      // }
 
-      @include respond(tabPort) {
-        display: none;
-      }
+      // @include respond(tabPort) {
+      //   display: none;
+      // }
     }
 
     img {
@@ -43,12 +55,12 @@
 
     }
 
-    &__section-right {
+    &--right {
       max-height: 100vh;
       display: flex;
       flex-direction: row;
       align-items: center;
-      width: 40%;
+      width: 60%;
 
       // justify-content: space-between;
       @include respond(tabLand) {
@@ -57,7 +69,7 @@
 
       @include respond(tabPort) {
         width: 70%;
-        max-height: 80vh;
+        // max-height: 80vh;
       }
 
       @include respond(phone) {
@@ -127,4 +139,29 @@
       }
     }
   }
+}
+
+// Skill Card
+
+.skillCard {
+  height: 5rem;
+  width: 5rem;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1rem 1rem 0;
+  column-gap: 20;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+
+  &__img {
+    height: 3rem;
+    width: 3rem;
+  }
+
 }

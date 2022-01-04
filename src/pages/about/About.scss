@@ -304,7 +304,7 @@
   //height: 50;
   //width: 40;
   font-size: 1.8rem;
-  color: rgb(255, 208, 0);
+  color: var(--color-text);
   animation: bounce;
   animation-duration: 3s;
   animation-iteration-count: 3;
