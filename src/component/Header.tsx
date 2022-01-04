@@ -28,7 +28,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
 
       root.style.setProperty("--color-mode-icon", "#242424");
       root.style.setProperty("--color-mode-bg", "#00000021");
-      root.style.setProperty("--color-secondary", "#EAB314");
+      root.style.setProperty("--color-secondary", "#ffbb00");
       root.style.setProperty("--color-bg", "#F7F7F8");
       root.style.setProperty("--color-bg-2", "#eeeeee");
       root.style.setProperty("--color-border", "#c0c8cb");
@@ -55,7 +55,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       setCurrentMode("light");
       root.style.setProperty("--color-mode-icon", "#242424");
       root.style.setProperty("--color-mode-bg", "#00000021");
-      root.style.setProperty("--color-secondary", "#EAB314");
+      root.style.setProperty("--color-secondary", "#ffbb00");
       root.style.setProperty("--color-bg", "#F7F7F8");
       root.style.setProperty("--color-bg-2", "#eeeeee");
       root.style.setProperty("--color-border", "#c0c8cb");

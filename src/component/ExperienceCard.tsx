@@ -20,7 +20,7 @@ const ExperienceCard: React.FC<Props> = ({ styling, experience, company }) => {
   //   console.log(menuOpen);
   // }, [menuOpen]);
   return (
-    <div className="skills__section--right--rgt__item">
+    <div className="skills__section--right__box--rgt__item">
       <h3>{experience}</h3>
       <p>{company}</p>
     </div>

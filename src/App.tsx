@@ -21,12 +21,21 @@ const  App: React.FC = () =>  {
   useEffect(() => {
     // document.documentElement.webkitRequestFullscreen();
     window.scrollTo(0, 1);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 4000);
   });
   return (
     <div className="App">
+      <Snowfall
+        // Changes the snowflake color
+        color={currentMode === "light" ? "#242424" : "#ffffff"}
+        // Applied to the canvas element
+        style={{ zIndex: 200}}
+        // Controls the number of snowflakes that are created (default 150)
+        snowflakeCount={15}
+        radius={[0.5, 1.0]}
+      />
       {isLoading && (
         <div className="loader" style={{ height: window.innerHeight }}>
           <div className="loader__Logo">
@@ -42,15 +51,7 @@ const  App: React.FC = () =>  {
       <div className="scroll-down">
         <p> &larr; &nbsp; &nbsp; &nbsp; Scroll down</p>
       </div>
-      <Snowfall
-        // Changes the snowflake color
-        color={currentMode === "light" ? "#242424" : "#ffffff"}
-        // Applied to the canvas element
-        // style={{ background: "#fff" }}
-        // Controls the number of snowflakes that are created (default 150)
-        snowflakeCount={10}
-        radius={[0.5, 1.0]}
-      />
+
       <Header setCurrentMode={setCurrentMode} />
 
       {/* <About /> */}
