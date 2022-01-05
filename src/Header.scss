@@ -40,7 +40,7 @@
       p {
         font-family: NicoMoji-Regular;
         font-size: 1.8rem;
-        color: white;
+        color: var(--color-text);
       }
     }
 
@@ -158,7 +158,7 @@
     p {
       font-family: NicoMoji-Regular;
       font-size: 1.8rem;
-      color: white;
+      color: var(--color-text);
       margin: 0;
 
       @include respond(tabPort) {
@@ -192,7 +192,7 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
 }
 
 .header li a {
@@ -232,7 +232,7 @@
   -o-transition: height .2s ease-out;
 
   p {
-    color: white;
+    color: var(--color-text);
     font-size: 1.4rem;
     font-family: Comfortaa-Regular;
     margin: 0.5rem 0;
@@ -259,7 +259,7 @@
 }
 
 .header .menu-icon .navicon {
-  background: white;
+  background: var(--color-text);
   display: block;
   height: 2px;
   position: relative;
@@ -274,7 +274,7 @@
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: white;
+  background: var(--color-text);
   content: '';
   display: block;
   height: 100%;

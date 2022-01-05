@@ -121,6 +121,10 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       ? setNavStyles({
           portfolio: "var(--color-secondary)",
         })
+      : location.hash === "#testimony"
+      ? setNavStyles({
+          testimony: "var(--color-secondary)",
+        })
       : setNavStyles({});
 
     // if (menuOpen) {
@@ -228,10 +232,22 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       </header>
 
       {/* MOBILE */}
-      <header className="mobile-header">
+      <header
+        className="mobile-header"
+        style={{
+          boxShadow:
+            location.hash === "#skills"
+              ? "none"
+              : "1px 1px 4px 0 rgba(0, 0, 0, .1)",
+        }}
+      >
         <div className="header">
           <Link to="" className="Logo1">
-            <img src={logoWhite} className="App-logo-header" alt="logo" />
+            <img
+              src={mode === "light" ? logoBlack : logoWhite}
+              className="App-logo-header"
+              alt="logo"
+            />
           </Link>
           <input
             className="menu-btn"
@@ -253,7 +269,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                   setMenuOpen(!menuOpen);
                 }}
               >
-                {/* <p style={aboutStyle}>Home</p> */}
+                <p style={{ color: navStyles?.about }}>About</p>
               </a>
             </li>
             <li>
@@ -264,26 +280,18 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                   setMenuOpen(!menuOpen);
                 }}
               >
-                {/* <p style={skillsStyle}>About</p> */}
+                <p style={{ color: navStyles?.skills }}>Skills</p>
               </a>
             </li>
             <li>
               <a
-                href="/#achievements"
+                href="/#portfolio"
                 onClick={() => {
                   checkRef.current.checked = !checkRef.current.checked;
                   setMenuOpen(!menuOpen);
                 }}
               >
-                <p
-                // style={
-                //   location.hash === "#achievements"
-                //     ? { color: "var(--color-secondary)" }
-                //     : null
-                // }
-                >
-                  Achievement
-                </p>
+                <p style={{ color: navStyles?.portfolio }}>Portfolio</p>
               </a>
             </li>
             <li>
@@ -294,15 +302,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                   setMenuOpen(!menuOpen);
                 }}
               >
-                <p
-                // style={
-                //   location.hash === "#testimony"
-                //     ? { color: "var(--color-secondary)" }
-                //     : null
-                // }
-                >
-                  Testimony
-                </p>
+                <p style={{ color: navStyles?.testimony }}>Testimony</p>
               </a>
             </li>
             <li>

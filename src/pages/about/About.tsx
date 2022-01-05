@@ -1,9 +1,11 @@
 import React from "react";
 import "./About.scss";
 import HomeImage from "../../assets/img/Profile.png";
-import Typist from "react-typist";
 import { useLocation } from "react-router-dom";
 import Snowfall from "react-snowfall";
+import Typist from "react-typist";
+import { ReactHeight } from "react-height";
+
 
 const About: React.FC = () => {
   const location = useLocation();
@@ -48,76 +50,88 @@ const About: React.FC = () => {
       {/* <img src={circleImg} alt="" className="roundCircle" /> */}
       <div className="home" style={{ height: window.innerHeight }}>
         {/* Left Section */}
-        <section className="home__section-left">
-          <div className="home__section-left--intro">
-            <div className="home__section-left--intro__top">
-              <div></div>
-              <p>HELLO</p>
-            </div>
-            {/* <Typist.Delay ms={500} /> */}
-            {location.hash === "#home" || location.hash === "/" ? (
-              <>
-                <Typist>
+        <ReactHeight
+          onHeightReady={(height) =>
+            console.log("Real About Left Height:++ ", height)
+          }
+        >
+          <section className="home__section-left">
+            <div className="home__section-left--intro">
+              <div className="home__section-left--intro__top">
+                <div></div>
+                <p>HELLO</p>
+              </div>
+              {/* <Typist.Delay ms={500} /> */}
+              {location.hash === "#home" || location.hash === "/" ? (
+                <>
+                  <Typist>
+                    <h1>
+                      I'm <span>Joshua</span> Nwakwuo
+                    </h1>
+                  </Typist>
+                  <Typist>
+                    <Typist.Delay ms={2000} />
+                    <p className="brief">
+                      An <span>Innovative & Creative Software Developer</span>,
+                      using my skills and initiative necessary to anticipate
+                      needs and bring good new ideas to the world of technology
+                    </p>
+                  </Typist>
+                </>
+              ) : (
+                <>
                   <h1>
                     I'm <span>Joshua</span> Nwakwuo
                   </h1>
-                </Typist>
-                <Typist>
-                  <Typist.Delay ms={2000} />
-                  <p className="brief">
-                    An <span>Innovative & Creative Software Developer</span>,
-                    using my skills and initiative necessary to anticipate needs
-                    and bring good new ideas to the world of technology
-                  </p>
-                </Typist>
-              </>
-            ) : (
-              <>
-                <h1>
-                  I'm <span>Joshua</span> Nwakwuo
-                </h1>
 
-                <p className="brief">
-                  An <span>Innovative Software Developer</span>, using the
-                  skills and initiative necessary to anticipate needs and bring
-                  good new ideas to the world of technology
-                </p>
-              </>
-            )}
-          </div>
-        </section>
+                  <p className="brief">
+                    An <span>Innovative Software Developer</span>, using the
+                    skills and initiative necessary to anticipate needs and
+                    bring good new ideas to the world of technology
+                  </p>
+                </>
+              )}
+            </div>
+          </section>
+        </ReactHeight>
 
         {/* Right Section */}
-        <section className="home__section-right">
-          {/*  */}
-          <div className="home__section-right__item">
-            <img src={HomeImage} alt="" />
-            <div className="hexagon">
-              <div
-                className="hexagon__item"
-                style={{ animationDelay: "0s" }}
-              ></div>
+        <ReactHeight
+          onHeightReady={(height) =>
+            console.log("Real About Left Height:++ ", height)
+          }
+        >
+          <section className="home__section-right">
+            {/*  */}
+            <div className="home__section-right__item">
+              <img src={HomeImage} alt="" />
+              <div className="hexagon">
+                <div
+                  className="hexagon__item"
+                  style={{ animationDelay: "0s" }}
+                ></div>
+              </div>
+              <div className="hexagon">
+                <div
+                  className="hexagon__item"
+                  style={{ animationDelay: "2s" }}
+                ></div>
+              </div>
+              <div className="hexagon">
+                <div
+                  className="hexagon__item"
+                  style={{ animationDelay: "4s" }}
+                ></div>
+              </div>
+              <div className="hexagon">
+                <div
+                  className="hexagon__item"
+                  style={{ animationDelay: "6s" }}
+                ></div>
+              </div>
             </div>
-            <div className="hexagon">
-              <div
-                className="hexagon__item"
-                style={{ animationDelay: "2s" }}
-              ></div>
-            </div>
-            <div className="hexagon">
-              <div
-                className="hexagon__item"
-                style={{ animationDelay: "4s" }}
-              ></div>
-            </div>
-            <div className="hexagon">
-              <div
-                className="hexagon__item"
-                style={{ animationDelay: "6s" }}
-              ></div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </ReactHeight>
         {/* <section className="home__c-container">
           <div className="home__c-container__item">
             <img src={HomeImage} alt="" />

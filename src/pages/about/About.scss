@@ -64,6 +64,10 @@
     justify-content: space-around;
   }
 
+  @include respond(phone) {
+    justify-content: space-between;
+  }
+
   // align-items: center;
 
 
@@ -79,6 +83,8 @@
 
     @include respond(tabPort) {
       width: 95%;
+      margin: auto;
+      margin-top: 2.5rem;
     }
 
 
@@ -185,7 +191,7 @@
         }
 
         @include respond(phone) {
-          height: 20rem;
+          height: 16rem;
         }
       }
 
@@ -203,7 +209,7 @@
 
         @include respond(phone) {
           top: 25%;
-          left: 10%;
+          left: 9%;
         }
 
         &__item {
@@ -222,8 +228,8 @@
           }
 
           @include respond(phone) {
-            width: 12rem;
-            height: 12rem;
+            width: 10rem;
+            height: 10rem;
           }
         }
       }

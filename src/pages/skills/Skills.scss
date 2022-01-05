@@ -1,25 +1,72 @@
 @import '../../themes/mixins.scss';
 
+.skills-nav {
+  display: none;
+
+  @include respond(tabPort) {
+    position: relative;
+    height: 3rem;
+    width: 100vw;
+    display: flex;
+    left: calc(-50vw + 50%);
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+  }
+
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    // background-color: red;
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: Comfortaa-Regular;
+    padding: 1rem 0;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-secondary);
+  }
+}
+
 .skills {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   // justify-content: center;
   // align-items: center;
   // margin: auto;
+  height: 100vh;
 
-
-  @include respond(tabLand) {
+  @include respond(tabPort) {
     // justify-content: space-around;
+    height: 85vh;
   }
 
 
   &__header {
-    margin-top: 5.5rem;
+    // display: flex;
+    margin-top: 4.5rem;
+    margin-bottom: 1rem;
+
+    @include respond(tabPort) {
+      // justify-content: space-around;
+      display: none;
+    }
 
     h1 {
       color: var(--color-text);
+      font-size: 1.8rem;
+
+      @include respond(tabLand) {
+        // justify-content: space-around;
+        font-size: 1.4rem;
+      }
+
     }
   }
 
@@ -29,6 +76,7 @@
     justify-content: space-evenly;
     // align-items: center;
     width: 100%;
+    overflow: hidden;
 
     &--left {
       display: flex;
@@ -46,9 +94,9 @@
       //   // margin-right: 10rem;
       // }
 
-      // @include respond(tabPort) {
-      //   display: none;
-      // }
+      @include respond(tabPort) {
+        display: none;
+      }
 
       // Skill Card
 
@@ -67,10 +115,20 @@
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
 
+        @include respond(tabLand) {
+          height: 4rem;
+          width: 4rem;
+        }
+
 
         &__img {
           height: 3rem;
           width: 3rem;
+
+          @include respond(tabLand) {
+            height: 3rem;
+            width: 3rem;
+          }
         }
 
       }
@@ -102,6 +160,7 @@
 
       @include respond(tabPort) {
         width: 70%;
+        overflow: hidden;
         // max-height: 80vh;
       }
 

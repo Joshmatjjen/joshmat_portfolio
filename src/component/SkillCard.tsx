@@ -23,11 +23,6 @@ const SkillCard: React.FC<Props> = ({
   // const location = useLocation();
   // const [menuOpen, setMenuOpen] = useState(false);
 
-  // const skillCard: React.CSSProperties = {
-
-  // }
-  console.log("CurrentMode ----- ", currentMode);
-
   return (
     <>
       {currentMode === "light" && (
