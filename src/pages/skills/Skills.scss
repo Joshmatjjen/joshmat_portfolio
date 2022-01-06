@@ -26,10 +26,39 @@
 
   p {
     font-size: 1rem;
-    font-family: Comfortaa-Regular;
+    font-family: Comfortaa-Bold;
     padding: 1rem 0;
     color: var(--color-text);
     border-bottom: 1px solid var(--color-secondary);
+
+    @include respond(phone) {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.bottom-more {
+  display: none;
+
+  @include respond(tabPort) {
+    position: absolute;
+    bottom: 0;
+    height: 3rem;
+    width: 100vw;
+    display: flex;
+    left: calc(-50vw + 50%);
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3rem;
+    box-shadow: 0px 0px 2px 0.8px rgba(0, 0, 0, .1);
+    border: none;
+    background-color: var(--color-bg);
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: Comfortaa-Regular;
+    color: var(--color-secondary);
   }
 }
 
@@ -171,10 +200,11 @@
       &__box {
         display: flex;
         flex-direction: row;
-        // align-items: center;
-        // justify-content: center;
-        // width: 60%;
-        // margin: 2rem 0;
+
+
+        @include respond(phone) {
+          margin-bottom: 0.5rem;
+        }
 
         &--lft {
           align-items: flex-start;
@@ -187,7 +217,6 @@
 
           @include respond(phone) {
             // height: 80vh;
-            padding-top: 2rem;
             overflow: hidden;
           }
 
@@ -196,7 +225,12 @@
             font-size: 0.9rem;
             color: var(--color-secondary);
             margin: 0;
-            font-family: Comfortaa-Bold
+            font-family: Comfortaa-Bold;
+
+            @include respond(phone) {
+              // height: 80vh;
+              font-size: 0.8rem;
+            }
           }
         }
 
@@ -211,11 +245,20 @@
             align-items: flex-start;
             margin-bottom: 1.5rem;
 
+            @include respond(phone) {
+              margin-bottom: 1rem;
+            }
+
             h3 {
               // color: #ff1414;
               color: var(--color-text);
               margin: 0;
               font-size: 1rem;
+              text-align: start;
+
+              @include respond(phone) {
+                font-size: 0.83rem;
+              }
 
               &:hover {
                 color: var(--color-secondary);
@@ -229,6 +272,11 @@
               font-weight: bold;
               text-transform: uppercase;
               color: var(--color-text-1);
+
+              @include respond(phone) {
+                // height: 80vh;
+                font-size: 0.5rem;
+              }
             }
 
           }

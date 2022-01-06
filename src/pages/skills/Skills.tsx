@@ -30,6 +30,8 @@ interface Props {
 const Skills: React.FC<Props> = ({ currentMode }) => {
   const location = useLocation();
 
+  const [experienceHeight, setExperienceHeight] = useState<number>(0);
+
   return (
     <div className="section">
       <div className="skills-nav">
@@ -50,6 +52,9 @@ const Skills: React.FC<Props> = ({ currentMode }) => {
           <ReactHeight
             onHeightReady={(height) =>
               console.log("Real Skill Left Height:++ ", height)
+            }
+            getElementHeight={(el) =>
+              console.log("Real Skill Left Element:++ ", el.clientHeight)
             }
             className="skills__section--left"
           >
@@ -151,95 +156,103 @@ const Skills: React.FC<Props> = ({ currentMode }) => {
 
           {/* Right Section */}
 
-         
-            <ReactHeight
-              onHeightReady={(height) =>
-                console.log("Real Skill right Height:++ ", height)
-              }
-              className="skills__section--right"
-            >
-              <div className="skills__section--right__box">
-                <div className="skills__section--right__box--lft">
-                  <p>2016</p>
-                </div>
-                <div className="skills__section--right__box--rgt">
-                  <ExperienceCard
-                    experience="Php & Web Developer"
-                    company="Freelancing"
-                  />
-                </div>
+          <ReactHeight
+            onHeightReady={(height) =>
+              console.log("Real Skill Left Height:++ ", height)
+            }
+            dirty={false}
+            getElementHeight={(el) => {
+              console.log(
+                "Real Skill Right Element:++ ",
+                el.scrollHeight,
+                window.innerHeight - 98
+              );
+              setExperienceHeight(el.scrollHeight);
+            }}
+            className="skills__section--right"
+          >
+            <div className="skills__section--right__box">
+              <div className="skills__section--right__box--lft">
+                <p>2021</p>
               </div>
+              <div className="skills__section--right__box--rgt">
+                <ExperienceCard
+                  experience="Snr. React-Native Engineer"
+                  company="Practx"
+                />
+                <ExperienceCard
+                  experience="Snr. React-Native Engineer"
+                  company="Vendior"
+                />
+              </div>
+            </div>
+            <div className="skills__section--right__box">
+              <div className="skills__section--right__box--lft">
+                <p>2020</p>
+              </div>
+              <div className="skills__section--right__box--rgt">
+                <ExperienceCard
+                  experience="Full-Stack Developer (MERN)"
+                  company="Joshmat"
+                />
+                <ExperienceCard
+                  experience="Snr. React Developer"
+                  company="FXC Invest"
+                />
+                <ExperienceCard
+                  experience="Full-Stack Developer (MERN)"
+                  company="BaseAfrique"
+                />
+              </div>
+            </div>
 
-              <div className="skills__section--right__box">
-                <div className="skills__section--right__box--lft">
-                  <p>2018</p>
-                </div>
-                <div className="skills__section--right__box--rgt">
-                  <ExperienceCard
-                    experience="Scholarship - Google Africa Android (Java)"
-                    company="Andela Learning Community"
-                  />
-                </div>
+            <div className="skills__section--right__box">
+              <div className="skills__section--right__box--lft">
+                <p>2019</p>
               </div>
+              <div className="skills__section--right__box--rgt">
+                <ExperienceCard
+                  experience="Mobile & WordPress Developer"
+                  company="Freelancing"
+                />
+                <ExperienceCard
+                  experience="Snr. React & React-Native Developer"
+                  company="Cre8tiveTech"
+                />
+              </div>
+            </div>
 
-              <div className="skills__section--right__box">
-                <div className="skills__section--right__box--lft">
-                  <p>2019</p>
-                </div>
-                <div className="skills__section--right__box--rgt">
-                  <ExperienceCard
-                    experience="Mobile & WordPress Developer"
-                    company="Freelancing"
-                  />
-                  <ExperienceCard
-                    experience="Snr. React & React-Native Developer"
-                    company="Cre8tiveTech"
-                  />
-                </div>
+            <div className="skills__section--right__box">
+              <div className="skills__section--right__box--lft">
+                <p>2018</p>
               </div>
-              {/* <ExperienceCard experience="UI/UX Web Designer" company="Google" />
-            <ExperienceCard
-              experience="Senior React-Native Developer"
-              company="WAW Media"
-            /> */}
-              <div className="skills__section--right__box">
-                <div className="skills__section--right__box--lft">
-                  <p>2020</p>
-                </div>
-                <div className="skills__section--right__box--rgt">
-                  <ExperienceCard
-                    experience="Full-Stack Developer (MERN)"
-                    company="Joshmat"
-                  />
-                  <ExperienceCard
-                    experience="Snr. React Developer"
-                    company="FXC Invest"
-                  />
-                  <ExperienceCard
-                    experience="Full-Stack Developer (MERN)"
-                    company="BaseAfrique"
-                  />
-                </div>
+              <div className="skills__section--right__box--rgt">
+                <ExperienceCard
+                  experience="Scholarship - Google Africa Android (Java)"
+                  company="Andela Learning Community"
+                />
               </div>
+            </div>
 
-              <div className="skills__section--right__box">
-                <div className="skills__section--right__box--lft">
-                  <p>2021</p>
-                </div>
-                <div className="skills__section--right__box--rgt">
-                  <ExperienceCard
-                    experience="Snr. React-Native Engineer"
-                    company="Practx"
-                  />
-                  <ExperienceCard
-                    experience="Snr. React-Native Engineer"
-                    company="Vendior"
-                  />
-                </div>
+            <div className="skills__section--right__box">
+              <div className="skills__section--right__box--lft">
+                <p>2016</p>
               </div>
-            </ReactHeight>
+              <div className="skills__section--right__box--rgt">
+                <ExperienceCard
+                  experience="Php & Web Developer"
+                  company="Freelancing"
+                />
+              </div>
+            </div>
+          </ReactHeight>
         </div>
       </div>
+      {experienceHeight > window.innerHeight - 98 && (
+        <button className="bottom-more">
+          <p>Show more</p>
+        </button>
+      )}
     </div>
   );
 };

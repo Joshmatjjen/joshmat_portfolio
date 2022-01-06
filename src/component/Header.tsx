@@ -144,8 +144,8 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
     console.log(menuOpen);
 
     let elem = document.querySelector<Element>(".header");
-    console.log("ELementss----", elem);
-    console.log("Locations----", location);
+    // console.log("ELementss----", elem);
+    // console.log("Locations----", location);
     // if (menuOpen) {
     //   elem?.ATTRIBUTE_NODE
     //   // elem?.style?.backgroundColor = "var(--color-primary)";
