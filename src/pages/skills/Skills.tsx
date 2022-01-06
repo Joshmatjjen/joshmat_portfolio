@@ -29,17 +29,36 @@ interface Props {
 
 const Skills: React.FC<Props> = ({ currentMode }) => {
   const location = useLocation();
+const [navSwitch, setNavSwitch] = useState<string>("experience");
 
   const [experienceHeight, setExperienceHeight] = useState<number>(0);
 
   return (
     <div className="section">
       <div className="skills-nav">
-        <a onClick={() => console.log("CLick on nav 1")}>
-          <p>Skills</p>
+        <a onClick={() => setNavSwitch("skills")}>
+          <p
+            style={{
+              borderBottom:
+                navSwitch === "skills"
+                  ? "1px solid var(--color-secondary)"
+                  : "none",
+            }}
+          >
+            Skills
+          </p>
         </a>
-        <a onClick={() => console.log("CLick on nav 1")}>
-          <p>Experience</p>
+        <a onClick={() => setNavSwitch("experience")}>
+          <p
+            style={{
+              borderBottom:
+                navSwitch === "experience"
+                  ? "1px solid var(--color-secondary)"
+                  : "none",
+            }}
+          >
+            Experience
+          </p>
         </a>
       </div>
       <div className="skills" style={{}}>
@@ -57,6 +76,7 @@ const Skills: React.FC<Props> = ({ currentMode }) => {
               console.log("Real Skill Left Element:++ ", el.clientHeight)
             }
             className="skills__section--left"
+            style={{ display: navSwitch === "skills" && "flex" }}
           >
             {currentMode && (
               <>
@@ -170,6 +190,7 @@ const Skills: React.FC<Props> = ({ currentMode }) => {
               setExperienceHeight(el.scrollHeight);
             }}
             className="skills__section--right"
+            style={{ display: navSwitch === "experience" && "flex" }}
           >
             <div className="skills__section--right__box">
               <div className="skills__section--right__box--lft">

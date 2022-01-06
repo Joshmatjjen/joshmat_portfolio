@@ -12,7 +12,7 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 3rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 2px 0 var(--boxShadow);
   }
 
   a {
@@ -29,7 +29,7 @@
     font-family: Comfortaa-Bold;
     padding: 1rem 0;
     color: var(--color-text);
-    border-bottom: 1px solid var(--color-secondary);
+    // border-bottom: 1px solid var(--color-secondary);
 
     @include respond(phone) {
       font-size: 0.85rem;
@@ -50,14 +50,14 @@
     flex-direction: row;
     justify-content: space-around;
     margin-top: 3rem;
-    box-shadow: 0px 0px 2px 0.8px rgba(0, 0, 0, .1);
+    box-shadow: 0px 0px 2px 0.8px var(--boxShadow);
     border: none;
     background-color: var(--color-bg);
   }
 
   p {
-    font-size: 1rem;
-    font-family: Comfortaa-Regular;
+    font-size: 0.91rem;
+    font-family: Comfortaa-Bold;
     color: var(--color-secondary);
   }
 }
@@ -125,6 +125,9 @@
 
       @include respond(tabPort) {
         display: none;
+        width: 90%;
+        align-items: center;
+        padding-top: 1rem;
       }
 
       // Skill Card
@@ -136,7 +139,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 1.2rem 0 0;
+        margin: 0 1.2rem 1rem 0;
         // column-gap: 20;
         border-radius: 50%;
         -webkit-border-radius: 50%;
@@ -147,6 +150,10 @@
         @include respond(tabLand) {
           height: 4rem;
           width: 4rem;
+        }
+
+        @include respond(tabPort) {
+          margin: 0 1.5rem 1.5rem 0;
         }
 
 
@@ -177,9 +184,6 @@
       // height: 100%;
       display: flex;
       flex-direction: column;
-      // align-items: center;
-      // justify-content: center;
-      // width: 60%;
       margin: 1.5rem 0;
 
       // justify-content: space-between;
@@ -190,6 +194,7 @@
       @include respond(tabPort) {
         width: 70%;
         overflow: hidden;
+        display: none;
         // max-height: 80vh;
       }
 

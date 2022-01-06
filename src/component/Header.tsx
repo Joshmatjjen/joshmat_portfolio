@@ -43,6 +43,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--scrollbarBG", "#e4ffeb");
       root.style.setProperty("--box-shadow", "rgba(0,0,0,0.35)");
       root.style.setProperty("--home-bg-opacity", 0.1);
+      root.style.setProperty("--boxShadow", "rgba(0, 0, 0, 0.1)");
     }
   };
 
@@ -71,6 +72,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--scrollbarBG", "#e4ffeb");
       root.style.setProperty("--box-shadow", "rgba(0,0,0,0.35)");
       root.style.setProperty("--home-bg-opacity", 0.1);
+      root.style.setProperty("--boxShadow", "rgba(0, 0, 0, 0.1)");
 
       localStorage.setItem("mode", "light");
       setMode("light");
@@ -93,6 +95,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--scrollbarBG", "#020503");
       root.style.setProperty("--box-shadow", "rgba(255,255,255,0.35)");
       root.style.setProperty("--home-bg-opacity", 0.9);
+      root.style.setProperty("--boxShadow", "rgba(255, 255, 255, 0.1)");
 
       localStorage.setItem("mode", "dark");
       setMode("dark");
@@ -238,7 +241,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           boxShadow:
             location.hash === "#skills"
               ? "none"
-              : "1px 1px 4px 0 rgba(0, 0, 0, .1)",
+              : "1px 0.5px 1px 0 var(--boxShadow)",
         }}
       >
         <div className="header">
