@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.scss";
-import HomeImage from "../../assets/img/Profile.png";
+import AboutImage from "../../assets/img/Profile.png";
 import { useLocation } from "react-router-dom";
 import Snowfall from "react-snowfall";
 import Typist from "react-typist";
@@ -48,21 +48,21 @@ const About: React.FC = () => {
         </div>
       </div> */}
       {/* <img src={circleImg} alt="" className="roundCircle" /> */}
-      <div className="home" style={{ height: window.innerHeight }}>
+      <div className="about" style={{ height: window.innerHeight }}>
         {/* Left Section */}
         <ReactHeight
           onHeightReady={(height) =>
             console.log("Real About Left Height:++ ", height)
           }
         >
-          <section className="home__section-left">
-            <div className="home__section-left--intro">
-              <div className="home__section-left--intro__top">
+          <section className="about__section-left">
+            <div className="about__section-left--intro">
+              <div className="about__section-left--intro__top">
                 <div></div>
                 <p>HELLO</p>
               </div>
               {/* <Typist.Delay ms={500} /> */}
-              {location.hash === "#home" || location.hash === "/" ? (
+              {location.hash === "#about" || location.hash === "/" ? (
                 <>
                   <Typist>
                     <h1>
@@ -101,10 +101,10 @@ const About: React.FC = () => {
             console.log("Real About Left Height:++ ", height)
           }
         >
-          <section className="home__section-right">
+          <section className="about__section-right">
             {/*  */}
-            <div className="home__section-right__item">
-              <img src={HomeImage} alt="" />
+            <div className="about__section-right__item">
+              <img src={AboutImage} alt="" />
               <div className="hexagon">
                 <div
                   className="hexagon__item"
@@ -132,25 +132,25 @@ const About: React.FC = () => {
             </div>
           </section>
         </ReactHeight>
-        {/* <section className="home__c-container">
-          <div className="home__c-container__item">
-            <img src={HomeImage} alt="" />
+        {/* <section className="about__c-container">
+          <div className="about__c-container__item">
+            <img src={AboutImage} alt="" />
           </div>
           {/* <div id="hexagon"></div> 
           <div
-            className="home__c-container__circle"
+            className="about__c-container__circle"
             style={{ animationDelay: "0s" }}
           ></div>
           <div
-            className="home__c-container__circle"
+            className="about__c-container__circle"
             style={{ animationDelay: "1s" }}
           ></div>
           <div
-            className="home__c-container__circle"
+            className="about__c-container__circle"
             style={{ animationDelay: "2s" }}
           ></div>
           <div
-            className="home__c-container__circle"
+            className="about__c-container__circle"
             style={{ animationDelay: "3s" }}
           ></div>
         </section> */}

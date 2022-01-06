@@ -6,7 +6,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import "./styles.scss";
 import About from "./pages/about/About";
 import Skills from "./pages/skills/Skills";
-import Achievement from "./pages/achievement/Achievement";
+import Portfolio from "./pages/portfolio/Portfolio";
 // import Testimony from "./pages/testimony/Testimony";
 // import Contact from "./pages/contact/Contact";
 
@@ -38,7 +38,7 @@ const FullPageWrapper: React.FC<Props> = ({currentMode}) => (
         <div className="fullpage">
           <About />
           <Skills currentMode={currentMode} />
-          <Achievement />
+          <Portfolio />
           {/* <Testimony /> */}
           {/* <Contact /> */}
         </div>
