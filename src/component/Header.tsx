@@ -44,6 +44,8 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--box-shadow", "rgba(0,0,0,0.35)");
       root.style.setProperty("--home-bg-opacity", 0.1);
       root.style.setProperty("--boxShadow", "rgba(0, 0, 0, 0.1)");
+      root.style.setProperty("--shadow1", "rgba(225, 225, 225, 0.6)");
+      root.style.setProperty("--shadow2", "rgba(225, 225, 225, 0.7)");
     }
   };
 
@@ -73,6 +75,8 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--box-shadow", "rgba(0,0,0,0.35)");
       root.style.setProperty("--home-bg-opacity", 0.1);
       root.style.setProperty("--boxShadow", "rgba(0, 0, 0, 0.1)");
+      root.style.setProperty("--shadow1", "rgba(225, 225, 225, 0.6)");
+      root.style.setProperty("--shadow2", "rgba(225, 225, 225, 0.7)");
 
       localStorage.setItem("mode", "light");
       setMode("light");
@@ -95,7 +99,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--scrollbarBG", "#020503");
       root.style.setProperty("--box-shadow", "rgba(255,255,255,0.35)");
       root.style.setProperty("--home-bg-opacity", 0.9);
-      root.style.setProperty("--boxShadow", "rgba(255, 255, 255, 0.1)");
+      root.style.setProperty("--boxShadow", "#ffffff0a");
+      root.style.setProperty("--shadow1", "rgba(0, 0, 0, 0.6)");
+      root.style.setProperty("--shadow2", "rgba(0, 0, 0, 0.7)");
 
       localStorage.setItem("mode", "dark");
       setMode("dark");
@@ -120,9 +126,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       ? setNavStyles({
           skills: "var(--color-secondary)",
         })
-      : location.hash === "#portfolio"
+      : location.hash === "#work"
       ? setNavStyles({
-          portfolio: "var(--color-secondary)",
+          work: "var(--color-secondary)",
         })
       : location.hash === "#testimony"
       ? setNavStyles({
@@ -181,8 +187,8 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             <a href="/#skills">
               <p style={{ color: navStyles?.skills }}>Skills</p>
             </a>
-            <a href="/#portfolio">
-              <p style={{ color: navStyles?.portfolio }}>Portfolio</p>
+            <a href="/#work">
+              <p style={{ color: navStyles?.work }}>Work</p>
             </a>
             <a href="/#testimony">
               <p
@@ -288,13 +294,13 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             </li>
             <li>
               <a
-                href="/#portfolio"
+                href="/#work"
                 onClick={() => {
                   checkRef.current.checked = !checkRef.current.checked;
                   setMenuOpen(!menuOpen);
                 }}
               >
-                <p style={{ color: navStyles?.portfolio }}>Portfolio</p>
+                <p style={{ color: navStyles?.portfolio }}>Work</p>
               </a>
             </li>
             <li>

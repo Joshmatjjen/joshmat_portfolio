@@ -8,6 +8,7 @@ import { Tooltip, withTooltip } from "react-tippy";
 interface Props {
   title: string;
   styling?: React.CSSProperties;
+  stylingImg?: React.CSSProperties;
   img?: any;
   bgColor?: string;
   currentMode?: string | any;
@@ -16,6 +17,7 @@ interface Props {
 const SkillCard: React.FC<Props> = ({
   title,
   styling,
+  stylingImg,
   img,
   bgColor,
   currentMode,
@@ -36,8 +38,16 @@ const SkillCard: React.FC<Props> = ({
           arrow={true}
           arrowSize="regular"
         >
-          <div className="skillCard" style={{ backgroundColor: bgColor }}>
-            <img src={img} alt="skillCard_img" className="skillCard__img" />
+          <div
+            className="skillCard"
+            style={{ ...styling, backgroundColor: bgColor }}
+          >
+            <img
+              src={img}
+              alt="skillCard_img"
+              style={{ ...stylingImg }}
+              className="skillCard__img"
+            />
           </div>
         </Tooltip>
       )}

@@ -6,11 +6,11 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import "./styles.scss";
 import About from "./pages/about/About";
 import Skills from "./pages/skills/Skills";
-import Portfolio from "./pages/portfolio/Portfolio";
+import Work from "./pages/work/Work";
 // import Testimony from "./pages/testimony/Testimony";
 // import Contact from "./pages/contact/Contact";
 
-const anchors = ["about", "skills", "portfolio", "testimony", "contact"];
+const anchors = ["about", "skills", "work", "testimony", "contact"];
 const pluginWrapper = () => {
   require("./extension/fullpage.extensions.min");
 };
@@ -38,7 +38,7 @@ const FullPageWrapper: React.FC<Props> = ({currentMode}) => (
         <div className="fullpage">
           <About />
           <Skills currentMode={currentMode} />
-          <Portfolio />
+          <Work currentMode={currentMode} />
           {/* <Testimony /> */}
           {/* <Contact /> */}
         </div>
