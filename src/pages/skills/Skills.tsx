@@ -182,11 +182,11 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
             }
             dirty={false}
             getElementHeight={(el) => {
-              console.log(
-                "Real Skill Right Element:++ ",
-                el.scrollHeight,
-                window.innerHeight - 98
-              );
+              // console.log(
+              //   "Real Skill Right Element:++ ",
+              //   el.scrollHeight,
+              //   window.innerHeight - 98
+              // );
               setExperienceHeight(el.scrollHeight);
             }}
             className="skills__section--right"

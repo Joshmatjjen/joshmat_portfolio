@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Work.scss";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import waveDownloader from "../../assets/img/waveDownloader.webp";
+import waveDownloaderWeb from "../../assets/img/wavedownloader.png";
 import jotours from "../../assets/img/jotours.png";
 import jclothing from "../../assets/img/jclothing.png";
+import sweetMother from "../../assets/img/sweetMother.webp";
+import practx from "../../assets/img/practx.png";
+import vendior from "../../assets/img/vendior.png";
+import thelightinghaus from "../../assets/img/thelightinghaus.png";
+
+import htmlIcon from "../../assets/svg/html5.svg";
+import cssIcon from "../../assets/svg/css3.svg";
+import javascriptIcon from "../../assets/svg/javascript.svg";
 import reactNativeIcon from "../../assets/svg/react_native.svg";
+import expoIcon from "../../assets/svg/expo.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -18,6 +30,8 @@ import SwiperCore, {
   EffectCoverflow,Pagination
 } from 'swiper';
 import SkillCard from "../../component/SkillCard";
+import { Tooltip } from "react-tippy";
+import TechCard from "../../component/TechCard";
 
 
 
@@ -33,6 +47,12 @@ const breakPoints = [
 
 interface Props {
   currentMode?: string;
+}
+
+interface TechProps {
+  title? : string;
+  image?: string;
+  bgColor?: string;
 }
 
 const Work: React.FC<Props> = ({ currentMode }) => {
@@ -51,6 +71,44 @@ const Work: React.FC<Props> = ({ currentMode }) => {
 
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [selectedSlide, setSelectedSlide] = useState<number | null>();
+  const [mode, setMode] = useState<any>(currentMode);
+
+  const Technology: React.FC<TechProps> = ({title, image, bgColor }) => {
+    return (
+      <Tooltip
+        // options
+        interactive={true}
+        title={title}
+        position="bottom"
+        trigger="mouseenter"
+        theme={currentMode === "light" ? "light" : "dark"}
+        arrow={true}
+        arrowSize="regular"
+      >
+        <div
+          className="skillCard"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "2.5rem",
+            width: "2.5rem",
+            borderRadius: "100%",
+            marginRight: "1rem",
+            backgroundColor: bgColor,
+          }}
+        >
+          <img
+            src={image}
+            alt="skillCard_img"
+            style={{ height: "1.5rem", width: "1.5rem" }}
+            className="skillCard__img"
+          />
+        </div>
+      </Tooltip>
+    );
+  };
+  
 
   return (
     <div className="section">
@@ -91,6 +149,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                 ? "swiperSlide-active"
                 : "swiperSlide"
             }
+            onClick={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
           >
             <div
               className={
@@ -98,32 +157,26 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   ? "swiperSlide-active__img"
                   : "swiperSlide__img"
               }
-              onClick={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
             >
-              <img alt="img" src={jotours} />
+              <img alt="img" src={waveDownloader} />
             </div>
             {currentSlide === 0 && selectedSlide === 0 && (
               <div className="swiperSlide-active__item">
-                <p>Jotours</p>
-                <p>View site</p>
-                <SkillCard
-                  currentMode={currentMode}
-                  title="React-Native"
-                  img={reactNativeIcon}
-                  bgColor="#80DEEA18"
-                  styling={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "2.5rem",
-                    width: "2.5rem",
-                    borderRadius: "100%",
-                  }}
-                  stylingImg={{ height: "1.5rem", width: "1.5rem" }}
-                />
+                <p>Wave Downloader</p>
+                <a href="" className="swiperSlide-active__item--link">
+                  <p>View on PlayStore</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="React-Native"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                </div>
               </div>
             )}
           </SwiperSlide>
+
           <SwiperSlide
             className={
               currentSlide === 1 && selectedSlide === 1
@@ -139,138 +192,243 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   : "swiperSlide__img"
               }
             >
-              <img alt="img" src={jclothing} />
+              <img alt="img" src={sweetMother} />
             </div>
             {currentSlide === 1 && selectedSlide === 1 && (
               <div className="swiperSlide-active__item">
+                <p>Sweet Mother</p>
+                <a href="" className="swiperSlide-active__item--link">
+                  <p>View on PlayStore</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="React-Native"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                  <Technology
+                    title="Expo"
+                    image={expoIcon}
+                    bgColor="#00000018"
+                  />
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={
+              currentSlide === 2 && selectedSlide === 2
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+            onClick={() => setSelectedSlide(selectedSlide === 2 ? null : 2)}
+          >
+            <div
+              className={
+                currentSlide === 2 && selectedSlide === 2
+                  ? "swiperSlide-active__img"
+                  : "swiperSlide__img"
+              }
+            >
+              <img alt="img" src={practx} />
+            </div>
+            {currentSlide === 2 && selectedSlide === 2 && (
+              <div className="swiperSlide-active__item">
+                <p>Practx</p>
+                <a href="" className="swiperSlide-active__item--link">
+                  <p>Coming soon</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="React-Native"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={
+              currentSlide === 3 && selectedSlide === 3
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+            onClick={() => setSelectedSlide(selectedSlide === 3 ? null : 3)}
+          >
+            <div
+              className={
+                currentSlide === 3 && selectedSlide === 3
+                  ? "swiperSlide-active__img"
+                  : "swiperSlide__img"
+              }
+            >
+              <img alt="img" src={vendior} />
+            </div>
+            {currentSlide === 3 && selectedSlide === 3 && (
+              <div className="swiperSlide-active__item">
+                <p>Vendior</p>
+                <a href="" className="swiperSlide-active__item--link">
+                  <p>Coming soon</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="React-Native"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={
+              currentSlide === 4 && selectedSlide === 4
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+            onClick={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
+          >
+            <div
+              className={
+                currentSlide === 4 && selectedSlide === 4
+                  ? "swiperSlide-active__img"
+                  : "swiperSlide__img"
+              }
+            >
+              <img alt="img" src={waveDownloaderWeb} />
+            </div>
+            {currentSlide === 4 && selectedSlide === 4 && (
+              <div className="swiperSlide-active__item">
+                <p>Wave Downloader</p>
+                <a href="" className="swiperSlide-active__item--link">
+                  <p>View on PlayStore</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="React"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={
+              currentSlide === 5 && selectedSlide === 5
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+          >
+            <div
+              className={
+                currentSlide === 5 && selectedSlide === 5
+                  ? "swiperSlide-active__img"
+                  : "swiperSlide__img"
+              }
+              onClick={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
+            >
+              <img alt="img" src={jotours} />
+            </div>
+            {currentSlide === 5 && selectedSlide === 5 && (
+              <div className="swiperSlide-active__item">
+                <p>Jotours</p>
+                <a
+                  href="https://jotours-frontend.herokuapp.com/"
+                  className="swiperSlide-active__item--link"
+                >
+                  <p>View site</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="html"
+                    image={htmlIcon}
+                    bgColor="#e44a2718"
+                  />
+                  <Technology title="css" image={cssIcon} bgColor="#0377BD13" />
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={
+              currentSlide === 6 && selectedSlide === 6
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+            onClick={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
+          >
+            <div
+              className={
+                currentSlide === 6 && selectedSlide === 6
+                  ? "swiperSlide-active__img"
+                  : "swiperSlide__img"
+              }
+            >
+              <img alt="img" src={jclothing} />
+            </div>
+            {currentSlide === 6 && selectedSlide === 6 && (
+              <div className="swiperSlide-active__item">
                 <p>JClothing</p>
-                <p>View site</p>
-                <SkillCard
-                  currentMode={currentMode}
-                  title="React-Native"
-                  img={reactNativeIcon}
-                  bgColor="#80DEEA18"
-                  styling={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "2.5rem",
-                    width: "2.5rem",
-                    borderRadius: "100%",
-                  }}
-                  stylingImg={{ height: "1.5rem", width: "1.5rem" }}
-                />
+                <a
+                  href="https://jclothing.herokuapp.com/"
+                  className="swiperSlide-active__item--link"
+                >
+                  <p>View site</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="React"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                </div>
               </div>
             )}
           </SwiperSlide>
 
           <SwiperSlide
             className={
-              currentSlide === 2 ? "swiperSlide-active" : "swiperSlide"
+              currentSlide === 7 && selectedSlide === 7
+                ? "swiperSlide-active"
+                : "swiperSlide"
             }
-            onClick={() => console.log("Hello")}
+            onClick={() => setSelectedSlide(selectedSlide === 7 ? null : 7)}
           >
             <div
               className={
-                currentSlide === 2
+                currentSlide === 7 && selectedSlide === 7
                   ? "swiperSlide-active__img"
                   : "swiperSlide__img"
               }
             >
-              <img
-                alt="img"
-                src="https://swiperjs.com/demos/images/nature-3.jpg"
-              />
+              <img alt="img" src={thelightinghaus} />
             </div>
-            {currentSlide === 2 && (
-              <div>
-                <p>Hellow world</p>
+            {currentSlide === 7 && selectedSlide === 7 && (
+              <div className="swiperSlide-active__item">
+                <p>TheLightHaus</p>
+                <a
+                  href="https://thelightinghaus.netlify.app/"
+                  className="swiperSlide-active__item--link"
+                >
+                  <p>View site</p>
+                </a>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <Technology
+                    title="html"
+                    image={htmlIcon}
+                    bgColor="#e44a2718"
+                  />
+                  <Technology title="css" image={cssIcon} bgColor="#0377BD13" />
+                </div>
               </div>
             )}
-          </SwiperSlide>
-
-          <SwiperSlide
-            onTouchMoveCapture={(el) => console.log("Touch move", el)}
-            className={
-              currentSlide === 3 ? "swiperSlide-active" : "swiperSlide"
-            }
-            onClick={() => console.log("Hello")}
-          >
-            <div
-              className={
-                currentSlide === 3
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
-              <img
-                alt="img"
-                src="https://swiperjs.com/demos/images/nature-4.jpg"
-              />
-            </div>
-            {currentSlide === 3 && (
-              <div>
-                <p>Hellow world</p>
-              </div>
-            )}
-          </SwiperSlide>
-
-          <SwiperSlide
-            className="swiperSlide"
-            onClick={() => console.log("Hello")}
-          >
-            <div className="swiperSlide__img">
-              <img
-                alt="img"
-                src="https://swiperjs.com/demos/images/nature-5.jpg"
-              />
-            </div>
-            <div>
-              <p>Hellow world</p>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide
-            className="swiperSlide"
-            onClick={() => console.log("Hello")}
-          >
-            <div className="swiperSlide__img">
-              <img
-                alt="img"
-                src="https://swiperjs.com/demos/images/nature-6.jpg"
-              />
-            </div>
-            <div>
-              <p>Hellow world</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide
-            className="swiperSlide"
-            onClick={() => console.log("Hello")}
-          >
-            <div className="swiperSlide__img">
-              <img
-                alt="img"
-                src="https://swiperjs.com/demos/images/nature-7.jpg"
-              />
-            </div>
-            <div>
-              <p>Hellow world</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide
-            className="swiperSlide"
-            onClick={() => console.log("Hello")}
-          >
-            <div className="swiperSlide__img">
-              <img
-                alt="img"
-                src="https://swiperjs.com/demos/images/nature-8.jpg"
-              />
-            </div>
-            <div>
-              <p>Hellow world</p>
-            </div>
           </SwiperSlide>
         </Swiper>
       </div>

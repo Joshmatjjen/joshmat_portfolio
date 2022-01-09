@@ -12,6 +12,7 @@ interface Props {
   img?: any;
   bgColor?: string;
   currentMode?: string | any;
+  test?: any;
 }
 
 const SkillCard: React.FC<Props> = ({
@@ -21,9 +22,12 @@ const SkillCard: React.FC<Props> = ({
   img,
   bgColor,
   currentMode,
+  test,
 }) => {
   // const location = useLocation();
-  // const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(currentMode);
+  console.log("Current mode in works", test);
+  useEffect(() => setMenuOpen(currentMode), [currentMode]);
 
   return (
     <>
