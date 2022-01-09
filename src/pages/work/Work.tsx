@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import waveDownloader from "../../assets/img/waveDownloader.webp";
 import waveDownloaderWeb from "../../assets/img/wavedownloader.png";
+import jobots from "../../assets/img/jobots.png";
 import jotours from "../../assets/img/jotours.png";
 import jclothing from "../../assets/img/jclothing.png";
 import sweetMother from "../../assets/img/sweetMother.webp";
@@ -17,6 +18,8 @@ import cssIcon from "../../assets/svg/css3.svg";
 import javascriptIcon from "../../assets/svg/javascript.svg";
 import reactNativeIcon from "../../assets/svg/react_native.svg";
 import expoIcon from "../../assets/svg/expo.svg";
+import mongodbIcon from "../../assets/svg/mongodb.svg";
+import playStore from "../../assets/svg/playstore.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -86,23 +89,16 @@ const Work: React.FC<Props> = ({ currentMode }) => {
         arrowSize="regular"
       >
         <div
-          className="skillCard"
+          className="techCard"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "2.5rem",
-            width: "2.5rem",
-            borderRadius: "100%",
-            marginRight: "1rem",
-            backgroundColor: bgColor,
+            backgroundColor: bgColor
           }}
         >
           <img
             src={image}
-            alt="skillCard_img"
-            style={{ height: "1.5rem", width: "1.5rem" }}
-            className="skillCard__img"
+            alt="techCard_img"
+            // style={{ height: "1.5rem", width: "1.5rem" }}
+            className="techCard__img"
           />
         </div>
       </Tooltip>
@@ -163,10 +159,21 @@ const Work: React.FC<Props> = ({ currentMode }) => {
             {currentSlide === 0 && selectedSlide === 0 && (
               <div className="swiperSlide-active__item">
                 <p>Wave Downloader</p>
-                <a href="" className="swiperSlide-active__item--link">
-                  <p>View on PlayStore</p>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://play.google.com/store/apps/details?id=com.wavedownloader"
+                  className="swiperSlide-active__item--link"
+                >
+                  <i className="fab fa-google-play"></i>
                 </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
                     title="React-Native"
                     image={reactNativeIcon}
@@ -192,30 +199,40 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   : "swiperSlide__img"
               }
             >
-              <img alt="img" src={sweetMother} />
+              <img alt="img" src={jobots} />
             </div>
             {currentSlide === 1 && selectedSlide === 1 && (
               <div className="swiperSlide-active__item">
-                <p>Sweet Mother</p>
-                <a href="" className="swiperSlide-active__item--link">
-                  <p>View on PlayStore</p>
+                <p>Jobots</p>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://jobots.herokuapp.com/"
+                  className="swiperSlide-active__item--link"
+                >
+                  <p>View site</p>
                 </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
-                    title="React-Native"
+                    title="React"
                     image={reactNativeIcon}
                     bgColor="#80DEEA18"
                   />
                   <Technology
-                    title="Expo"
-                    image={expoIcon}
-                    bgColor="#00000018"
+                    title="Mongodb"
+                    image={mongodbIcon}
+                    bgColor="#6DAC4718"
                   />
                 </div>
               </div>
             )}
           </SwiperSlide>
-
           <SwiperSlide
             className={
               currentSlide === 2 && selectedSlide === 2
@@ -231,19 +248,35 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   : "swiperSlide__img"
               }
             >
-              <img alt="img" src={practx} />
+              <img alt="img" src={sweetMother} />
             </div>
             {currentSlide === 2 && selectedSlide === 2 && (
               <div className="swiperSlide-active__item">
-                <p>Practx</p>
-                <a href="" className="swiperSlide-active__item--link">
-                  <p>Coming soon</p>
+                <p>Sweet Mother</p>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://play.google.com/store/apps/details?id=com.sweetmother"
+                  className="swiperSlide-active__item--link"
+                >
+                  <i className="fab fa-google-play"></i>
                 </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
                     title="React-Native"
                     image={reactNativeIcon}
                     bgColor="#80DEEA18"
+                  />
+                  <Technology
+                    title="Expo"
+                    image={expoIcon}
+                    bgColor="#00000018"
                   />
                 </div>
               </div>
@@ -265,15 +298,21 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   : "swiperSlide__img"
               }
             >
-              <img alt="img" src={vendior} />
+              <img alt="img" src={practx} />
             </div>
             {currentSlide === 3 && selectedSlide === 3 && (
               <div className="swiperSlide-active__item">
-                <p>Vendior</p>
-                <a href="" className="swiperSlide-active__item--link">
+                <p>Practx</p>
+                <div className="swiperSlide-active__item--link">
                   <p>Coming soon</p>
-                </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
                     title="React-Native"
                     image={reactNativeIcon}
@@ -299,17 +338,28 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   : "swiperSlide__img"
               }
             >
-              <img alt="img" src={waveDownloaderWeb} />
+              <img alt="img" src={vendior} />
             </div>
             {currentSlide === 4 && selectedSlide === 4 && (
               <div className="swiperSlide-active__item">
-                <p>Wave Downloader</p>
-                <a href="" className="swiperSlide-active__item--link">
-                  <p>View on PlayStore</p>
+                <p>Vendior</p>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://vendoir.com/"
+                  className="swiperSlide-active__item--link"
+                >
+                  <p>Coming soon</p>
                 </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
-                    title="React"
+                    title="React-Native"
                     image={reactNativeIcon}
                     bgColor="#80DEEA18"
                   />
@@ -324,6 +374,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                 ? "swiperSlide-active"
                 : "swiperSlide"
             }
+            onClick={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
           >
             <div
               className={
@@ -331,26 +382,33 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   ? "swiperSlide-active__img"
                   : "swiperSlide__img"
               }
-              onClick={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
             >
-              <img alt="img" src={jotours} />
+              <img alt="img" src={waveDownloaderWeb} />
             </div>
             {currentSlide === 5 && selectedSlide === 5 && (
               <div className="swiperSlide-active__item">
-                <p>Jotours</p>
+                <p>Wave Downloader</p>
                 <a
-                  href="https://jotours-frontend.herokuapp.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://wavedownloader.com/"
                   className="swiperSlide-active__item--link"
                 >
                   <p>View site</p>
                 </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
-                    title="html"
-                    image={htmlIcon}
-                    bgColor="#e44a2718"
+                    title="React"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
                   />
-                  <Technology title="css" image={cssIcon} bgColor="#0377BD13" />
+                  <Technology title="Css" image={cssIcon} bgColor="#0377BD13" />
                 </div>
               </div>
             )}
@@ -362,7 +420,6 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                 ? "swiperSlide-active"
                 : "swiperSlide"
             }
-            onClick={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
           >
             <div
               className={
@@ -370,24 +427,32 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   ? "swiperSlide-active__img"
                   : "swiperSlide__img"
               }
+              onClick={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
             >
-              <img alt="img" src={jclothing} />
+              <img alt="img" src={jotours} />
             </div>
             {currentSlide === 6 && selectedSlide === 6 && (
               <div className="swiperSlide-active__item">
-                <p>JClothing</p>
+                <p>Jotours</p>
                 <a
-                  href="https://jclothing.herokuapp.com/"
+                  href="https://jotours-frontend.herokuapp.com/"
                   className="swiperSlide-active__item--link"
                 >
                   <p>View site</p>
                 </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
-                    title="React"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
+                    title="html"
+                    image={htmlIcon}
+                    bgColor="#e44a2718"
                   />
+                  <Technology title="css" image={cssIcon} bgColor="#0377BD13" />
                 </div>
               </div>
             )}
@@ -408,18 +473,70 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                   : "swiperSlide__img"
               }
             >
-              <img alt="img" src={thelightinghaus} />
+              <img alt="img" src={jclothing} />
             </div>
             {currentSlide === 7 && selectedSlide === 7 && (
               <div className="swiperSlide-active__item">
+                <p>JClothing</p>
+                <a
+                  href="https://jclothing.herokuapp.com/"
+                  className="swiperSlide-active__item--link"
+                >
+                  <p>View site</p>
+                </a>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
+                  <Technology
+                    title="React"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                  <Technology title="Css" image={cssIcon} bgColor="#0377BD13" />
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={
+              currentSlide === 8 && selectedSlide === 8
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+            onClick={() => setSelectedSlide(selectedSlide === 8 ? null : 8)}
+          >
+            <div
+              className={
+                currentSlide === 8 && selectedSlide === 8
+                  ? "swiperSlide-active__img"
+                  : "swiperSlide__img"
+              }
+            >
+              <img alt="img" src={thelightinghaus} />
+            </div>
+            {currentSlide === 8 && selectedSlide === 8 && (
+              <div className="swiperSlide-active__item">
                 <p>TheLightHaus</p>
                 <a
+                  target="_blank"
+                  rel="noreferrer"
                   href="https://thelightinghaus.netlify.app/"
                   className="swiperSlide-active__item--link"
                 >
                   <p>View site</p>
                 </a>
-                <div style={{ display: "flex", flexDirection: "row" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
                   <Technology
                     title="html"
                     image={htmlIcon}
@@ -431,6 +548,12 @@ const Work: React.FC<Props> = ({ currentMode }) => {
             )}
           </SwiperSlide>
         </Swiper>
+
+        <section className="work__bottom">
+          <i className="fad fa-long-arrow-left" />
+          <p>Swipe or click</p>
+          <i className="fad fa-long-arrow-right" />
+        </section>
       </div>
 
       {/* <div className="portfolio" style={{ height: window.innerHeight }}>
