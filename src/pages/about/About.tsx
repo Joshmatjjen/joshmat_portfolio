@@ -64,18 +64,23 @@ const About: React.FC = () => {
               {/* <Typist.Delay ms={500} /> */}
               {location.hash === "#about" || location.hash === "/" ? (
                 <>
-                  <Typist>
-                    <h1>
-                      I'm <span>Joshua</span> Nwakwuo
-                    </h1>
+                  <Typist
+                    cursor={{
+                      show: true,
+                      blink: true,
+                      hideWhenDone: true,
+                      hideWhenDoneDelay: 1000,
+                    }}
+                    className="about__section-left--intro__name"
+                  >
+                    I'm <span>Joshua</span> Nwakwuo
                   </Typist>
-                  <Typist>
+                  <Typist className="brief">
                     <Typist.Delay ms={2000} />
-                    <p className="brief">
                       An <span>Innovative & Creative Software Developer</span>,
                       using my skills and initiative necessary to anticipate
                       needs and bring good new ideas to the world of technology
-                    </p>
+            
                   </Typist>
                 </>
               ) : (

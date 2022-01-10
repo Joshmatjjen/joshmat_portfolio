@@ -8,7 +8,7 @@ import About from "./pages/about/About";
 import Skills from "./pages/skills/Skills";
 import Work from "./pages/work/Work";
 // import Testimony from "./pages/testimony/Testimony";
-// import Contact from "./pages/contact/Contact";
+import Contact from "./pages/contact/Contact";
 
 const anchors = ["about", "skills", "work", "testimony", "contact"];
 const pluginWrapper = () => {
@@ -40,7 +40,7 @@ const FullPageWrapper: React.FC<Props> = ({currentMode}) => (
           <Skills currentMode={currentMode} />
           <Work currentMode={currentMode} />
           {/* <Testimony /> */}
-          {/* <Contact /> */}
+          <Contact />
         </div>
       );
     }}

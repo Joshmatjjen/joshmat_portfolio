@@ -101,17 +101,15 @@
 
         div {
           width: 1.6rem;
-          height: 0.1rem;
+          height: 2px;
           background-color: var(--color-secondary);
           margin-right: 1rem;
         }
 
         p {
-          color: var(--color-secondary) !important;
-
-          &:hover {
-            color: red !important;
-          }
+          color: var(--color-secondary);
+          font-size: 1rem;
+          font-family: Comfortaa-Bold;
 
           @include respond(phone) {
             font-size: 0.7rem;
@@ -119,11 +117,12 @@
         }
       }
 
-      h1 {
+      &__name {
         font-size: 3rem;
         color: var(--color-text);
         font-family: Comfortaa-Bold;
         text-align: left;
+        margin: 2rem 0 1rem 0;
 
         @include respond(tabPort) {
           font-size: 2rem;

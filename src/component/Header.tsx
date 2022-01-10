@@ -190,7 +190,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             <a href="/#work">
               <p style={{ color: navStyles?.work }}>Work</p>
             </a>
-            <a href="/#testimony">
+            {/* <a href="/#testimony">
               <p
               // style={
               //   location.hash === "#testimony"
@@ -200,7 +200,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               >
                 Testimony
               </p>
-            </a>
+            </a> */}
             <a href="/#contact">
               <p
               // style={

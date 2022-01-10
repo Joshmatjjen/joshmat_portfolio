@@ -257,7 +257,12 @@
 
   &__top {
     margin-top: 7rem;
-    // width: 35%;
+
+    @include respond(tabPort) {
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+    }
+
 
     h1 {
       font-size: 2rem;
@@ -271,8 +276,12 @@
       }
 
       @include respond(phone) {
-        font-size: 1.1rem;
+        font-size: 1.45rem;
         margin: 0.3;
+      }
+
+      @include respond(phone) {
+        font-size: 1.3rem;
       }
     }
 
@@ -294,20 +303,23 @@
     justify-content: center;
     margin-bottom: 3rem;
 
+    @include respond(tabPort) {
+      margin-bottom: 0rem;
+    }
+
     p {
       font-size: 1.3rem;
       color: var(--color-text);
       font-family: Comfortaa-Bold;
       margin: 0rem 1.5rem;
 
-      @include respond(tabLand) {
-        font-size: 1.6rem;
-        margin: 0.5rem 0;
+      @include respond(tabPort) {
+        font-size: 1.2rem;
       }
 
       @include respond(phone) {
         font-size: 1.1rem;
-        margin: 0.3;
+        // margin: 0.3;
       }
     }
 
