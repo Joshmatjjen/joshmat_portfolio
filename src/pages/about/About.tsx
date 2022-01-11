@@ -11,42 +11,6 @@ const About: React.FC = () => {
   const location = useLocation();
   return (
     <div className="section">
-      {/* <div className="social">
-        <div className="social--content">
-          <a
-            className="social--content--link"
-            href="https://www.facebook.com/kayode.a.joshua.3"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fab fa-facebook"></i>
-          </a>
-          <a
-            className="social--content--link"
-            href="https://www.instagram.com/thejoshuakayode/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a
-            className="social--content--link"
-            href="https://www.facebook.com/kayode.a.joshua.3"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fab fa-facebook"></i>
-          </a>
-          <a
-            className="social--content--link"
-            href="https://twitter.com/TheJoshuaKayode"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fab fa-twitter"></i>
-          </a>
-        </div>
-      </div> */}
       {/* <img src={circleImg} alt="" className="roundCircle" /> */}
       <div className="about" style={{ height: window.innerHeight }}>
         {/* Left Section */}
@@ -75,12 +39,19 @@ const About: React.FC = () => {
                   >
                     I'm <span>Joshua</span> Nwakwuo
                   </Typist>
-                  <Typist className="brief">
+                  <Typist
+                    className="brief"
+                    cursor={{
+                      show: true,
+                      blink: true,
+                      hideWhenDone: true,
+                      hideWhenDoneDelay: 1000,
+                    }}
+                  >
                     <Typist.Delay ms={2000} />
-                      An <span>Innovative & Creative Software Developer</span>,
-                      using my skills and initiative necessary to anticipate
-                      needs and bring good new ideas to the world of technology
-            
+                    An <span>Innovative & Creative Software Developer</span>,
+                    using my skills and initiative necessary to anticipate needs
+                    and bring good new ideas to the world of technology
                   </Typist>
                 </>
               ) : (

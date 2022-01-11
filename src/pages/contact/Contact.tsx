@@ -1,9 +1,18 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./Contact.scss";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useForm } from "@formcarry/react";
+import emailIcon from "../../assets/img/envelope.png";
+import phoneIcon from "../../assets/img/smartphone.png";
 
 const Contact: React.FC =  () => {
+  
+  const { state, submit } = useForm({
+    id: "drM33_-Ro0i",
+    debug: true,
+  });
+  
   const notify = (message: string | {} | null | undefined) => {
     toast.dark(message, {
       position: "bottom-center",
@@ -15,51 +24,81 @@ const Contact: React.FC =  () => {
       progress: undefined,
     });
   };
-  const [status, setStatus] = useState("");
-  const submitForm = (ev: { preventDefault: () => void; target: any; }) => {
-    ev.preventDefault();
-    const form = ev.target;
-    const data = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.action);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        form.reset();
-        setStatus("SUCCESS");
-      } else {
-        setStatus("ERROR");
-      }
-    };
-    xhr.send(data);
-  };
-  useMemo(() => {
-    status === "SUCCESS" && notify("😁 Message submitted successfully");
-    status === "ERROR" && notify("😢 Message was not submitted successfully");
-  }, [status]);
+  // const [status, setStatus] = useState("");
+  // const submitForm = (ev: { preventDefault: () => void; target: any; }) => {
+  //   ev.preventDefault();
+  //   const form = ev.target;
+  //   const data = new FormData(form);
+  //   const xhr = new XMLHttpRequest();
+  //   xhr.open(form.method, form.action);
+  //   xhr.setRequestHeader("Accept", "application/json");
+  //   xhr.onreadystatechange = () => {
+  //     if (xhr.readyState !== XMLHttpRequest.DONE) return;
+  //     if (xhr.status === 200) {
+  //       form.reset();
+  //       setStatus("SUCCESS");
+  //     } else {
+  //       setStatus("ERROR");
+  //     }
+  //   };
+  //   xhr.send(data);
+  // };
+  // useMemo(() => {
+  //   status === "SUCCESS" && notify("😁 Message submitted successfully");
+  //   status === "ERROR" && notify("😢 Message was not submitted successfully");
+  // }, [status]);
+
+  useEffect(() => {
+    if (state.submitted && !state.submitting) {
+      console.log("Helloo", state);
+      notify("😁 Message submitted successfully");
+    }
+  }, [state]);
+
   return (
     <div className="section">
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <div className="contact" style={{ height: window.innerHeight }}>
+        <section className="contact__top">
+          <h1>Take a coffee & chat with me</h1>
+        </section>
         {/* Title & Sub */}
+        <section className="contact__item">
+          <div className="contact__item--box">
+            <div className="contact__item--box--1">
+              <img src={emailIcon} alt="itemImage" />
+              <p>joshmatparrot@gmail.com</p>
+            </div>
+            <div className="contact__item--box--2">
+              <img src={phoneIcon} alt="itemImage" />
+              <p>+2349035982285</p>
+            </div>
+          </div>
+        </section>
         <section className="contact__content">
-          {/* Edu Section */}
-          <section className="contact__content--text">
-            <p>
-              Let's make something new, different and more meaningful or make
-              thing more visual or Conceptual ? <span>Just Say Hello!</span>
-            </p>
-            <p>{"-->"}</p>
-          </section>
-          {/* Exp Section */}
           <form
             className="contact__content--form"
-            onSubmit={submitForm}
-            action="https://formspree.io/f/mleoozpw"
-            method="POST"
+            // onSubmit={submitForm}
+            // action="https://formspree.io/f/xlezdyzg"
+            // method="POST"
+            onSubmit={submit}
           >
-            <input type="email" name="email" placeholder="Mail Address" />
-            <input type="text" name="message" placeholder="Message" />
+            <div className="contact__content--form__list">
+              <input type="email" name="_replyto" placeholder="Email Address" />
+              <input type="firstName" name="firstName" placeholder="Name" />
+              {/* <input type="lastName" name="lastName" placeholder="Last name" /> */}
+              <input type="text" name="message" placeholder="Message" />
+            </div>
             <div>
               {/* <div className="btn" onClick={() => submitForm()}></div> */}
               <button className="btn" type="submit">
@@ -70,18 +109,14 @@ const Contact: React.FC =  () => {
         </section>
         <section className="footer">
           <p>
-            Copyright © {new Date().getFullYear()} Joshua Kayode. All rights
-            Reserved.
+            Copyright © {new Date().getFullYear()} Joshmat. All rights Reserved.
           </p>
-          <p>
+          {/* <p>
             Created by{" "}
-            {/* <a href="whatsapp://send?text=Hello World!&phone=+2349035982285">
-              Ĵoshmăt
-            </a> */}
             <a href="https://wa.me/+2349035982285?text=Hello Ĵoshmăt">
               Ĵoshmăt
             </a>
-          </p>
+          </p> */}
         </section>
       </div>
     </div>

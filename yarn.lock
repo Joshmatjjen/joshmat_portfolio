@@ -1114,6 +1114,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@formcarry/react@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@formcarry/react/-/react-1.0.3.tgz#6a664f7bd6ab0c09c9f317392980db95cdde5be1"
+  integrity sha512-bJ+vv+cic8pba1+zL0rubQAxnYhZRCJLz1Y1oEqN2FickShLMHIfmVt4wB0wlovgaeZxwEFxjbiIxv4MplL6vg==
+
 "@fullpage/react-fullpage@^0.1.19":
   version "0.1.19"
   resolved "https://registry.yarnpkg.com/@fullpage/react-fullpage/-/react-fullpage-0.1.19.tgz#770ecfc96475900007ce1c29376da7fa11fb26a8"
@@ -8013,7 +8018,7 @@ react-tippy@^1.4.0:
   dependencies:
     popper.js "^1.11.1"
 
-react-toastify@^8.1.0:
+react-toastify@8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-8.1.0.tgz#acaca4e8c4415c8474562dd84a14e6f390ed7f17"
   integrity sha512-M+Q3rTmEw/53Csr7NsV/YnldJe4c7uERcY7Tma9mvLU98QT2VhIkKwjBzzxZkJRk/oBKyUAtkyMjMgO00hx6gQ==

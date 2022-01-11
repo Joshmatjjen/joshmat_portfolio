@@ -10,7 +10,7 @@ import Work from "./pages/work/Work";
 // import Testimony from "./pages/testimony/Testimony";
 import Contact from "./pages/contact/Contact";
 
-const anchors = ["about", "skills", "work", "testimony", "contact"];
+const anchors = ["about", "skills", "work", "contact"];
 const pluginWrapper = () => {
   require("./extension/fullpage.extensions.min");
 };

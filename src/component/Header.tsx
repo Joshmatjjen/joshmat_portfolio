@@ -134,6 +134,10 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       ? setNavStyles({
           testimony: "var(--color-secondary)",
         })
+      : location.hash === "#contact"
+      ? setNavStyles({
+          contact: "var(--color-secondary)",
+        })
       : setNavStyles({});
 
     // if (menuOpen) {
@@ -202,15 +206,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               </p>
             </a> */}
             <a href="/#contact">
-              <p
-              // style={
-              //   location.hash === "#contact"
-              //     ? { color: "var(--color-secondary)" }
-              //     : null
-              // }
-              >
-                Contact
-              </p>
+              <p style={{ color: navStyles?.contact }}>Contact</p>
             </a>
             <span
               className="toggle"

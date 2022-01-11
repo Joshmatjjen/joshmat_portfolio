@@ -7,7 +7,7 @@ import "./themes/variables.scss";
 import { Route, useLocation, Routes } from "react-router-dom";
 // import FullPageWrapper from "./FullPageWrapper";
 import { useEffect, useState } from "react";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import Header from "./component/Header";
 import About from "./pages/about/About";
 import FullPageWrapper from "./FullPageWrapper";
@@ -54,13 +54,52 @@ const  App: React.FC = () =>  {
       </div>
 
       <Header setCurrentMode={setCurrentMode} />
-
       {/* <About /> */}
       {/* <FullPageWrapper /> */}
+      <div className="social">
+        <div className="social--content">
+          <a
+            className="social--content--link"
+            href="https://www.facebook.com/JoshmatJjen"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a
+            className="social--content--link"
+            href="https://www.instagram.com/JoshmatJjen/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a
+            className="social--content--link"
+            href="https://www.facebook.com/JoshmatJjen"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a
+            className="social--content--link"
+            href="https://twitter.com/Joshmat_jjen"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
       <Routes>
         <Route
           index={true}
-          element={<FullPageWrapper currentMode={currentMode === "light" ? "light" : "dark"} />}
+          element={
+            <FullPageWrapper
+              currentMode={currentMode === "light" ? "light" : "dark"}
+            />
+          }
         />
       </Routes>
 

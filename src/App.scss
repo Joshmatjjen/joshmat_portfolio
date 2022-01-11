@@ -7,6 +7,79 @@
   width: 100%;
 }
 
+.social {
+  // flex: 1;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // height: 100%;
+  bottom: 1rem;
+  left: 2rem;
+  align-items: center;
+  z-index: 100;
+
+  @include respond(tabLand) {
+    left: 1rem;
+  }
+
+  @include respond(tabPort) {
+    display:  none;
+  }
+
+  &--content {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+
+    // @include respond(tabLand) {
+    //   display: flex;
+    //   flex-direction: column;
+    //   margin: auto;
+    // }
+
+    a {
+      display: flex;
+      margin: 1.5rem 0;
+      width: 2rem;
+      height: 2rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      background-color: var(--color-text);
+
+      @include respond(tabLand) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &:hover {
+        background-color: var(--color-secondary);
+      }
+
+
+      i {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-bg);
+        font-size: 1rem;
+
+        @include respond(tabLand) {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        @include respond(phone) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
 .loader {
   position: fixed;
   width: 100vw;
@@ -39,7 +112,7 @@
 
     &--App-logo {
       position: absolute;
-      margin: auto ;
+      margin: auto;
       padding-bottom: 8rem;
       height: 1.2rem;
 
