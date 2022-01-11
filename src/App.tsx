@@ -17,14 +17,14 @@ import "react-tippy/dist/tippy.css";
 const  App: React.FC = () =>  {
   // const location = useLocation();
   const [currentMode, setCurrentMode] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   // console.log(location.hash);
   useEffect(() => {
     // document.documentElement.webkitRequestFullscreen();
     window.scrollTo(0, 1);
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 4000);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
   });
   return (
     <div className="App">
