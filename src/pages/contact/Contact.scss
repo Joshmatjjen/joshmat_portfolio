@@ -123,6 +123,7 @@
         @include respond(tabPort) {
           flex-direction: row;
           width: 80%;
+          padding: 0.2rem 1rem;
         }
 
         img {
@@ -168,7 +169,7 @@
 
         @include respond(tabPort) {
           margin-left: 0;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
       }
 
@@ -178,6 +179,7 @@
 
         @include respond(tabPort) {
           margin-right: 0;
+          padding: 0rem 0rem;
         }
       }
     }
@@ -293,14 +295,18 @@
           margin: 1rem auto;
           font-size: 1.1rem;
           font-family: Comfortaa-Regular;
-          width: 40%;
+          width: 42%;
           border: none;
           border-bottom: 1px solid var(--color-text);
           padding: 5px 0;
           color: var(--color-text);
 
           &:last-child {
-            width: 90%;
+            width: 92%;
+
+            @include respond(phone) {
+              width: 95%;
+            }
           }
 
           @include respond(tabPort) {
@@ -309,7 +315,7 @@
 
           @include respond(phone) {
             font-size: 0.9rem;
-            width: 90%;
+            width: 95%;
           }
 
           &:focus {

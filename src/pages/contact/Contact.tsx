@@ -5,18 +5,19 @@ import "react-toastify/dist/ReactToastify.css";
 import { useForm } from "@formcarry/react";
 import emailIcon from "../../assets/img/envelope.png";
 import phoneIcon from "../../assets/img/smartphone.png";
+import axios from "axios";
 
 const Contact: React.FC =  () => {
   
-  const { state, submit } = useForm({
-    id: "drM33_-Ro0i",
-    debug: true,
-  });
+  // const { state, submit } = useForm({
+  //   id: "drM33_-Ro0i",
+  //   debug: true,
+  // });
   
   const notify = (message: string | {} | null | undefined) => {
     toast.dark(message, {
       position: "bottom-center",
-      autoClose: 5000,
+      autoClose: 10000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -24,7 +25,7 @@ const Contact: React.FC =  () => {
       progress: undefined,
     });
   };
-  // const [status, setStatus] = useState("");
+  const [formState, setFormState] = useState({email: '', name: '', message: ''});
   // const submitForm = (ev: { preventDefault: () => void; target: any; }) => {
   //   ev.preventDefault();
   //   const form = ev.target;
@@ -48,26 +49,60 @@ const Contact: React.FC =  () => {
   //   status === "ERROR" && notify("😢 Message was not submitted successfully");
   // }, [status]);
 
-  useEffect(() => {
-    if (state.submitted && !state.submitting) {
-      console.log("Helloo", state);
-      notify("😁 Message submitted successfully");
-    }
-  }, [state]);
+  const clearInput = () => {
+    setFormState({ email: "", name: "", message: "" });
+  };
+
+  const onInputChange = (type: string, e: string | any) => {
+    console.log("onInputChange", formState);
+    setFormState({ ...formState, [type]: e.target.value });
+    // this.setState({ inputVal: e.target.value });
+  };
+
+  const handleForm = (e) => {
+    axios
+      .post("https://formcarry.com/s/drM33_-Ro0i", formState, {
+        headers: { Accept: "application/json" },
+      })
+      .then(function (response) {
+        // access response.data in order to check formcarry response
+        if (response.data.success) {
+          // handle success
+          
+        } else {
+          // handle error
+          
+          console.log(response.data.message);
+        }
+        notify(
+          "😁 Message submitted successfully, you will get a response soon"
+        );
+        clearInput();
+      })
+      .catch(function (error) {
+        notify(
+          "😞 Error occur while submitting message, please try again later"
+        );
+        console.log(error);
+      });
+
+    e.preventDefault();
+  };
+
+  // useEffect(() => {
+  //   if (state.submitted && !state.submitting) {
+       
+  //     setTimeout(() => {
+       
+  //     }, 2000);
+  //     console.log("Helloo", state);
+      
+      
+  //   }
+  // }, [state]);
 
   return (
     <div className="section">
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
       <div className="contact" style={{ height: window.innerHeight }}>
         <section className="contact__top">
           <h1>Take a coffee & chat with me</h1>
@@ -91,13 +126,31 @@ const Contact: React.FC =  () => {
             // onSubmit={submitForm}
             // action="https://formspree.io/f/xlezdyzg"
             // method="POST"
-            onSubmit={submit}
+            onSubmit={handleForm}
           >
             <div className="contact__content--form__list">
-              <input type="email" name="_replyto" placeholder="Email Address" />
-              <input type="firstName" name="firstName" placeholder="Name" />
+              <input
+                type="email"
+                name="_replyto"
+                placeholder="Email Address"
+                value={formState.email}
+                onChange={(e) => onInputChange("email", e)}
+              />
+              <input
+                type="firstName"
+                name="firstName"
+                placeholder="Name"
+                value={formState.name}
+                onChange={(e) => onInputChange("name", e)}
+              />
               {/* <input type="lastName" name="lastName" placeholder="Last name" /> */}
-              <input type="text" name="message" placeholder="Message" />
+              <input
+                type="text"
+                name="message"
+                placeholder="Message"
+                value={formState.message}
+                onChange={(e) => onInputChange("message", e)}
+              />
             </div>
             <div>
               {/* <div className="btn" onClick={() => submitForm()}></div> */}

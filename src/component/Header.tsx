@@ -208,27 +208,43 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             <a href="/#contact">
               <p style={{ color: navStyles?.contact }}>Contact</p>
             </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/Joshmatjjen"
+            >
+              <i
+                className={"fab fa-github"}
+                style={{
+                  marginLeft: "3rem",
+                  color: "var(--color-text)",
+                  fontSize: "1.5rem",
+                  marginBottom: "0.5rem",
+                }}
+              />
+            </a>
             <span
               className="toggle"
               onClick={toggleMode}
               style={{
+                display: 'flex',
                 marginLeft: "4rem",
                 marginBottom: "0.5rem",
                 backgroundColor: "var(--color-mode-bg)",
                 borderRadius: "50%",
-                width: "2.3rem",
+                width: "2rem",
+                height: "2rem",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
               <i
                 className={
-                  mode === "light" ? "fad fa-moon-stars" : "fad fa-sun"
+                  mode === "light" ? "fad fa-moon-stars " : "fad fa-sun"
                 }
                 style={{
                   color: "var(--color-mode-icon)",
                   fontSize: "1.2rem",
-                  marginBottom: "0.5rem",
                 }}
               />
             </span>
@@ -254,6 +270,18 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               alt="logo"
             />
           </Link>
+
+          <span className="mobile-toggle" onClick={toggleMode}>
+            <i
+              className={mode === "light" ? "fad fa-moon-stars" : "fad fa-sun"}
+              style={{
+                color: "var(--color-mode-icon)",
+                fontSize: "1.2rem",
+                // marginBottom: "0.5rem",
+              }}
+            />
+          </span>
+
           <input
             className="menu-btn"
             defaultChecked={menuOpen}
@@ -299,7 +327,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 <p style={{ color: navStyles?.portfolio }}>Work</p>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/#testimony"
                 onClick={() => {
@@ -309,7 +337,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               >
                 <p style={{ color: navStyles?.testimony }}>Testimony</p>
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="/#contact"
@@ -331,6 +359,52 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             </li>
           </ul>
         </div>
+        {menuOpen && (
+          <div className="mobile-social">
+            <div className="mobile-social--content">
+              <a
+                className="mobile-social--content--link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/Joshmatjjen"
+              >
+                <i className="fab fa-github"></i>
+              </a>
+              <a
+                className="mobile-social--content--link"
+                href="https://www.facebook.com/JoshmatJjen"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a
+                className="mobile-social--content--link"
+                href="https://www.instagram.com/JoshmatJjen/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a
+                className="mobile-social--content--link"
+                href="https://www.facebook.com/JoshmatJjen"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a
+                className="mobile-social--content--link"
+                href="https://twitter.com/Joshmat_jjen"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        )}
       </header>
     </>
   );

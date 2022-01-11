@@ -23,6 +23,7 @@ import expoIcon from "../../assets/svg/expo.svg";
 import { ReactHeight } from "react-height";
 
 import ExperienceCard from "../../component/ExperienceCard";
+import { toast } from "react-toastify";
 interface Props {
   currentMode?: string;
 }
@@ -32,6 +33,27 @@ const Skills: React.FC<Props> = ({ currentMode }) => {
 const [navSwitch, setNavSwitch] = useState<string>("experience");
 
   const [experienceHeight, setExperienceHeight] = useState<number>(0);
+
+  const notify = (message: string | {} | null | undefined) => {
+    currentMode === "light" ? toast(message, {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    }): 
+    toast.dark(message, {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   return (
     <div className="section">
@@ -270,7 +292,7 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
         </div>
       </div>
       {experienceHeight > window.innerHeight - 98 && (
-        <button className="bottom-more">
+        <button className="bottom-more" onClick={() => notify("😁 Coming Soon")}>
           <p>Show more</p>
         </button>
       )}

@@ -54,6 +54,17 @@ const  App: React.FC = () =>  {
       </div>
 
       <Header setCurrentMode={setCurrentMode} />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       {/* <About /> */}
       {/* <FullPageWrapper /> */}
       <div className="social">
