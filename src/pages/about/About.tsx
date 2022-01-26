@@ -47,6 +47,7 @@ const About: React.FC = () => {
                       hideWhenDone: true,
                       hideWhenDoneDelay: 1000,
                     }}
+                    onTypingDone={() => console.log("Happy everyone")}
                   >
                     <Typist.Delay ms={2000} />
                     An <span>Innovative & Creative Software Developer</span>,
@@ -67,6 +68,37 @@ const About: React.FC = () => {
                   </p>
                 </>
               )}
+              <div className="about__section-left--intro__bottom">
+                <button
+                  className="btn"
+                  style={{
+                    backgroundColor: "var(--color-text)",
+                    minWidth: "8rem",
+                    fontSize: "1rem",
+                  }}
+                  type="submit"
+                >
+                  <a href="#contact">Let's talk</a>
+                </button>
+                <button
+                  style={{
+                    backgroundColor: "var(--color-secondary3)",
+                    minWidth: "13rem",
+                    fontSize: "1rem",
+                  }}
+                  className="btn"
+                  type="submit"
+                >
+                  <a
+                    target="_blank"
+                    href="https://jobots.herokuapp.com/"
+                    style={{ color: "var(--color-bg);" }} rel="noreferrer"
+                  >
+                    Chat with parrot &nbsp;<i className="fad fa-robot"></i>
+                  </a>
+                </button>
+                <div></div>
+              </div>
             </div>
           </section>
         </ReactHeight>

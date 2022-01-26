@@ -44,9 +44,9 @@
     &--intro {
       flex: 7;
       align-items: flex-start;
-      // margin-left: 5rem;
+        // margin-left: 5rem;
 
-      &__top {
+        &__top {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -67,6 +67,13 @@
             font-size: 0.7rem;
           }
         }
+      }
+
+      &__bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 1rem;
       }
 
       &__name {
@@ -265,4 +272,57 @@
   animation: bounce;
   animation-duration: 3s;
   animation-iteration-count: 3;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #CCC;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  border: none !important;
+  cursor: pointer;
+  vertical-align: middle;
+  text-align: center;
+  display: flex;
+  font-family: Comfortaa-Bold;
+  // margin-left: auto;
+  margin-right: 1rem;
+  justify-content: center;
+  padding: 0.7rem 0.5rem;
+  // background-color: var(--color-text);
+  color: var(--color-bg);
+
+  border-radius: 0.5rem;
+
+  @include respond(tabLand) {
+    font-size: 1rem;
+  }
+
+  @include respond(tabPort) {
+    font-size: 0.9rem;
+  }
+
+  @include respond(phone) {
+    font-size: 0.8rem;
+  }
+
+  a {
+    color: var(--color-bg);
+  }
+
+  &:hover {
+    background-color: var(--color-secondary);
+    color: white;
+    cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFTSURBVHgBrZS9UsJAFIWPjC1OrCnc0k4stM4M9vAEArUFWFqJFaVxxNrEF4hvEGobtNLONNZEeID1bFbCXxICyZk5k+xN8u3duzcLJMugBQqSoMe0pJ9RgCzzDNJzQqDEFpmWEuKGqJBSwdYqoWBlBQroTSoM6NHftEk3cgPdAVCvhRl6RhkuryO6Qzd3AlaPgcMyU6uR5OoQN8wi3OZ9Nw5Yhe63ZhqYgHnWj3oC6mQVqJbi8mGLs9rQtTrCBhkH8fH9f6C4vdIv9QYQzqtuZDXuXOrM6hfA72Q5libPPIeUn9rcBMlaReMktxrrv+ashu3hGwJHFzysjdqIXTQD+vRDtw8EE+TSYttYwRT+3RNyaREY0G3rBeDyM2k8TQcqDWnnuo+N8n+Aj6/om0h7Me+qNhqxJ8X9TXx7KJgqDa/vHJ4igwRtY35qr1rFe4g5gf4ApeZ0dUcd+qUAAAAASUVORK5CYII="),
+      pointer;
+  }
+
+  &:active {
+    background-color: var(--color-secondary);
+  }
+
+  &:focus {
+    border: none !important;
+    outline: none;
+
+  }
 }

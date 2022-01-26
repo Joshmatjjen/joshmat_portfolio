@@ -18,7 +18,7 @@ const  App: React.FC = () =>  {
   // const location = useLocation();
   // let navigate = useNavigate();
   const [currentMode, setCurrentMode] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   // console.log(location.hash);
   useEffect(() => {
     // document.documentElement.webkitRequestFullscreen();
