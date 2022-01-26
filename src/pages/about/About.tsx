@@ -83,7 +83,7 @@ const About: React.FC = () => {
                 <button
                   style={{
                     backgroundColor: "var(--color-secondary3)",
-                    minWidth: "13rem",
+                    minWidth: "9rem",
                     fontSize: "1rem",
                   }}
                   className="btn"
@@ -94,7 +94,7 @@ const About: React.FC = () => {
                     href="https://jobots.herokuapp.com/"
                     style={{ color: "var(--color-bg);" }} rel="noreferrer"
                   >
-                    Chat with parrot &nbsp;<i className="fad fa-robot"></i>
+                    Chat with &nbsp;<i className="fad fa-robot"></i>
                   </a>
                 </button>
                 <div></div>
