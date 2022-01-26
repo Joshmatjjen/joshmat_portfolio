@@ -6,7 +6,7 @@ import "./themes/mixins.scss";
 import "./themes/variables.scss";
 import { Route, useLocation, Routes, Router, useNavigate } from "react-router-dom";
 // import FullPageWrapper from "./FullPageWrapper";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Header from "./component/Header";
 import About from "./pages/about/About";
@@ -17,15 +17,19 @@ import "react-tippy/dist/tippy.css";
 const  App: React.FC = () =>  {
   // const location = useLocation();
   // let navigate = useNavigate();
+  const imgEl = useRef<HTMLImageElement>(null);
+  
   const [currentMode, setCurrentMode] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  
   // console.log(location.hash);
   useEffect(() => {
     // document.documentElement.webkitRequestFullscreen();
     window.scrollTo(0, 1);
     setTimeout(() => {
       setIsLoading(false);
-    }, 7000);
+    }, 6000);
   });
   return (
     <div className="App">

@@ -118,9 +118,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
 
   useEffect(() => {
     console.log(location);
-    location.hash === "#about" ||
-    location.hash === "/" ||
-    location.hash === ""
+    location.hash === "#about" || location.hash === "/" || location.hash === ""
       ? setNavStyles({
           about: "var(--color-secondary)",
         })
@@ -176,7 +174,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       {/* DESKTOP */}
       <header className="App-header">
         <div className="App-header--container">
-          <Link to="" className="Logo">
+          <a href="/#about" className="Logo">
             {/* <p>J</p> */}
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
             <img
@@ -185,7 +183,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               alt="logo"
             />
             {/* <p>K</p> */}
-          </Link>
+          </a>
           <div className="App-header--container__main-nav">
             <a href="/#about">
               <p style={{ color: navStyles?.about }}>About</p>
@@ -229,7 +227,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               className="toggle"
               onClick={toggleMode}
               style={{
-                display: 'flex',
+                display: "flex",
                 marginLeft: "4rem",
                 marginBottom: "0.5rem",
                 backgroundColor: "var(--color-mode-bg)",
@@ -265,13 +263,13 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
         }}
       >
         <div className="header">
-          <Link to="" className="Logo1">
+          <a href="/#about" className="Logo1">
             <img
               src={mode === "light" ? logoBlack : logoWhite}
               className="App-logo-header"
               alt="logo"
             />
-          </Link>
+          </a>
 
           <span className="mobile-toggle" onClick={toggleMode}>
             <i

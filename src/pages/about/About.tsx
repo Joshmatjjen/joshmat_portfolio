@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./About.scss";
 import AboutImage from "../../assets/img/Profile.png";
 import { useLocation } from "react-router-dom";
@@ -8,7 +8,19 @@ import { ReactHeight } from "react-height";
 
 
 const About: React.FC = () => {
+  const imgEl = useRef<HTMLImageElement>(null);
   const location = useLocation();
+  const [loaded, setLoaded] = useState(false);
+  const onImageLoaded = () => setLoaded(true);
+
+  useEffect(() => {
+    const imgElCurrent = imgEl.current;
+
+    if (imgElCurrent) {
+      imgElCurrent.addEventListener("load", onImageLoaded);
+      return () => imgElCurrent.removeEventListener("load", onImageLoaded);
+    }
+  }, [imgEl]);
   return (
     <div className="section">
       {/* <img src={circleImg} alt="" className="roundCircle" /> */}
@@ -70,11 +82,9 @@ const About: React.FC = () => {
               )}
               <div className="about__section-left--intro__bottom">
                 <button
-                  className="btn"
+                  className="btn btn-left"
                   style={{
                     backgroundColor: "var(--color-text)",
-                    minWidth: "8rem",
-                    fontSize: "1rem",
                   }}
                   type="submit"
                 >
@@ -83,16 +93,15 @@ const About: React.FC = () => {
                 <button
                   style={{
                     backgroundColor: "var(--color-secondary3)",
-                    minWidth: "9rem",
-                    fontSize: "1rem",
                   }}
-                  className="btn"
+                  className="btn btn-right"
                   type="submit"
                 >
                   <a
                     target="_blank"
                     href="https://jobots.herokuapp.com/"
-                    style={{ color: "var(--color-bg);" }} rel="noreferrer"
+                    style={{ color: "var(--color-bg);" }}
+                    rel="noreferrer"
                   >
                     Chat with &nbsp;<i className="fad fa-robot"></i>
                   </a>
@@ -112,7 +121,8 @@ const About: React.FC = () => {
           <section className="about__section-right">
             {/*  */}
             <div className="about__section-right__item">
-              <img src={AboutImage} alt="" />
+              <img ref={imgEl} src={AboutImage} alt="" />
+              {loaded && <>
               <div className="hexagon">
                 <div
                   className="hexagon__item"
@@ -137,6 +147,7 @@ const About: React.FC = () => {
                   style={{ animationDelay: "6s" }}
                 ></div>
               </div>
+              </>}
             </div>
           </section>
         </ReactHeight>

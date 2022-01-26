@@ -44,9 +44,9 @@
     &--intro {
       flex: 7;
       align-items: flex-start;
-        // margin-left: 5rem;
+      // margin-left: 5rem;
 
-        &__top {
+      &__top {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -274,6 +274,32 @@
   animation-iteration-count: 3;
 }
 
+.btn-left {
+  min-width: 9rem;
+
+  @include respond(tabPort) {
+    font-size: 0.9rem;
+  }
+
+  @include respond(phone) {
+    font-size: 0.8rem;
+    min-width: 6rem,
+  }
+}
+
+.btn-right {
+  min-width: 9rem;
+
+  @include respond(tabPort) {
+    font-size: 0.9rem;
+  }
+
+  @include respond(phone) {
+    font-size: 0.8rem;
+    min-width: 7.5rem,
+  }
+}
+
 .btn {
   display: inline-block;
   border: 1px solid #CCC;
@@ -302,11 +328,24 @@
   }
 
   @include respond(phone) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.5rem;
   }
 
   a {
     color: var(--color-bg);
+
+    @include respond(tabLand) {
+      font-size: 1rem;
+    }
+
+    @include respond(tabPort) {
+      font-size: 0.9rem;
+    }
+
+    @include respond(phone) {
+      font-size: 0.8rem;
+    }
   }
 
   &:hover {
