@@ -118,7 +118,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
 
   useEffect(() => {
     console.log(location);
-    location.hash === "#about"
+    location.hash === "#about" ||
+    location.hash === "/" ||
+    location.hash === ""
       ? setNavStyles({
           about: "var(--color-secondary)",
         })
@@ -394,14 +396,14 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               >
                 <i className="fab fa-facebook"></i>
               </a>
-              <a
+              {/* <a
                 className="mobile-social--content--link"
                 href="https://twitter.com/Joshmat_jjen"
                 target="_blank"
                 rel="noreferrer"
               >
                 <i className="fab fa-twitter"></i>
-              </a>
+              </a> */}
             </div>
           </div>
         )}

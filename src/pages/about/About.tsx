@@ -26,7 +26,7 @@ const About: React.FC = () => {
                 <p>HELLO</p>
               </div>
               {/* <Typist.Delay ms={500} /> */}
-              {location.hash === "#about" || location.hash === "/" ? (
+              {location.hash === "#about" || location.hash === "" ? (
                 <>
                   <Typist
                     cursor={{

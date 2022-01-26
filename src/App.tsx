@@ -4,7 +4,7 @@ import "./App.scss";
 import "./Header.scss";
 import "./themes/mixins.scss";
 import "./themes/variables.scss";
-import { Route, useLocation, Routes } from "react-router-dom";
+import { Route, useLocation, Routes, Router, useNavigate } from "react-router-dom";
 // import FullPageWrapper from "./FullPageWrapper";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -16,6 +16,7 @@ import "react-tippy/dist/tippy.css";
 
 const  App: React.FC = () =>  {
   // const location = useLocation();
+  // let navigate = useNavigate();
   const [currentMode, setCurrentMode] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
   // console.log(location.hash);
@@ -24,7 +25,7 @@ const  App: React.FC = () =>  {
     window.scrollTo(0, 1);
     setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 7000);
   });
   return (
     <div className="App">
@@ -93,14 +94,14 @@ const  App: React.FC = () =>  {
           >
             <i className="fab fa-facebook"></i>
           </a>
-          <a
+          {/* <a
             className="social--content--link"
             href="https://twitter.com/Joshmat_jjen"
             target="_blank"
             rel="noreferrer"
           >
             <i className="fab fa-twitter"></i>
-          </a>
+          </a> */}
         </div>
       </div>
       <Routes>

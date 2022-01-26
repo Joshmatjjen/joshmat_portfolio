@@ -30,7 +30,7 @@ const SkillCard: React.FC<Props> = ({
   useEffect(() => setMenuOpen(currentMode), [currentMode]);
 
   return (
-    <>
+    <div>
       {currentMode === "light" && (
         <Tooltip
           // options
@@ -71,7 +71,7 @@ const SkillCard: React.FC<Props> = ({
           </div>
         </Tooltip>
       )}
-    </>
+    </div>
   );
 };
 
