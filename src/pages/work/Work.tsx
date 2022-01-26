@@ -15,6 +15,7 @@ import thelightinghaus from "../../assets/img/thelightinghaus.png";
 
 import htmlIcon from "../../assets/svg/html5.svg";
 import cssIcon from "../../assets/svg/css3.svg";
+import sassIcon from "../../assets/svg/sass.svg";
 import javascriptIcon from "../../assets/svg/javascript.svg";
 import reactNativeIcon from "../../assets/svg/react_native.svg";
 import expoIcon from "../../assets/svg/expo.svg";
@@ -409,6 +410,11 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                     bgColor="#80DEEA18"
                   />
                   <Technology title="Css" image={cssIcon} bgColor="#0377BD13" />
+                  <Technology
+                    title="Sass"
+                    image={sassIcon}
+                    bgColor="#DC5E9B13"
+                  />
                 </div>
               </div>
             )}
@@ -452,7 +458,11 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                     image={htmlIcon}
                     bgColor="#e44a2718"
                   />
-                  <Technology title="css" image={cssIcon} bgColor="#0377BD13" />
+                  <Technology
+                    title="Sass"
+                    image={sassIcon}
+                    bgColor="#DC5E9B13"
+                  />
                 </div>
               </div>
             )}
@@ -543,6 +553,11 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                     bgColor="#e44a2718"
                   />
                   <Technology title="css" image={cssIcon} bgColor="#0377BD13" />
+                  <Technology
+                    title="Sass"
+                    image={sassIcon}
+                    bgColor="#DC5E9B13"
+                  />
                 </div>
               </div>
             )}

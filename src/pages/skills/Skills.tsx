@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import "./Skills.scss";
-import HomeImage from "../../assets/img/homeImage1.png";
-import Typist from "react-typist";
 import { useLocation } from "react-router-dom";
 import SkillCard from "../../component/SkillCard";
 import htmlIcon from "../../assets/svg/html5.svg";
 import cssIcon from "../../assets/svg/css3.svg";
+import sassIcon from "../../assets/svg/sass.svg";
 import reactNativeIcon from "../../assets/svg/react_native.svg";
 import typeScriptIcon from "../../assets/svg/typescript.svg";
 import vueIcon from "../../assets/svg/vue_js.svg";
@@ -113,6 +112,12 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
                   title="Css"
                   img={cssIcon}
                   bgColor="#0377BD13"
+                />
+                <SkillCard
+                  currentMode={currentMode}
+                  title="Sass"
+                  img={sassIcon}
+                  bgColor="#DC5E9B13"
                 />
                 <SkillCard
                   currentMode={currentMode}
@@ -292,7 +297,10 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
         </div>
       </div>
       {experienceHeight > window.innerHeight - 98 && (
-        <button className="bottom-more" onClick={() => notify("😁 Coming Soon")}>
+        <button
+          className="bottom-more"
+          onClick={() => notify("😁 Coming Soon")}
+        >
           <p>Show more</p>
         </button>
       )}
