@@ -20,7 +20,7 @@ const  App: React.FC = () =>  {
   const imgEl = useRef<HTMLImageElement>(null);
   
   const [currentMode, setCurrentMode] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   
   // console.log(location.hash);
@@ -76,12 +76,21 @@ const  App: React.FC = () =>  {
         <div className="social--content">
           <a
             className="social--content--link"
-            href="https://www.facebook.com/JoshmatJjen"
+            href="https://github.com/Joshmatjjen"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-github"></i>
+          </a>
+          <a
+            className="social--content--link"
+            href="https://www.linkedin.com/in/joshmatjjen"
             target="_blank"
             rel="noreferrer"
           >
             <i className="fab fa-linkedin"></i>
           </a>
+
           <a
             className="social--content--link"
             href="https://www.instagram.com/JoshmatJjen/"
@@ -90,14 +99,14 @@ const  App: React.FC = () =>  {
           >
             <i className="fab fa-instagram"></i>
           </a>
-          <a
+          {/* <a
             className="social--content--link"
             href="https://www.facebook.com/JoshmatJjen"
             target="_blank"
             rel="noreferrer"
           >
             <i className="fab fa-facebook"></i>
-          </a>
+          </a> */}
           {/* <a
             className="social--content--link"
             href="https://twitter.com/Joshmat_jjen"

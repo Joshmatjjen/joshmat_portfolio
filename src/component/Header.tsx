@@ -38,7 +38,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--color-text", "#242424");
       root.style.setProperty("--color-text-1", "#777777");
       root.style.setProperty("--color-text-2", "#242424");
+      root.style.setProperty("--color-text-3", "#cccccc");
       root.style.setProperty("--color-text-4", "#e6e1e1");
+      root.style.setProperty("--color-text-5", "#242424");
       root.style.setProperty("--color-btn-hover", "#a8a8a8");
       root.style.setProperty("--scrollbarBG", "#e4ffeb");
       root.style.setProperty("--box-shadow", "rgba(0,0,0,0.35)");
@@ -69,7 +71,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--color-text", "#242424");
       root.style.setProperty("--color-text-1", "#777777");
       root.style.setProperty("--color-text-2", "#242424");
+      root.style.setProperty("--color-text-3", "#cccccc");
       root.style.setProperty("--color-text-4", "#e6e1e1");
+      root.style.setProperty("--color-text-5", "#242424");
       root.style.setProperty("--color-btn-hover", "#a8a8a8");
       root.style.setProperty("--scrollbarBG", "#e4ffeb");
       root.style.setProperty("--box-shadow", "rgba(0,0,0,0.35)");
@@ -94,7 +98,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       root.style.setProperty("--color-text", "#ffffff");
       root.style.setProperty("--color-text-1", "#ffffff");
       root.style.setProperty("--color-text-2", "#cccccc");
+      root.style.setProperty("--color-text-3", "#242424");
       root.style.setProperty("--color-text-4", "#b8b8b8");
+      root.style.setProperty("--color-text-5", "#242424");
       root.style.setProperty("--color-btn-hover", "#0b1d12");
       root.style.setProperty("--scrollbarBG", "#020503");
       root.style.setProperty("--box-shadow", "rgba(255,255,255,0.35)");
@@ -209,19 +215,15 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               <p style={{ color: navStyles?.contact }}>Contact</p>
             </a>
             <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/Joshmatjjen"
+              href="../assets/file/JoshmatCV.pdf"
+              attributes-list
+              download
+              className="resume"
             >
-              <i
-                className={"fab fa-github"}
-                style={{
-                  marginLeft: "3rem",
-                  color: "var(--color-text)",
-                  fontSize: "1.5rem",
-                  marginBottom: "0.5rem",
-                }}
-              />
+              <p className="resume--text">
+                Resume
+              </p>
+              <i className="fal fa-cloud-download" />
             </a>
             <span
               className="toggle"
@@ -229,7 +231,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               style={{
                 display: "flex",
                 marginLeft: "4rem",
-                marginBottom: "0.5rem",
+                // marginBottom: "0.5rem",
                 backgroundColor: "var(--color-mode-bg)",
                 borderRadius: "50%",
                 width: "2rem",
@@ -271,16 +273,32 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             />
           </a>
 
-          <span className="mobile-toggle" onClick={toggleMode}>
-            <i
-              className={mode === "light" ? "fad fa-moon-stars" : "fad fa-sun"}
-              style={{
-                color: "var(--color-mode-icon)",
-                fontSize: "1.2rem",
-                // marginBottom: "0.5rem",
-              }}
-            />
-          </span>
+          <div className="mobile-actions">
+            <a
+              className="resume"
+              href="../assets/file/JoshmatCV.pdf"
+              attributes-list
+              download
+            >
+              <p className="resume--text" style={{ color: navStyles?.contact }}>
+                Resume
+              </p>
+              <i className="fal fa-cloud-download" />
+            </a>
+
+            <span className="mobile-toggle" onClick={toggleMode}>
+              <i
+                className={
+                  mode === "light" ? "fad fa-moon-stars" : "fad fa-sun"
+                }
+                style={{
+                  color: "var(--color-mode-icon)",
+                  fontSize: "1.2rem",
+                  // marginBottom: "0.5rem",
+                }}
+              />
+            </span>
+          </div>
 
           <input
             className="menu-btn"
@@ -372,7 +390,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               </a>
               <a
                 className="mobile-social--content--link"
-                href="https://www.facebook.com/JoshmatJjen"
+                href="https://www.linkedin.com/in/joshmatjjen"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -386,14 +404,14 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a
+              {/* <a
                 className="mobile-social--content--link"
                 href="https://www.facebook.com/JoshmatJjen"
                 target="_blank"
                 rel="noreferrer"
               >
                 <i className="fab fa-facebook"></i>
-              </a>
+              </a> */}
               {/* <a
                 className="mobile-social--content--link"
                 href="https://twitter.com/Joshmat_jjen"
