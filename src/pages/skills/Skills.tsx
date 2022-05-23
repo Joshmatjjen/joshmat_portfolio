@@ -221,16 +221,16 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
           >
             <div className="skills__section--right__box">
               <div className="skills__section--right__box--lft">
-                <p>2021</p>
+                <p>2021 - 2022</p>
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
-                  experience="Snr. React-Native Engineer"
+                  experience="Snr. React-Native Engineer & App Maintainer"
                   company="Practx"
                 />
                 <ExperienceCard
-                  experience="Snr. React-Native Engineer"
-                  company="Vendior"
+                  experience="Snr. React-Native Engineer & App Maintainer"
+                  company="Vendoir"
                 />
               </div>
             </div>

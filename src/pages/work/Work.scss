@@ -4,23 +4,26 @@
 
 .swiper {
   width: 100%;
-  height: 30rem !important;
+  max-height: 23rem !important;
+   display: block;
+  //  height: unset !important;
+   overflow: visible;
   padding-top: 50px;
   padding-bottom: 50px;
 
   // @include respond(bigDesktop) {
   //   // width: 80% !important;
-  //   height: 30rem !important;
+  //  height: 31.25rem !important;
   // }
 
   // @include respond(tabLand) {
   //   // width: 60% !important;
-  //   height: 25rem !important;
+  //   height: 31.25rem !important;
   // }
 
   // @include respond(tabPort) {
   //   // width: 80% !important;
-  //   height: 30rem !important;
+  //  height: 31.25rem !important;
   // }
 
 }
@@ -88,15 +91,16 @@
   position: relative;
   box-shadow: 1px 1px 50px 4px var(--boxShadow);
   // border: 2px solid var(--color-secondary);
+  height: initial !important;
 
   @include respond(bigDesktop) {
     width: 80% !important;
-    height: 30rem !important;
+    // height: 30rem !important;
   }
 
   @include respond(tabLand) {
     width: 60% !important;
-    height: 25rem !important;
+    // height: 25rem !important;
   }
 
   @include respond(tabPort) {
@@ -105,12 +109,12 @@
 
   @include respond(tabPort) {
     width: 85% !important;
-    height: 20rem !important;
+    // height: 20rem !important;
   }
 
   &__img {
     width: 100%;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     // background-color: cadetblue;
     border-radius: 1rem;
@@ -118,7 +122,7 @@
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
     }
   }
