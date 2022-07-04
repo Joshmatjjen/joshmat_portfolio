@@ -283,6 +283,50 @@ const Work: React.FC<Props> = ({ currentMode }) => {
               </div>
             )}
           </SwiperSlide>
+                    <SwiperSlide
+                      className={
+                        currentSlide === 4 && selectedSlide === 4
+                          ? "swiperSlide-active"
+                          : "swiperSlide"
+                      }
+                      onClick={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
+                    >
+                      <div
+                        className={
+                          currentSlide === 4 && selectedSlide === 4
+                            ? "swiperSlide-active__img"
+                            : "swiperSlide__img"
+                        }
+                      >
+                        <img alt="img" src={vendior} />
+                      </div>
+                      {currentSlide === 4 && selectedSlide === 4 && (
+                        <div className="swiperSlide-active__item">
+                          <p>Vendior</p>
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://vendoir.com/"
+                            className="swiperSlide-active__item--link"
+                          >
+                            <p>Coming soon</p>
+                          </a>
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "row",
+                              padding: "1rem 0",
+                            }}
+                          >
+                            <Technology
+                              title="React-Native"
+                              image={reactNativeIcon}
+                              bgColor="#80DEEA18"
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </SwiperSlide>
 
           <SwiperSlide
             className={
@@ -304,53 +348,13 @@ const Work: React.FC<Props> = ({ currentMode }) => {
             {currentSlide === 3 && selectedSlide === 3 && (
               <div className="swiperSlide-active__item">
                 <p>Practx</p>
-                <div className="swiperSlide-active__item--link">
-                  <p>Coming soon</p>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React-Native"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                </div>
-              </div>
-            )}
-          </SwiperSlide>
-
-          <SwiperSlide
-            className={
-              currentSlide === 4 && selectedSlide === 4
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
-            onClick={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
-          >
-            <div
-              className={
-                currentSlide === 4 && selectedSlide === 4
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
-              <img alt="img" src={vendior} />
-            </div>
-            {currentSlide === 4 && selectedSlide === 4 && (
-              <div className="swiperSlide-active__item">
-                <p>Vendior</p>
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://vendoir.com/"
+                  href="https://practxs.com"
                   className="swiperSlide-active__item--link"
                 >
-                  <p>Coming soon</p>
+                  <p>Beta test</p>
                 </a>
                 <div
                   style={{
@@ -368,6 +372,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
               </div>
             )}
           </SwiperSlide>
+
 
           <SwiperSlide
             className={
@@ -566,7 +571,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
 
         <section className="work__bottom">
           <i className="fad fa-long-arrow-left" />
-          <p>Swipe or click</p>
+          <p>Click or Swipe</p>
           <i className="fad fa-long-arrow-right" />
         </section>
       </div>

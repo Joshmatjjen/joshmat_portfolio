@@ -218,7 +218,8 @@
           display: flex;
           flex-direction: column;
           padding-right: 2rem;
-          // justify-content: center;
+
+          justify-content: space-between;
 
           @include respond(phone) {
             // height: 80vh;
@@ -335,4 +336,10 @@
       }
     }
   }
+}
+
+.vl {
+  border-left: 2px solid var(--color-secondary);
+  height: 3rem;
+  align-self: center;
 }

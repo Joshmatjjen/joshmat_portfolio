@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/svg/logo-2.svg";
 import logoWhite from "../assets/svg/logo-white.svg";
 import logoBlack from "../assets/svg/logo-black.svg";
+import pdfFile from "../assets/file/JoshmatCV.pdf";
 
 // interface BoxProps {
 //   styles?: React.CSSProperties;
@@ -215,14 +216,12 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               <p style={{ color: navStyles?.contact }}>Contact</p>
             </a>
             <a
-              href="../assets/file/JoshmatCV.pdf"
-              attributes-list
-              download
+              href={pdfFile}
+              // attributes-list
+              download="Joshmat_Resume.pdf"
               className="resume"
             >
-              <p className="resume--text">
-                Resume
-              </p>
+              <p className="resume--text">Resume</p>
               <i className="fal fa-cloud-download" />
             </a>
             <span
