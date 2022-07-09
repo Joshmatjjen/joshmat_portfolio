@@ -93,24 +93,26 @@
   // border: 2px solid var(--color-secondary);
   height: initial !important;
 
-  @include respond(bigDesktop) {
-    width: 80% !important;
-    // height: 30rem !important;
-  }
+  // @include respond(bigDesktop) {
+  //   width: 80% !important;
+  //   // height: 30rem !important;
+  // }
 
   @include respond(tabLand) {
-    width: 60% !important;
+    width: 85% !important;
     // height: 25rem !important;
   }
 
   @include respond(tabPort) {
     width: 70% !important;
+    height: 11rem !important;
   }
 
-  @include respond(tabPort) {
-    width: 85% !important;
-    // height: 20rem !important;
+  @include respond(phone) {
+    width: 70% !important;
+    height: 62% !important;
   }
+
 
   &__img {
     width: 100%;
