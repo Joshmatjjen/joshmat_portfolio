@@ -10,7 +10,7 @@ import jotours from "../../assets/img/jotours.png";
 import jclothing from "../../assets/img/jclothing.png";
 import sweetMother from "../../assets/img/sweetMother.webp";
 import practx from "../../assets/img/practx.png";
-import vendior from "../../assets/img/vendior.png";
+import vendoir from "../../assets/img/vendoir.png";
 import thelightinghaus from "../../assets/img/thelightinghaus.png";
 
 import htmlIcon from "../../assets/svg/html5.svg";
@@ -142,22 +142,38 @@ const Work: React.FC<Props> = ({ currentMode }) => {
         >
           <SwiperSlide
             className={
-              currentSlide === 0 && selectedSlide === 0
-                ? "swiperSlide-active"
-                : "swiperSlide"
+              // currentSlide === 0 && selectedSlide === 0
+              //   ? "swiperSlide-active"
+                "swiperSlide"
             }
-            onClick={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
+            // onClick={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
           >
             <div
               className={
-                currentSlide === 0 && selectedSlide === 0
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
+                //  "swiperSlide-active__img"
+                   "swiperSlide__img"
+              }
+            >
+              <img alt="img" src={vendoir} />
+            </div>
+            
+          </SwiperSlide>
+          <SwiperSlide
+            className={
+              currentSlide === 1 && selectedSlide === 1
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+            // onClick={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
+          >
+            <div
+              className={
+               "swiperSlide__img"
               }
             >
               <img alt="img" src={waveDownloader} />
             </div>
-            {currentSlide === 0 && selectedSlide === 0 && (
+            {currentSlide === 1 && selectedSlide === 1 && (
               <div className="swiperSlide-active__item">
                 <p>Wave Downloader</p>
                 <a
@@ -185,55 +201,6 @@ const Work: React.FC<Props> = ({ currentMode }) => {
             )}
           </SwiperSlide>
 
-          <SwiperSlide
-            className={
-              currentSlide === 1 && selectedSlide === 1
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
-            onClick={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
-          >
-            <div
-              className={
-                currentSlide === 1 && selectedSlide === 1
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
-              <img alt="img" src={jobots} />
-            </div>
-            {currentSlide === 1 && selectedSlide === 1 && (
-              <div className="swiperSlide-active__item">
-                <p>Jobots</p>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://jobots.herokuapp.com/"
-                  className="swiperSlide-active__item--link"
-                >
-                  <p>View site</p>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                  <Technology
-                    title="Mongodb"
-                    image={mongodbIcon}
-                    bgColor="#6DAC4718"
-                  />
-                </div>
-              </div>
-            )}
-          </SwiperSlide>
           <SwiperSlide
             className={
               currentSlide === 2 && selectedSlide === 2
@@ -283,50 +250,6 @@ const Work: React.FC<Props> = ({ currentMode }) => {
               </div>
             )}
           </SwiperSlide>
-                    <SwiperSlide
-                      className={
-                        currentSlide === 4 && selectedSlide === 4
-                          ? "swiperSlide-active"
-                          : "swiperSlide"
-                      }
-                      onClick={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
-                    >
-                      <div
-                        className={
-                          currentSlide === 4 && selectedSlide === 4
-                            ? "swiperSlide-active__img"
-                            : "swiperSlide__img"
-                        }
-                      >
-                        <img alt="img" src={vendior} />
-                      </div>
-                      {currentSlide === 4 && selectedSlide === 4 && (
-                        <div className="swiperSlide-active__item">
-                          <p>Vendior</p>
-                          <a
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://vendoir.com/"
-                            className="swiperSlide-active__item--link"
-                          >
-                            <p>Coming soon</p>
-                          </a>
-                          <div
-                            style={{
-                              display: "flex",
-                              flexDirection: "row",
-                              padding: "1rem 0",
-                            }}
-                          >
-                            <Technology
-                              title="React-Native"
-                              image={reactNativeIcon}
-                              bgColor="#80DEEA18"
-                            />
-                          </div>
-                        </div>
-                      )}
-                    </SwiperSlide>
 
           <SwiperSlide
             className={
@@ -373,6 +296,55 @@ const Work: React.FC<Props> = ({ currentMode }) => {
             )}
           </SwiperSlide>
 
+          <SwiperSlide
+            className={
+              currentSlide === 4 && selectedSlide === 4
+                ? "swiperSlide-active"
+                : "swiperSlide"
+            }
+            onClick={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
+          >
+            <div
+              className={
+                currentSlide === 4 && selectedSlide === 4
+                  ? "swiperSlide-active__img"
+                  : "swiperSlide__img"
+              }
+            >
+              <img alt="img" src={jobots} />
+            </div>
+            {currentSlide === 4 && selectedSlide === 4 && (
+              <div className="swiperSlide-active__item">
+                <p>Jobots</p>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://jobots.herokuapp.com/"
+                  className="swiperSlide-active__item--link"
+                >
+                  <p>View site</p>
+                </a>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: "1rem 0",
+                  }}
+                >
+                  <Technology
+                    title="React"
+                    image={reactNativeIcon}
+                    bgColor="#80DEEA18"
+                  />
+                  <Technology
+                    title="Mongodb"
+                    image={mongodbIcon}
+                    bgColor="#6DAC4718"
+                  />
+                </div>
+              </div>
+            )}
+          </SwiperSlide>
 
           <SwiperSlide
             className={

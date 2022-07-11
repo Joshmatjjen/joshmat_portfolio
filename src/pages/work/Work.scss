@@ -59,7 +59,8 @@
 // }
 
 .swiper-3d .swiper-slide-shadow-left {
-  background-image: linear-gradient(to left, var(--shadow2), var(--shadow1)) !important;
+  // background-image: linear-gradient(to left, var(--shadow2), var(--shadow1)) !important;
+  background-image: none !important;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
@@ -69,7 +70,8 @@
 }
 
 .swiper-3d .swiper-slide-shadow-right {
-  background-image: linear-gradient(to right, var(--shadow1), var(--shadow2)) !important;
+  // background-image: linear-gradient(to right, var(--shadow1), var(--shadow2)) !important;
+  background-image: none !important;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
@@ -87,20 +89,18 @@
 
 .swiperSlide {
   display: flex;
-  background-color: var(--color-bg-2);
+  background-color: transparent;
   position: relative;
-  box-shadow: 1px 1px 50px 4px var(--boxShadow);
-  // border: 2px solid var(--color-secondary);
-  height: initial !important;
+  // box-shadow: 1px 1px 50px 4px var(--boxShadow);
+  align-items: flex-end;
 
-  // @include respond(bigDesktop) {
-  //   width: 80% !important;
-  //   // height: 30rem !important;
-  // }
+  transition-duration: 9ms;
+  transform: translate3d(0 px, 0 px, -383.006 px) rotateX(0deg) rotateY(0deg) scale(1);
+  z-index: 0;
 
   @include respond(tabLand) {
-    width: 85% !important;
-    // height: 25rem !important;
+    width: 70% !important;
+    height: 11rem !important;
   }
 
   @include respond(tabPort) {
@@ -114,18 +114,46 @@
   }
 
 
-  &__img {
-    width: 100%;
-    height: auto;
+ &__img {
+    position: absolute;
+    width: 80% !important;
+    // height: 28rem;
+    top: -3rem !important;
     overflow: hidden;
-    // background-color: cadetblue;
+    background-color: transparent;
+    left: 10%;
     border-radius: 1rem;
     background-size: contain;
+    box-shadow: 1px 1px 50px 4px var(--boxShadow);
+
+    // @include respond(bigDesktop) {
+    // //   height: 30rem !important;
+    // // }
+
+    @include respond(tabLand) {
+      
+      width: 100% !important;
+      height: auto !important;
+      top: 0rem !important;
+      left: 0%;
+    }
+
+    @include respond(tabPort) {
+      // width: 85% !important;
+      position: relative;
+      width: 100% !important;
+    height: auto !important;
+    border-radius: 0.5rem;
+    
+      // height: 18rem !important;
+    }
+
 
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
+      margin-bottom: -0.5rem;
     }
   }
 }
