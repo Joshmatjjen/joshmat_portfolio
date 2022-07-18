@@ -359,4 +359,8 @@
 
 #fp-nav.fp-right {
   right: 2% !important;
+
+  @include respond(phone) {
+    right: 0% !important;
+  }
 }
