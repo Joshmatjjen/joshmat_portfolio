@@ -10,10 +10,23 @@
     font-size: 2rem;
     margin: 0rem;
     font-family: "Comfortaa-Bold";
+
+    @include respond(tabPort) {
+      font-size: 1.5rem;
+    }
   }
+
+  // @include respond(phone) {
+  //   width: 80% !important;
+  //   height: 30rem !important;
+  // }
 
   &__subtitle {
     font-size: 1.1rem;
+
+    @include respond(tabPort) {
+      font-size: 0.85rem;
+    }
   }
 
   &__link {
@@ -76,16 +89,29 @@
       align-items: flex-start;
       margin: 2rem 4rem 2rem 0;
 
+      @include respond(tabPort) {
+         margin: 1rem 2rem 1rem 0;
+      }
+
       h4 {
-        font-size: 1.1.5rem;
+        font-size: 1.1rem;
         margin: 0rem;
         font-family: "Rubik-Bold";
+
+        @include respond(tabPort) {
+          font-size: 0.9rem;
+        }
       }
       p {
         margin: 0rem;
         padding-top: 1rem;
         font-size: 1.1rem;
         text-align: start;
+
+        @include respond(tabPort) {
+          font-size: 0.9rem;
+          padding-top: 0.6rem;
+        }
       }
     }
   }
@@ -116,6 +142,11 @@
       margin: 0rem;
       font-family: "Lora-Regular";
       text-align: start;
+
+      @include respond(tabPort) {
+        font-size: 1.1rem;
+        padding-top: 0.6rem;
+      }
     }
     p {
       white-space: pre-wrap;
@@ -123,14 +154,20 @@
       //   margin: 0rem;
       // font-family: 'Lora-Regular';
       text-align: start;
+
+      @include respond(tabPort) {
+        font-size: 0.9rem;
+      }
     }
     .screenshot {
       height: 20rem;
       margin: 1rem 1rem 1rem 0;
       border-radius: 1rem;
 
+
       @include respond(tabLand) {
         height: 15rem;
+        border-radius: 0.5rem;
       }
 
       @include respond(tabPort) {
