@@ -1,0 +1,22 @@
+{
+  "title": "Vendoir",
+  "subtitle": "Source & Book Event Vendors with a few taps!",
+  "type": "app",
+  "onAndroid": "https://play.google.com/store/apps/details?id=com.vendoir.app.prod",
+  "onIOS": "https://apps.apple.com/us/app/vendoir/id1630965089",
+  "onWeb": "https://vendoir.com",
+  "note": "App is only available to users in UK",
+  "myRole": "Senior React Native Developer",
+  "platform": "Android & IOS",
+  "technologies": "React Native, Expo",
+  "year": "2021/2022",
+  "briefing": "Do you want more time to do what matters to you? Are you planning an event and find it stressful to find, book and manage event vendors/suppliers within your budget? \nVendoir will sort this out for you! Vendoir is the one-stop shop for instantly sourcing, booking, and managing event vendors such as DJs, Photographers, Videographers, Photo booths etc., in just a few taps! \n \n \n\n# How it works: \n• Tell us your event requirement \n• Get an instant list of vetted vendors \n• Select vendor(s) of your choice based on budget, reviews, location rating and your needs \n• Chat, pay, review all through one platform \n• Save your favourites to your Wishlist to book them again and again \n\n# Organise your events through Vendoir: \n• Book event vendor service in a few taps \n• Access vetted local vendors \n• Get transparent & instant pricing \n• Book vendor within your budget \n• Chat with vendors in the app \n• Make secure payments with protection \n• Relax, get peace of mind, and have a great time \n• Contact support available to help you \n\n# Become an event vendor and offer your services through Vendoir: \n• You decide when and where you want to work \n• Manage all bookings with ease \n• Set your rates, time, and earnings \n• Chat with organisers in the app \n• Push notification so you never miss a booking \n• Insight feature to help support your performance \n• We provide the marketing and support you need to grow your business \n• Simply set your schedule and organisers will send you a request to accept their booking or instantly book you \n• Get paid directly through our secure payment system \n\n# Popular vendor services in Vendoir: \n• Photographers \n• Videographers \n• DJ’s \n• Mc/Host \n• Live band \n• Photo booth",
+  "screenshots": [
+    "https://res.cloudinary.com/jasky/image/upload/v1660110397/joshmat/vendoir/vendoir1_tqur14.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110395/joshmat/vendoir/vendoir2_iegyre.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110384/joshmat/vendoir/vendoir6_e2gidh.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110371/joshmat/vendoir/vendoir4_qwaqlt.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110384/joshmat/vendoir/vendoir5_njvmx8.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110377/joshmat/vendoir/vendoir3_sfb68w.png"
+  ]
+}

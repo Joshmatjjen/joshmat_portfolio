@@ -1,0 +1,23 @@
+{
+  "title": "Wave Downloader App",
+  "subtitle": "Social Video Downloader & WhatApp Status Saver",
+  "type": "app",
+  "onAndroid": "https://play.google.com/store/apps/details?id=com.wavedownloader",
+  "onIOS": "",
+  "onWeb": "",
+  "note": "App is only on Android currently",
+  "myRole": "Full Stack Developer & React Native Developer",
+  "platform": "Android",
+  "technologies": "React Native, Nodejs",
+  "year": "2020/2021",
+  "briefing": "Free Best Social Video Downloader & Status Saver For Downloading Videos from Instagram, Facebook, Twitter, etc... And Status Saver for WhatsApp and WhatsApp Business...",
+  "screenshots": [
+    "https://res.cloudinary.com/jasky/image/upload/v1660117177/joshmat/wavedownloaderApp/wdApp1_uixjui.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660117180/joshmat/wavedownloaderApp/wdApp2_woyqh4.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660117180/joshmat/wavedownloaderApp/wdApp3_fhybgz.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660117179/joshmat/wavedownloaderApp/wdApp4_a7m2ov.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660117179/joshmat/wavedownloaderApp/wdApp5_oahesn.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660117180/joshmat/wavedownloaderApp/wdApp6_lmzc4p.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660117179/joshmat/wavedownloaderApp/wdApp7_olkpp7.png"
+  ]
+}

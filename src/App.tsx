@@ -6,24 +6,82 @@ import "./themes/mixins.scss";
 import "./themes/variables.scss";
 import { Route, useLocation, Routes, Router, useNavigate } from "react-router-dom";
 // import FullPageWrapper from "./FullPageWrapper";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Header from "./component/Header";
 import About from "./pages/about/About";
 import FullPageWrapper from "./FullPageWrapper";
 import Snowfall from "react-snowfall";
 import "react-tippy/dist/tippy.css";
+import { useModal, Modal } from "react-morphing-modal";
+import "react-morphing-modal/dist/ReactMorphingModal.css";
+import SkillModal from "./component/SkillModal";
+import FullPageWrapperWork from "./FullPageWrapperWork";
+import vendoirJson from "./assets/json/vendoir.json";
+import wavedownloaderAppJson from "./assets/json/wavedownloaderApp.json";
+import sweetmotherJson from "./assets/json/sweetmother.json";
+
+const LoremIpsum: React.FC = () => {
+  const lorem: string[] = [];
+
+  for (let i = 0; i < 10; i++) {
+    lorem.push(
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    );
+  }
+
+  return (
+    <>
+      {lorem.map((el) => (
+        <p style={{ color: "white" }}>{el}</p>
+      ))}
+    </>
+  );
+};
+
 
 const  App: React.FC = () =>  {
-  // const location = useLocation();
+   const { open, close, modalProps, activeModal, getTriggerProps} = useModal({
+     background: "#000000ea",
+   });
+   const myRef = React.useRef(null);
+   const [showModal, setShowModal] = useState(false);
+  const [currentSlideState, setCurrentSlideState] = useState<number>(0);
+   // const location = useLocation();
+  console.log("Acrtive modal", activeModal);
+  let componentToRender: React.ReactNode;
+
+  switch (activeModal) {
+    case "vendoir":
+      componentToRender = <SkillModal data={vendoirJson} />;
+      break;
+    case "waveApp":
+      componentToRender = <SkillModal data={wavedownloaderAppJson} />;
+      break;
+    case "sweetmother":
+      componentToRender = <SkillModal data={sweetmotherJson} />;
+      break;
+
+    default:
+      componentToRender = <LoremIpsum />;
+      break;
+  }
+
   // let navigate = useNavigate();
   const imgEl = useRef<HTMLImageElement>(null);
   
   const [currentMode, setCurrentMode] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  
-  // console.log(location.hash);
+  useEffect(() => {
+    if (activeModal) {
+      setShowModal(true);
+      activeModal === 'vendoir' && setCurrentSlideState(0)
+      activeModal === "waveApp" && setCurrentSlideState(1);
+      activeModal === "sweetmother" && setCurrentSlideState(2);
+    }
+  }, [activeModal]);
+
   useEffect(() => {
     // document.documentElement.webkitRequestFullscreen();
     window.scrollTo(0, 1);
@@ -121,12 +179,40 @@ const  App: React.FC = () =>  {
         <Route
           index={true}
           element={
-            <FullPageWrapper
-              currentMode={currentMode === "light" ? "light" : "dark"}
-            />
+            <>
+              {showModal ? (
+                <FullPageWrapperWork
+                  currentMode={currentMode === "light" ? "light" : "dark"}
+                  getTriggerProps={getTriggerProps}
+                  activeModal={activeModal}
+                  currentSlideState={currentSlideState}
+                />
+              ) : (
+                <FullPageWrapper
+                  currentMode={currentMode === "light" ? "light" : "dark"}
+                  getTriggerProps={getTriggerProps}
+                  activeModal={activeModal}
+                  currentSlideState={currentSlideState}
+                />
+              )}
+            </>
           }
         />
       </Routes>
+
+      <div>
+        <Modal
+          {...modalProps}
+          close={() => {
+            setShowModal(false);
+            setTimeout(() => {
+              close();
+            }, 500);
+          }}
+        >
+          {componentToRender}
+        </Modal>
+      </div>
 
       {/* <div className="scrollText">
         <p> &larr; &nbsp; &nbsp; Scroll down</p>

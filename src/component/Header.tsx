@@ -221,7 +221,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               download="Joshmat_Resume.pdf"
               className="resume"
             >
-              <p className="resume--text">Resume</p>
+              <p className="resume--text">Resume/CV</p>
               <i className="fal fa-cloud-download" />
             </a>
             <span
@@ -280,7 +280,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               download
             >
               <p className="resume--text" style={{ color: navStyles?.contact }}>
-                Resume
+                Resume/CV
               </p>
               <i className="fal fa-cloud-download" />
             </a>

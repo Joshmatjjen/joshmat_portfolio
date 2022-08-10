@@ -41,7 +41,7 @@
       height: 2rem;
       border-radius: 0.5rem;
       padding: 0 1rem;
-      // backgroundColor: "var(--color-secondary)";
+      // backgroundColor: var(--color-text-3);
       background-color: var(--color-text-3);
 
       @include respond(tabLand) {
@@ -459,11 +459,11 @@
   
  .resume {
    display: flex;
-   width: 5rem;
+   min-width: 5rem;
    flex-direction: row;
    align-items: center;
    margin-left: 2rem;
-  margin-right: 1rem;
+    margin-right: 1rem;
    color: var(--color-text);
    font-size: 1.5rem;
    // marginBottom: "0.5rem";
@@ -483,6 +483,11 @@
      height: 1.7rem;
    }
 
+   @include respond(phone) {
+     // width: 5.5rem;
+     height: 1.5rem;
+     font-size: 1rem;
+   }
    &:hover {
      background-color: var(--color-secondary);
      color: var(--color-text-5);

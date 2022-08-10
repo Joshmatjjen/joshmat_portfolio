@@ -4,54 +4,27 @@ import React, { useEffect, useState } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import "./styles.scss";
-import About from "./pages/about/About";
-import Skills from "./pages/skills/Skills";
 import Work from "./pages/work/Work";
-// import Testimony from "./pages/testimony/Testimony";
-import Contact from "./pages/contact/Contact";
-
-
-const pluginWrapper = () => {
-  require("./extension/fullpage.extensions.min");
-};
 
 interface Props {
   currentMode?: string;
   getTriggerProps?: any;
   activeModal?: any;
-  currentSlideState?:number
+  currentSlideState?: any;
 }
 
-const FullPageWrapper: React.FC<Props> = ({
+const anchors = [ "work"];
+
+const FullPageWrapperWork: React.FC<Props> = ({
   currentMode,
   getTriggerProps,
-  activeModal,
   currentSlideState,
 }) => {
-  const [anchors, setLockAnchors] = useState([
-    "about",
-    "skills",
-    "work",
-    "contact",
-  ]);
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    if (isActive) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }, [isActive]);
-
   return (
     <ReactFullpage
       lazyLoading={true}
-      // scrollBar={true}
-      // pluginWrapper={pluginWrapper}
       anchors={anchors}
       navigation
-      scrollingSpeed={isActive ? 100000000 : 1000}
       navigationTooltips={anchors}
       // sectionsColor={["#04070e", "#03060c", "#04070e", "#03060c", "#03060c"]}
       onLeave={(origin, destination, direction) => {
@@ -61,15 +34,11 @@ const FullPageWrapper: React.FC<Props> = ({
         // console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
         return (
           <div className="fullpage">
-            <About />
-            <Skills currentMode={currentMode} />
-
             <Work
               currentMode={currentMode}
               getTriggerProps={getTriggerProps}
               currentSlideState={currentSlideState}
             />
-            <Contact />
           </div>
         );
       }}
@@ -77,4 +46,4 @@ const FullPageWrapper: React.FC<Props> = ({
   );
 };
 
-export default FullPageWrapper;
+export default FullPageWrapperWork;

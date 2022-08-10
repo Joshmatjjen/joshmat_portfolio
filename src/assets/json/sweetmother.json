@@ -1,0 +1,22 @@
+{
+  "title": "Sweet Mother",
+  "subtitle": "Give you information to save live, improve health, and enhances well-being.",
+  "type": "app",
+  "onAndroid": "https://play.google.com/store/apps/details?id=com.sweetmother",
+  "onIOS": "",
+  "onWeb": "",
+  "note": "App is only available to users in UK",
+  "myRole": "WordPress Developer & React Native Developer",
+  "platform": "Android",
+  "technologies": "WordPress, React Native, Expo",
+  "year": "2021",
+  "briefing": "Health Education and Empowerment Initiative (HEDEN) acknowledges the use of open source contents of books, website and other materials in the development of the content of the Sweet Mother App. HEDEN hereby appreciates the authors of such content. Sweet Mother App Disclaimer This mobile app is proposed for educational, informational and research purposes only and is not made for use in diagnosis of disease or other conditions or in cure, prevention or treatment of disease in human or other animals. Users should use their own freedom and judgement when using the mobile app for health care. The information contained in the video content posted represents the views and opinions of the original creators of such video content and does not necessarily represent the views or opinions of Health Education and Empowerment Initiative (HEDEN). The mere appearance of video content on this app does not constitute an endorsement by HEDEN or its affiliates of such video content. HEDEN hereby disclaims any and all liability to any party for any direct, indirect, implied, punitive, special, incidental or other consequential damages arising directly or indirectly from any use of the text and Video Content.",
+  "screenshots": [
+    "https://res.cloudinary.com/jasky/image/upload/v1660110397/joshmat/vendoir/vendoir1_tqur14.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110395/joshmat/vendoir/vendoir2_iegyre.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110384/joshmat/vendoir/vendoir6_e2gidh.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110371/joshmat/vendoir/vendoir4_qwaqlt.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110384/joshmat/vendoir/vendoir5_njvmx8.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660110377/joshmat/vendoir/vendoir3_sfb68w.png"
+  ]
+}

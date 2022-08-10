@@ -22,6 +22,7 @@ import expoIcon from "../../assets/svg/expo.svg";
 import mongodbIcon from "../../assets/svg/mongodb.svg";
 import playStore from "../../assets/svg/playstore.svg";
 
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -36,6 +37,7 @@ import SwiperCore, {
 import SkillCard from "../../component/SkillCard";
 import { Tooltip } from "react-tippy";
 import TechCard from "../../component/TechCard";
+import { useModal } from "react-morphing-modal";
 
 
 
@@ -51,15 +53,31 @@ const breakPoints = [
 
 interface Props {
   currentMode?: string;
+  getTriggerProps?: any;
+  currentSlideState?: number;
 }
 
 interface TechProps {
-  title? : string;
+  title?: string;
   image?: string;
   bgColor?: string;
+  
 }
 
-const Work: React.FC<Props> = ({ currentMode }) => {
+
+
+
+
+const Work: React.FC<Props> = ({
+  currentMode,
+  getTriggerProps,
+  currentSlideState,
+}) => {
+  // const { open, close, modalProps, activeModal, getTriggerProps } = useModal({
+  //   background: "#666",
+  // });
+  const myRef = React.useRef(null);
+
   const notify = () => {
     console.log("Hello logs");
     toast.dark("😁 Coming Soon!", {
@@ -77,7 +95,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
   const [selectedSlide, setSelectedSlide] = useState<number | null>();
   const [mode, setMode] = useState<any>(currentMode);
 
-  const Technology: React.FC<TechProps> = ({title, image, bgColor }) => {
+  const Technology: React.FC<TechProps> = ({ title, image, bgColor }) => {
     return (
       <Tooltip
         // options
@@ -92,7 +110,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
         <div
           className="techCard"
           style={{
-            backgroundColor: bgColor
+            backgroundColor: bgColor,
           }}
         >
           <img
@@ -105,7 +123,6 @@ const Work: React.FC<Props> = ({ currentMode }) => {
       </Tooltip>
     );
   };
-  
 
   return (
     <div className="section">
@@ -113,6 +130,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
         <section className="work__top">
           <h1>My Work</h1>
         </section>
+
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
@@ -126,6 +144,8 @@ const Work: React.FC<Props> = ({ currentMode }) => {
           // on={{
           //   slideChange: (v) => console.log("Change of slide", v),
           // }}
+          
+          initialSlide={currentSlideState}
           lazy={true}
           coverflowEffect={{
             rotate: 0,
@@ -142,21 +162,19 @@ const Work: React.FC<Props> = ({ currentMode }) => {
         >
           <SwiperSlide
             className={
-              // currentSlide === 0 && selectedSlide === 0
-              //   ? "swiperSlide-active"
-                "swiperSlide"
+              "swiperSlide"
             }
-            // onClick={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
+            {...getTriggerProps({ id: "vendoir" })}
+            onPress={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
           >
             <div
               className={
                 //  "swiperSlide-active__img"
-                   "swiperSlide__img"
+                "swiperSlide__img"
               }
             >
               <img alt="img" src={vendoir} />
             </div>
-            
           </SwiperSlide>
           <SwiperSlide
             className={
@@ -164,41 +182,12 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                 ? "swiperSlide-active"
                 : "swiperSlide"
             }
-            // onClick={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
+            {...getTriggerProps({ id: "waveApp" })}
+            onPress={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
           >
-            <div
-              className={
-               "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={waveDownloader} />
             </div>
-            {currentSlide === 1 && selectedSlide === 1 && (
-              <div className="swiperSlide-active__item">
-                <p>Wave Downloader</p>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://play.google.com/store/apps/details?id=com.wavedownloader"
-                  className="swiperSlide-active__item--link"
-                >
-                  <i className="fab fa-google-play"></i>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React-Native"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
 
           <SwiperSlide
@@ -207,7 +196,7 @@ const Work: React.FC<Props> = ({ currentMode }) => {
                 ? "swiperSlide-active"
                 : "swiperSlide"
             }
-            onClick={() => setSelectedSlide(selectedSlide === 2 ? null : 2)}
+            {...getTriggerProps({ id: "sweetmother" })}
           >
             <div
               className={
@@ -218,37 +207,6 @@ const Work: React.FC<Props> = ({ currentMode }) => {
             >
               <img alt="img" src={sweetMother} />
             </div>
-            {currentSlide === 2 && selectedSlide === 2 && (
-              <div className="swiperSlide-active__item">
-                <p>Sweet Mother</p>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://play.google.com/store/apps/details?id=com.sweetmother"
-                  className="swiperSlide-active__item--link"
-                >
-                  <i className="fab fa-google-play"></i>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React-Native"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                  <Technology
-                    title="Expo"
-                    image={expoIcon}
-                    bgColor="#00000018"
-                  />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
 
           <SwiperSlide
@@ -268,32 +226,6 @@ const Work: React.FC<Props> = ({ currentMode }) => {
             >
               <img alt="img" src={practx} />
             </div>
-            {currentSlide === 3 && selectedSlide === 3 && (
-              <div className="swiperSlide-active__item">
-                <p>Practx</p>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://practxs.com"
-                  className="swiperSlide-active__item--link"
-                >
-                  <p>Beta test</p>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React-Native"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
 
           <SwiperSlide

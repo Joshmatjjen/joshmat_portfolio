@@ -89,11 +89,11 @@
       height: 2rem;
       border-radius: 0.5rem;
       padding: 0 1rem;
-      // backgroundColor: "var(--color-secondary)";
-      background-color: var(--color-text-3);
+      background-color: var(--color-secondary);
+      // background-color: var(--color-text-3);
 
       @include respond(tabLand) {
-        width: 1.5rem;
+        // width: 1.5rem;
         height: 1.5rem;
       }
 
