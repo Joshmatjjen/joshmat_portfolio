@@ -1,0 +1,19 @@
+{
+  "title": "Wave Downloader Web",
+  "subtitle": "Social Video Downloader & WhatApp Status Saver",
+  "type": "web",
+  "onAndroid": "",
+  "onIOS": "",
+  "onWeb": "https://wavedownloader.com/",
+  "note": "",
+  "myRole": "Full Stack Developer MERN",
+  "platform": "Android",
+  "technologies": "React, Nodejs",
+  "year": "2020/2021",
+  "briefing": "Free Best Social Video Downloader & Status Saver For Downloading Videos from Instagram, Facebook, Twitter, etc... And Status Saver for WhatsApp and WhatsApp Business...",
+  "screenshots": [
+    "https://res.cloudinary.com/jasky/image/upload/v1660380434/joshmat/waveWeb/waveWeb1_mi4wom.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660380442/joshmat/waveWeb/waveWeb2_to8g1x.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660380437/joshmat/waveWeb/waveWeb3_cunnzi.png"
+  ]
+}

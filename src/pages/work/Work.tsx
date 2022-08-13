@@ -63,23 +63,30 @@ const Work: React.FC<Props> = ({
   getTriggerProps,
   currentSlideState,
 }) => {
-  // const { open, close, modalProps, activeModal, getTriggerProps } = useModal({
-  //   background: "#666",
-  // });
+  const notify = (message: string | {} | null | undefined) => {
+    currentMode === "light"
+      ? toast(message, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      : toast.dark(message, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+  };
   const myRef = React.useRef(null);
 
-  const notify = () => {
-    console.log("Hello logs");
-    toast.dark("😁 Coming Soon!", {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
+  
 
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [selectedSlide, setSelectedSlide] = useState<number | null>();
@@ -201,160 +208,45 @@ const Work: React.FC<Props> = ({
 
           <SwiperSlide
             className={"swiperSlide"}
-            onClick={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
+            {...getTriggerProps({ id: "waveWeb" })}
+            onPress={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
           >
-            <div
-              className={
-                currentSlide === 5 && selectedSlide === 5
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={waveDownloaderWeb} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide
-            className={
-              currentSlide === 6 && selectedSlide === 6
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "jotours" })}
+            onPress={() => notify("😁 Coming Soon")}
           >
             <div
-              className={
-                currentSlide === 6 && selectedSlide === 6
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-              onClick={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
+              className={"swiperSlide__img"}
+              // onClick={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
             >
               <img alt="img" src={jotours} />
             </div>
-            {currentSlide === 6 && selectedSlide === 6 && (
-              <div className="swiperSlide-active__item">
-                <p>Jotours</p>
-                <a
-                  href="https://jotours-frontend.herokuapp.com/"
-                  className="swiperSlide-active__item--link"
-                >
-                  <p>View site</p>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="html"
-                    image={htmlIcon}
-                    bgColor="#e44a2718"
-                  />
-                  <Technology
-                    title="Sass"
-                    image={sassIcon}
-                    bgColor="#DC5E9B13"
-                  />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
 
           <SwiperSlide
-            className={
-              currentSlide === 7 && selectedSlide === 7
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
-            onClick={() => setSelectedSlide(selectedSlide === 7 ? null : 7)}
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "jclothing" })}
+            onPress={() => notify("😁 Coming Soon")}
           >
-            <div
-              className={
-                currentSlide === 7 && selectedSlide === 7
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={jclothing} />
             </div>
-            {currentSlide === 7 && selectedSlide === 7 && (
-              <div className="swiperSlide-active__item">
-                <p>JClothing</p>
-                <a
-                  href="https://jclothing.herokuapp.com/"
-                  className="swiperSlide-active__item--link"
-                >
-                  <p>View site</p>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                  <Technology title="Css" image={cssIcon} bgColor="#0377BD13" />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
 
           <SwiperSlide
-            className={
-              currentSlide === 8 && selectedSlide === 8
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
-            onClick={() => setSelectedSlide(selectedSlide === 8 ? null : 8)}
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "thelightinghaus" })}
+            onPress={() => notify("😁 Coming Soon")}
           >
-            <div
-              className={
-                currentSlide === 8 && selectedSlide === 8
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={thelightinghaus} />
             </div>
-            {currentSlide === 8 && selectedSlide === 8 && (
-              <div className="swiperSlide-active__item">
-                <p>TheLightHaus</p>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://thelightinghaus.netlify.app/"
-                  className="swiperSlide-active__item--link"
-                >
-                  <p>View site</p>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="html"
-                    image={htmlIcon}
-                    bgColor="#e44a2718"
-                  />
-                  <Technology title="css" image={cssIcon} bgColor="#0377BD13" />
-                  <Technology
-                    title="Sass"
-                    image={sassIcon}
-                    bgColor="#DC5E9B13"
-                  />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
         </Swiper>
 
@@ -364,79 +256,6 @@ const Work: React.FC<Props> = ({
           <i className="fad fa-long-arrow-right" />
         </section>
       </div>
-
-      {/* <div className="portfolio" style={{ height: window.innerHeight }}>
-
-        <section className="portfolio__top">
-          <h1>My portfolios</h1>
-          <p>Explore all my great portfolios</p>
-        </section>
-        <section className="portfolio__content">
-
-          <section className="portfolio__content--edu">
-            <div className="portfolio__content--edu--title">
-              <i className="fad fa-book-reader"></i>
-              <p>Education</p>
-            </div>
-            <div className="portfolio__content--edu--list">
-              <Carousel breakPoints={breakPoints}>
-                <div className="portfolio__content--edu--list__box">
-                  <p>September 2008 - 2014 September</p>
-                  <h3>Higher Secondary School Certificate</h3>
-                  <p>
-                    I had lot of great portfolio being a student of Hebron
-                    college. For instance, i was one of there students, also
-                    became the School Head Prefect at my last year.
-                  </p>
-                  <p>Hebron College</p>
-                </div>
-                <div
-                  className="portfolio__content--edu--list__box"
-                  onClick={notify}
-                >
-                  <i className="fad fa-plus"></i>
-                </div>
-              </Carousel>
-            </div>
-          </section>
-
-          <section className="portfolio__content--exp">
-            <div className="portfolio__content--exp--title">
-              <i className="fad fa-briefcase"></i>
-              <p>Experience</p>
-            </div>
-            <div className="portfolio__content--exp--list">
-              <Carousel breakPoints={breakPoints}>
-                <a
-                  className="portfolio__content--exp--list__box"
-                  href="https://www.quintessentialinvestment.ng/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <p>October 2019</p>
-                  <h3>
-                    <span>Q</span> Quintessential
-                  </h3>
-                  <p>
-                    Quintessential is an investment company who believe in
-                    abundance, sustainable and consistent financial growth. They
-                    set-up and investment club, which gives it investors 25%
-                    monthly interest.
-                  </p>
-                  <p>CEO & Founder</p>
-                </a>
-
-                <div
-                  className="portfolio__content--exp--list__box"
-                  onClick={notify}
-                >
-                  <i className="fad fa-plus"></i>
-                </div>
-              </Carousel>
-            </div>
-          </section>
-        </section>
-      </div> */}
     </div>
   );
 };

@@ -4,7 +4,13 @@ import "./App.scss";
 import "./Header.scss";
 import "./themes/mixins.scss";
 import "./themes/variables.scss";
-import { Route, useLocation, Routes, Router, useNavigate } from "react-router-dom";
+import {
+  Route,
+  useLocation,
+  Routes,
+  Router,
+  useNavigate,
+} from "react-router-dom";
 // import FullPageWrapper from "./FullPageWrapper";
 import React, { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -18,10 +24,11 @@ import "react-morphing-modal/dist/ReactMorphingModal.css";
 import SkillModal from "./component/SkillModal";
 import FullPageWrapperWork from "./FullPageWrapperWork";
 import vendoirJson from "./assets/json/vendoir.json";
-import wavedownloaderAppJson from "./assets/json/wavedownloaderApp.json";
+import waveAppJson from "./assets/json/waveApp.json";
 import sweetmotherJson from "./assets/json/sweetmother.json";
 import practxJson from "./assets/json/practx.json";
 import jobotsJson from "./assets/json/jobots.json";
+import waveWebJson from "./assets/json/waveWeb.json";
 
 const LoremIpsum: React.FC = () => {
   const lorem: string[] = [];
@@ -41,15 +48,14 @@ const LoremIpsum: React.FC = () => {
   );
 };
 
-
-const  App: React.FC = () =>  {
-   const { open, close, modalProps, activeModal, getTriggerProps} = useModal({
-     background: "#000000ea",
-   });
-   const myRef = React.useRef(null);
-   const [showModal, setShowModal] = useState(false);
+const App: React.FC = () => {
+  const { open, close, modalProps, activeModal, getTriggerProps } = useModal({
+    background: "#000000ea",
+  });
+  const myRef = React.useRef(null);
+  const [showModal, setShowModal] = useState(false);
   const [currentSlideState, setCurrentSlideState] = useState<number>(0);
-   // const location = useLocation();
+  // const location = useLocation();
   console.log("Acrtive modal", activeModal);
   let componentToRender: React.ReactNode;
 
@@ -58,7 +64,7 @@ const  App: React.FC = () =>  {
       componentToRender = <SkillModal data={vendoirJson} />;
       break;
     case "waveApp":
-      componentToRender = <SkillModal data={wavedownloaderAppJson} />;
+      componentToRender = <SkillModal data={waveAppJson} />;
       break;
     case "sweetmother":
       componentToRender = <SkillModal data={sweetmotherJson} />;
@@ -69,6 +75,9 @@ const  App: React.FC = () =>  {
     case "jobots":
       componentToRender = <SkillModal data={jobotsJson} />;
       break;
+    case "waveWeb":
+      componentToRender = <SkillModal data={waveWebJson} />;
+      break;
     default:
       componentToRender = <SkillModal data={vendoirJson} />;
       break;
@@ -76,18 +85,19 @@ const  App: React.FC = () =>  {
 
   // let navigate = useNavigate();
   const imgEl = useRef<HTMLImageElement>(null);
-  
+
   const [currentMode, setCurrentMode] = useState("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (activeModal) {
       setShowModal(true);
-      activeModal === 'vendoir' && setCurrentSlideState(0)
+      activeModal === "vendoir" && setCurrentSlideState(0);
       activeModal === "waveApp" && setCurrentSlideState(1);
       activeModal === "sweetmother" && setCurrentSlideState(2);
       activeModal === "practx" && setCurrentSlideState(3);
       activeModal === "jobots" && setCurrentSlideState(4);
+      activeModal === "waveWeb" && setCurrentSlideState(5);
     }
   }, [activeModal]);
 
@@ -229,6 +239,6 @@ const  App: React.FC = () =>  {
       {/* <ToastContainer /> */}
     </div>
   );
-}
+};
 
 export default App;
