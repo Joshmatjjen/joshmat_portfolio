@@ -22,7 +22,6 @@ import expoIcon from "../../assets/svg/expo.svg";
 import mongodbIcon from "../../assets/svg/mongodb.svg";
 import playStore from "../../assets/svg/playstore.svg";
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -31,18 +30,14 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 // import Swiper core and required modules
-import SwiperCore, {
-  EffectCoverflow,Pagination
-} from 'swiper';
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
 import SkillCard from "../../component/SkillCard";
 import { Tooltip } from "react-tippy";
 import TechCard from "../../component/TechCard";
 import { useModal } from "react-morphing-modal";
 
-
-
 // install Swiper modules
-SwiperCore.use([EffectCoverflow,Pagination]);
+SwiperCore.use([EffectCoverflow, Pagination]);
 
 const breakPoints = [
   { width: 1, itemsToShow: 1, showArrows: false },
@@ -61,12 +56,7 @@ interface TechProps {
   title?: string;
   image?: string;
   bgColor?: string;
-  
 }
-
-
-
-
 
 const Work: React.FC<Props> = ({
   currentMode,
@@ -144,7 +134,7 @@ const Work: React.FC<Props> = ({
           // on={{
           //   slideChange: (v) => console.log("Change of slide", v),
           // }}
-          
+
           initialSlide={currentSlideState}
           lazy={true}
           coverflowEffect={{
@@ -161,27 +151,16 @@ const Work: React.FC<Props> = ({
           className="mySwiper"
         >
           <SwiperSlide
-            className={
-              "swiperSlide"
-            }
+            className={"swiperSlide"}
             {...getTriggerProps({ id: "vendoir" })}
             onPress={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
           >
-            <div
-              className={
-                //  "swiperSlide-active__img"
-                "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={vendoir} />
             </div>
           </SwiperSlide>
           <SwiperSlide
-            className={
-              currentSlide === 1 && selectedSlide === 1
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
+            className={"swiperSlide"}
             {...getTriggerProps({ id: "waveApp" })}
             onPress={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
           >
@@ -191,99 +170,37 @@ const Work: React.FC<Props> = ({
           </SwiperSlide>
 
           <SwiperSlide
-            className={
-              currentSlide === 2 && selectedSlide === 2
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
+            className={"swiperSlide"}
             {...getTriggerProps({ id: "sweetmother" })}
+            onPress={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
           >
-            <div
-              className={
-                currentSlide === 2 && selectedSlide === 2
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={sweetMother} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide
-            className={
-              currentSlide === 3 && selectedSlide === 3
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
-            onClick={() => setSelectedSlide(selectedSlide === 3 ? null : 3)}
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "practx" })}
+            onPress={() => setSelectedSlide(selectedSlide === 3 ? null : 3)}
           >
-            <div
-              className={
-                currentSlide === 3 && selectedSlide === 3
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={practx} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide
-            className={
-              currentSlide === 4 && selectedSlide === 4
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
-            onClick={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "jobots" })}
+            onPress={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
           >
-            <div
-              className={
-                currentSlide === 4 && selectedSlide === 4
-                  ? "swiperSlide-active__img"
-                  : "swiperSlide__img"
-              }
-            >
+            <div className={"swiperSlide__img"}>
               <img alt="img" src={jobots} />
             </div>
-            {currentSlide === 4 && selectedSlide === 4 && (
-              <div className="swiperSlide-active__item">
-                <p>Jobots</p>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://jobots.herokuapp.com/"
-                  className="swiperSlide-active__item--link"
-                >
-                  <p>View site</p>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                  <Technology
-                    title="Mongodb"
-                    image={mongodbIcon}
-                    bgColor="#6DAC4718"
-                  />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
 
           <SwiperSlide
-            className={
-              currentSlide === 5 && selectedSlide === 5
-                ? "swiperSlide-active"
-                : "swiperSlide"
-            }
+            className={"swiperSlide"}
             onClick={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
           >
             <div
@@ -295,38 +212,6 @@ const Work: React.FC<Props> = ({
             >
               <img alt="img" src={waveDownloaderWeb} />
             </div>
-            {currentSlide === 5 && selectedSlide === 5 && (
-              <div className="swiperSlide-active__item">
-                <p>Wave Downloader</p>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://wavedownloader.com/"
-                  className="swiperSlide-active__item--link"
-                >
-                  <p>View site</p>
-                </a>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    padding: "1rem 0",
-                  }}
-                >
-                  <Technology
-                    title="React"
-                    image={reactNativeIcon}
-                    bgColor="#80DEEA18"
-                  />
-                  <Technology title="Css" image={cssIcon} bgColor="#0377BD13" />
-                  <Technology
-                    title="Sass"
-                    image={sassIcon}
-                    bgColor="#DC5E9B13"
-                  />
-                </div>
-              </div>
-            )}
           </SwiperSlide>
 
           <SwiperSlide

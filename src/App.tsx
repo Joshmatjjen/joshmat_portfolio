@@ -20,6 +20,8 @@ import FullPageWrapperWork from "./FullPageWrapperWork";
 import vendoirJson from "./assets/json/vendoir.json";
 import wavedownloaderAppJson from "./assets/json/wavedownloaderApp.json";
 import sweetmotherJson from "./assets/json/sweetmother.json";
+import practxJson from "./assets/json/practx.json";
+import jobotsJson from "./assets/json/jobots.json";
 
 const LoremIpsum: React.FC = () => {
   const lorem: string[] = [];
@@ -61,9 +63,14 @@ const  App: React.FC = () =>  {
     case "sweetmother":
       componentToRender = <SkillModal data={sweetmotherJson} />;
       break;
-
+    case "practx":
+      componentToRender = <SkillModal data={practxJson} />;
+      break;
+    case "jobots":
+      componentToRender = <SkillModal data={jobotsJson} />;
+      break;
     default:
-      componentToRender = <LoremIpsum />;
+      componentToRender = <SkillModal data={vendoirJson} />;
       break;
   }
 
@@ -79,6 +86,8 @@ const  App: React.FC = () =>  {
       activeModal === 'vendoir' && setCurrentSlideState(0)
       activeModal === "waveApp" && setCurrentSlideState(1);
       activeModal === "sweetmother" && setCurrentSlideState(2);
+      activeModal === "practx" && setCurrentSlideState(3);
+      activeModal === "jobots" && setCurrentSlideState(4);
     }
   }, [activeModal]);
 

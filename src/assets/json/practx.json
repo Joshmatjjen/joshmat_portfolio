@@ -2,21 +2,22 @@
   "title": "Practx",
   "subtitle": "Build a meaningful connection with your patients",
   "type": "app",
-  "onAndroid": "https://play.google.com/store/apps/details?id=com.vendoir.app.prod",
-  "onIOS": "",
-  "onWeb": "",
-  "note": "App is only available on Android",
+  "onAndroid": "",
+  "onIOS": "https://testflight.apple.com/join/DyHxjm6C",
+  "onWeb": "https://practxs.com",
+  "note": "App is currently on Beta-Test",
   "myRole": "Senior React Native Developer",
   "platform": "Android & IOS",
-  "technologies": "React Native, Expo",
+  "technologies": "React Native",
   "year": "2021/2022",
   "briefing": "Our secure doctor’s office messaging app is HIPAA compliant. You can streamline patient communication while offering patients the personalized service they deserve.",
   "screenshots": [
-    "https://res.cloudinary.com/jasky/image/upload/v1660118074/joshmat/sweetMother/sweetM1_d378a2.png",
-    "https://res.cloudinary.com/jasky/image/upload/v1660118074/joshmat/sweetMother/sweetM2_f0caot.png",
-    "https://res.cloudinary.com/jasky/image/upload/v1660118074/joshmat/sweetMother/sweetM3_pvvasa.png",
-    "https://res.cloudinary.com/jasky/image/upload/v1660118074/joshmat/sweetMother/sweetM4_qgm0fi.png",
-    "https://res.cloudinary.com/jasky/image/upload/v1660118074/joshmat/sweetMother/sweetM5_dvttt6.png",
-    "https://res.cloudinary.com/jasky/image/upload/v1660118074/joshmat/sweetMother/sweetM6_nopkhv.png"
+    "https://res.cloudinary.com/jasky/image/upload/v1660126635/joshmat/practx/practx1_dwxyfv.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660126636/joshmat/practx/practx2_a77qz8.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660126636/joshmat/practx/practx3_qkwsa9.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660126635/joshmat/practx/practx4_rgizyc.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660126635/joshmat/practx/practx5_ajy9pk.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660126637/joshmat/practx/practx6_fiy9vs.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660126637/joshmat/practx/practx7_kqvffn.png"
   ]
 }

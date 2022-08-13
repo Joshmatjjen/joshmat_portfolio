@@ -1,0 +1,19 @@
+{
+  "title": "Jobots",
+  "subtitle": "AI Chat assistant bot to Joshmat",
+  "type": "website",
+  "onAndroid": "",
+  "onIOS": "",
+  "onWeb": "https://jobots.herokuapp.com/",
+  "note": "",
+  "myRole": "Full Stack Developer MERN",
+  "platform": "Web",
+  "technologies": "React, Nodejs, Dialogflow, MongoDB",
+  "year": "2020",
+  "briefing": "Jobot is a smart, interactive & funny AI Chat Bot, built to put smiles on the faces of everyone. \nWith jobot, you have to opportunity to read thousands of funny jokes, njust by saying: 'Please tell me a joke'",
+  "screenshots": [
+    "https://res.cloudinary.com/jasky/image/upload/v1660376253/joshmat/jobots/jobot1_ahdwka.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660376252/joshmat/jobots/jobot2_jvpgjd.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660376252/joshmat/jobots/jobot3_g3ibzg.png"
+  ]
+}
