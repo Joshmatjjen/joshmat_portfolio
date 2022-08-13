@@ -199,6 +199,7 @@ const App: React.FC = () => {
           index={true}
           element={
             <>
+              {/* <LoremIpsum/> */}
               {showModal ? (
                 <FullPageWrapperWork
                   currentMode={currentMode === "light" ? "light" : "dark"}
@@ -219,19 +220,17 @@ const App: React.FC = () => {
         />
       </Routes>
 
-      <div>
-        <Modal
-          {...modalProps}
-          close={() => {
-            setShowModal(false);
-            setTimeout(() => {
-              close();
-            }, 500);
-          }}
-        >
-          {componentToRender}
-        </Modal>
-      </div>
+      <Modal
+        {...modalProps}
+        close={() => {
+          setShowModal(false);
+          setTimeout(() => {
+            close();
+          }, 500);
+        }}
+      >
+        {componentToRender}
+      </Modal>
 
       {/* <div className="scrollText">
         <p> &larr; &nbsp; &nbsp; Scroll down</p>
