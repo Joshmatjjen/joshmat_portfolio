@@ -23,41 +23,39 @@ import { ReactHeight } from "react-height";
 
 import ExperienceCard from "../../component/ExperienceCard";
 import { toast } from "react-toastify";
+import { useModal } from "react-morphing-modal";
 interface Props {
   currentMode?: string;
+  getTriggerProps?: any;
+  navState?: string;
+  setNavState?: any;
 }
 
-const Skills: React.FC<Props> = ({ currentMode }) => {
-  const location = useLocation();
-const [navSwitch, setNavSwitch] = useState<string>("experience");
-
+const Skills: React.FC<Props> = ({
+  currentMode,
+  getTriggerProps,
+  navState,
+  setNavState,
+}) => {
+  // const location = useLocation();
+  const [navSwitch, setNavSwitch] = useState<string>("experience");
   const [experienceHeight, setExperienceHeight] = useState<number>(0);
+  const [skillHeight, setSkillHeight] = useState<number>(0);
+  console.log("Nav state---", navState);
 
-  const notify = (message: string | {} | null | undefined) => {
-    currentMode === "light" ? toast(message, {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    }): 
-    toast.dark(message, {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
+  useEffect(() => {
+    setNavSwitch(navSwitch);
+  }, [navSwitch]);
 
   return (
     <div className="section">
       <div className="skills-nav">
-        <a onClick={() => setNavSwitch("skills")}>
+        <a
+          onClick={() => {
+            setNavState("skills");
+            setNavSwitch("skills");
+          }}
+        >
           <p
             style={{
               borderBottom:
@@ -69,7 +67,12 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
             Skills
           </p>
         </a>
-        <a onClick={() => setNavSwitch("experience")}>
+        <a
+          onClick={() => {
+            setNavState("experience");
+            setNavSwitch("experience");
+          }}
+        >
           <p
             style={{
               borderBottom:
@@ -93,9 +96,10 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
             onHeightReady={(height) =>
               console.log("Real Skill Left Height:++ ", height)
             }
-            getElementHeight={(el) =>
-              console.log("Real Skill Left Element:++ ", el.clientHeight)
-            }
+            getElementHeight={(el) => {
+              console.log("Real Skill Left Element:++ ", el.clientHeight);
+              setSkillHeight(el.scrollHeight);
+            }}
             className="skills__section--left"
             style={{ display: navSwitch === "skills" && "flex" }}
           >
@@ -223,7 +227,7 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
               <div className="skills__section--right__box--lft">
                 <p>2021</p>
                 <div className="vl"></div>
-                <p style={{marginBottom: "3rem"}}>2022</p>
+                <p style={{ marginBottom: "3rem" }}>2022</p>
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
@@ -298,14 +302,37 @@ const [navSwitch, setNavSwitch] = useState<string>("experience");
           </ReactHeight>
         </div>
       </div>
-      {experienceHeight > window.innerHeight - 98 && (
+
+      <>
         <button
+          style={{
+            display:
+              navSwitch === "experience" &&
+              experienceHeight > window.innerHeight - 158
+                ? "block"
+                : "none",
+          }}
           className="bottom-more"
-          onClick={() => notify("😁 Coming Soon")}
+          // onClick={() => notify("😁 Coming Soon")}
+          {...getTriggerProps({ id: "experience" })}
         >
           <p>Show more</p>
         </button>
-      )}
+
+        <button
+          style={{
+            display:
+              navSwitch === "skills" && skillHeight > window.innerHeight - 158
+                ? "block"
+                : "none",
+          }}
+          className="bottom-more"
+          // onClick={() => notify("😁 Coming Soon")}
+          {...getTriggerProps({ id: "skill" })}
+        >
+          <p>Show more</p>
+        </button>
+      </>
     </div>
   );
 };

@@ -10,7 +10,6 @@ import Work from "./pages/work/Work";
 // import Testimony from "./pages/testimony/Testimony";
 import Contact from "./pages/contact/Contact";
 
-
 const pluginWrapper = () => {
   require("./extension/fullpage.extensions.min");
 };
@@ -19,7 +18,9 @@ interface Props {
   currentMode?: string;
   getTriggerProps?: any;
   activeModal?: any;
-  currentSlideState?:number
+  currentSlideState?: number;
+  navState?: string;
+  setNavState?: any;
 }
 
 const FullPageWrapper: React.FC<Props> = ({
@@ -27,6 +28,8 @@ const FullPageWrapper: React.FC<Props> = ({
   getTriggerProps,
   activeModal,
   currentSlideState,
+  navState,
+  setNavState,
 }) => {
   const [anchors, setLockAnchors] = useState([
     "about",
@@ -62,7 +65,12 @@ const FullPageWrapper: React.FC<Props> = ({
         return (
           <div className="fullpage">
             <About />
-            <Skills currentMode={currentMode} />
+            <Skills
+              currentMode={currentMode}
+              getTriggerProps={getTriggerProps}
+              navState={navState}
+              setNavState={setNavState}
+            />
 
             <Work
               currentMode={currentMode}

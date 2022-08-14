@@ -21,7 +21,7 @@ import Snowfall from "react-snowfall";
 import "react-tippy/dist/tippy.css";
 import { useModal, Modal } from "react-morphing-modal";
 import "react-morphing-modal/dist/ReactMorphingModal.css";
-import SkillModal from "./component/SkillModal";
+import WorkModal from "./component/WorkModal";
 import FullPageWrapperWork from "./FullPageWrapperWork";
 import vendoirJson from "./assets/json/vendoir.json";
 import waveAppJson from "./assets/json/waveApp.json";
@@ -29,6 +29,8 @@ import sweetmotherJson from "./assets/json/sweetmother.json";
 import practxJson from "./assets/json/practx.json";
 import jobotsJson from "./assets/json/jobots.json";
 import waveWebJson from "./assets/json/waveWeb.json";
+import ExperienceModal from "./component/ExperienceModal";
+import SkillModal from "./component/SkillModal";
 
 const LoremIpsum: React.FC = () => {
   const lorem: string[] = [];
@@ -49,9 +51,25 @@ const LoremIpsum: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  const [navState, setNavState] = useState("experience");
   const { open, close, modalProps, activeModal, getTriggerProps } = useModal({
     background: "#000000ea",
+    onOpen() {
+      console.log("onOpen", activeModal);
+    },
+    onClose() {
+      if (activeModal === "skill") {
+        setNavState("skills");
+      } else if (activeModal === "experience") {
+        setNavState("experience");
+      }
+    },
   });
+  const imgEl = useRef<HTMLImageElement>(null);
+
+  const [currentMode, setCurrentMode] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const myRef = React.useRef(null);
   const [showModal, setShowModal] = useState(false);
   const [currentSlideState, setCurrentSlideState] = useState<number>(0);
@@ -61,33 +79,37 @@ const App: React.FC = () => {
 
   switch (activeModal) {
     case "vendoir":
-      componentToRender = <SkillModal data={vendoirJson} />;
+      componentToRender = <WorkModal data={vendoirJson} />;
       break;
     case "waveApp":
-      componentToRender = <SkillModal data={waveAppJson} />;
+      componentToRender = <WorkModal data={waveAppJson} />;
       break;
     case "sweetmother":
-      componentToRender = <SkillModal data={sweetmotherJson} />;
+      componentToRender = <WorkModal data={sweetmotherJson} />;
       break;
     case "practx":
-      componentToRender = <SkillModal data={practxJson} />;
+      componentToRender = <WorkModal data={practxJson} />;
       break;
     case "jobots":
-      componentToRender = <SkillModal data={jobotsJson} />;
+      componentToRender = <WorkModal data={jobotsJson} />;
       break;
     case "waveWeb":
-      componentToRender = <SkillModal data={waveWebJson} />;
+      componentToRender = <WorkModal data={waveWebJson} />;
+      break;
+    case "experience":
+      componentToRender = <ExperienceModal />;
+      break;
+    case "skill":
+      componentToRender = (
+        <SkillModal currentMode={currentMode === "light" ? "light" : "dark"} />
+      );
       break;
     default:
-      componentToRender = <SkillModal data={vendoirJson} />;
+      componentToRender = <WorkModal data={vendoirJson} />;
       break;
   }
 
   // let navigate = useNavigate();
-  const imgEl = useRef<HTMLImageElement>(null);
-
-  const [currentMode, setCurrentMode] = useState("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (activeModal) {
@@ -212,6 +234,8 @@ const App: React.FC = () => {
                   currentMode={currentMode === "light" ? "light" : "dark"}
                   getTriggerProps={getTriggerProps}
                   activeModal={activeModal}
+                  navState={navState}
+                  setNavState={setNavState}
                   currentSlideState={currentSlideState}
                 />
               )}

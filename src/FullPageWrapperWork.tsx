@@ -20,7 +20,14 @@ const FullPageWrapperWork: React.FC<Props> = ({
   currentSlideState,
 }) => {
   return (
-    <div className="fullpage">
+    <div
+      className="fullpage"
+      style={{
+        // height: "100vh",
+        overflow: "hidden",
+        backgroundColor: "var(--color-bg)",
+      }}
+    >
       <Work
         currentMode={currentMode}
         getTriggerProps={getTriggerProps}

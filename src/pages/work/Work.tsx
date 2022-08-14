@@ -13,15 +13,6 @@ import practx from "../../assets/img/practx.png";
 import vendoir from "../../assets/img/vendoir.png";
 import thelightinghaus from "../../assets/img/thelightinghaus.png";
 
-import htmlIcon from "../../assets/svg/html5.svg";
-import cssIcon from "../../assets/svg/css3.svg";
-import sassIcon from "../../assets/svg/sass.svg";
-import javascriptIcon from "../../assets/svg/javascript.svg";
-import reactNativeIcon from "../../assets/svg/react_native.svg";
-import expoIcon from "../../assets/svg/expo.svg";
-import mongodbIcon from "../../assets/svg/mongodb.svg";
-import playStore from "../../assets/svg/playstore.svg";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -31,20 +22,10 @@ import "swiper/css/pagination";
 
 // import Swiper core and required modules
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
-import SkillCard from "../../component/SkillCard";
 import { Tooltip } from "react-tippy";
-import TechCard from "../../component/TechCard";
-import { useModal } from "react-morphing-modal";
 
 // install Swiper modules
 SwiperCore.use([EffectCoverflow, Pagination]);
-
-const breakPoints = [
-  { width: 1, itemsToShow: 1, showArrows: false },
-  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
-];
 
 interface Props {
   currentMode?: string;
@@ -85,8 +66,6 @@ const Work: React.FC<Props> = ({
         });
   };
   const myRef = React.useRef(null);
-
-  
 
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [selectedSlide, setSelectedSlide] = useState<number | null>();

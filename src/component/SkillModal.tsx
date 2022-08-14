@@ -1,119 +1,181 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./../Modal.scss";
-import { Tooltip, withTooltip } from "react-tippy";
-import playStore from "../assets/img/playStore.png";
-import appStore from "../assets/img/appStore.png";
-import vendoirJS from "../assets/json/vendoir.json";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useEffect, useState } from "react";
+// import "./Skills.scss";
+import { useLocation } from "react-router-dom";
+import SkillCard from "../component/SkillCard";
+import htmlIcon from "../assets/svg/html5.svg";
+import cssIcon from "../assets/svg/css3.svg";
+import sassIcon from "../assets/svg/sass.svg";
+import reactNativeIcon from "../assets/svg/react_native.svg";
+import typeScriptIcon from "../assets/svg/typescript.svg";
+import vueIcon from "../assets/svg/vue_js.svg";
+import wordpressIcon from "../assets/svg/wordpress.svg";
+import graphqlIcon from "../assets/svg/graphql.svg";
+import javascriptIcon from "../assets/svg/javascript.svg";
+import mongodbIcon from "../assets/svg/mongodb.svg";
+import nodejsIcon from "../assets/svg/nodejs.svg";
+import netlifyIcon from "../assets/svg/netlify.svg";
+import dialogFlowIcon from "../assets/svg/dialogFlow.svg";
+import firebaseIcon from "../assets/svg/firebase.svg";
+import ionicIcon from "../assets/svg/ionic.svg";
+import expoIcon from "../assets/svg/expo.svg";
+import { ReactHeight } from "react-height";
 
+import ExperienceCard from "../component/ExperienceCard";
+import { toast } from "react-toastify";
+import { useModal } from "react-morphing-modal";
 interface Props {
-  data: any;
-  // data: {
-  //   title: string;
-  //   subtitle: string;
-  //   type: string;
-  //   onAndroid: string;
-  //   onIOS: string;
-  //   onWeb: string;
-  //   note: string;
-  //   myRole: string;
-  //   platform: string;
-  //   technologies: string;
-  //   year: string;
-  //   briefing: string;
-  //   screenshots: [];
-  
-  // };
+  currentMode?: string;
+  getTriggerProps?: any;
 }
 
-const SkillModal: React.FC<Props> = ({
-  data,
-}) => {
+const SkillModal: React.FC<Props> = ({ currentMode, getTriggerProps }) => {
   // const location = useLocation();
-
-  console.log("Josn---", vendoirJS);
+  const [navSwitch, setNavSwitch] = useState<string>("experience");
+  const [skillHeight, setSkillHeight] = useState<number>(0);
+  const notify = (message: string | {} | null | undefined) => {
+    currentMode === "light"
+      ? toast(message, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      : toast.dark(message, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+  };
 
   return (
-    <div className="workModal">
-      <h3 className="workModal__title">{data.title}</h3>
-      <p className="workModal__subtitle">{data.subtitle}</p>
-      {data?.onWeb && (
-        <div className="workModal__web">
-          <a
-            href={data?.onWeb}
-            target="_blank"
-            className="workModa"
-            rel="noreferrer"
-          >
-            <p>View Website</p>
-          </a>
-        </div>
-      )}
-      <div className="workModal__link">
-        {data?.onAndroid && (
-          <a
-            href={data?.onAndroid}
-            target="_blank"
-            className="workModa"
-            rel="noreferrer"
-          >
-            <img src={playStore} alt="skillCard_img" className="screenshot" />
-          </a>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <ReactHeight
+        onHeightReady={(height) =>
+          console.log("Real Skill Left Height:++ ", height)
+        }
+        getElementHeight={(el) => {
+          console.log("Real Skill Left Element:++ ", el.clientHeight);
+          setSkillHeight(el.scrollHeight);
+        }}
+        className="skills__section--left"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          // flexDirection: "column",
+          marginTop: 0,
+          paddingTop: 0,
+          marginBottom: "6rem",
+        }}
+      >
+        {currentMode && (
+          <>
+            <SkillCard
+              currentMode={currentMode}
+              title="Html"
+              img={htmlIcon}
+              bgColor="#e44a2718"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Css"
+              img={cssIcon}
+              bgColor="#0377BD13"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Sass"
+              img={sassIcon}
+              bgColor="#DC5E9B13"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="React & React-Native"
+              img={reactNativeIcon}
+              bgColor="#80DEEA18"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Expo"
+              img={expoIcon}
+              bgColor="#00000018"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="TypeScript"
+              img={typeScriptIcon}
+              bgColor="#1976D213"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Vue"
+              img={vueIcon}
+              bgColor="#81C78413"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="WordPress"
+              img={wordpressIcon}
+              bgColor="#02579B18"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="GraphQL"
+              img={graphqlIcon}
+              bgColor="#FF408118"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Javascript"
+              img={javascriptIcon}
+              bgColor="#FFD60118"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Mongodb"
+              img={mongodbIcon}
+              bgColor="#6DAC4718"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Nodejs"
+              img={nodejsIcon}
+              bgColor="#8BC84B18"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Netlify"
+              img={netlifyIcon}
+              bgColor="#25C7B718"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Ionic"
+              img={ionicIcon}
+              bgColor="#177EFF18"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="Firebase"
+              img={firebaseIcon}
+              bgColor="#FECD3018"
+            />
+            <SkillCard
+              currentMode={currentMode}
+              title="DialogFlow"
+              img={dialogFlowIcon}
+              bgColor="#FF980018"
+            />
+          </>
         )}
-        {data?.onIOS && (
-          <a
-            href={data?.onIOS}
-            target="_blank"
-            className="workModa"
-            rel="noreferrer"
-          >
-            <img src={appStore} alt="skillCard_img" className="screenshot" />
-          </a>
-        )}
-      </div>
-
-      <div className="workModal__info">
-        <div className="workModal__info--box">
-          <h4>MY ROLE</h4>
-          <p>{data?.myRole}</p>
-        </div>
-        <div className="workModal__info--box">
-          <h4>PLATFORM</h4>
-          <p>{data?.platform}</p>
-        </div>
-        <div className="workModal__info--box">
-          <h4>TECHNOLOGY</h4>
-          <p>{data?.technologies}</p>
-        </div>
-        <div className="workModal__info--box">
-          <h4>YEAR</h4>
-          <p>{data?.year}</p>
-        </div>
-      </div>
-      {data?.note && (
-        <section className="workModal__brief">
-          <h3>Note#</h3>
-          <p>{data?.note}</p>
-        </section>
-      )}
-      <section className="workModal__brief">
-        <h3>Briefing</h3>
-        <p>{data?.briefing}</p>
-      </section>
-      <section className="workModal__screenshot">
-        <h3>Features & Screenshots</h3>
-        <div className="workModal__screenshot--container">
-          {data?.screenshots &&
-            data?.screenshots.map((item, i) => (
-              <img
-                key={i}
-                src={item}
-                alt="skillCard_img"
-                className="screenshot"
-              />
-            ))}
-        </div>
-      </section>
+      </ReactHeight>
     </div>
   );
 };

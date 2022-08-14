@@ -73,7 +73,7 @@
 
   @include respond(tabPort) {
     // justify-content: space-around;
-    height: 85vh;
+    height: calc(100vh - 10.5rem);
   }
 
 
