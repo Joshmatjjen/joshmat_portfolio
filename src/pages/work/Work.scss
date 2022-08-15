@@ -105,7 +105,7 @@
 
   @include respond(tabLand) {
     width: 70% !important;
-    height: 11rem !important;
+    // height: 11rem !important;
   }
 
   @include respond(tabPort) {
@@ -300,7 +300,7 @@
   }
 
   &__top {
-    margin-top: 7rem;
+    margin-top: 5rem;
 
     @include respond(tabPort) {
       margin-top: 4rem;

@@ -7,13 +7,12 @@ import emailIcon from "../../assets/img/envelope.png";
 import phoneIcon from "../../assets/img/smartphone.png";
 import axios from "axios";
 
-const Contact: React.FC =  () => {
-  
+const Contact: React.FC = () => {
   // const { state, submit } = useForm({
   //   id: "drM33_-Ro0i",
   //   debug: true,
   // });
-  
+
   const notify = (message: string | {} | null | undefined) => {
     toast.dark(message, {
       position: "bottom-center",
@@ -25,7 +24,12 @@ const Contact: React.FC =  () => {
       progress: undefined,
     });
   };
-  const [formState, setFormState] = useState({email: '', name: '', message: ''});
+  const [formState, setFormState] = useState({
+    email: "",
+    name: "",
+    message: "",
+  });
+  const [submitText, setSubmitText] = useState("Submit");
   // const submitForm = (ev: { preventDefault: () => void; target: any; }) => {
   //   ev.preventDefault();
   //   const form = ev.target;
@@ -60,44 +64,49 @@ const Contact: React.FC =  () => {
   };
 
   const handleForm = (e) => {
-    axios
-      .post("https://formcarry.com/s/drM33_-Ro0i", formState, {
-        headers: { Accept: "application/json" },
-      })
-      .then(function (response) {
-        // access response.data in order to check formcarry response
-        if (response.data.success) {
-          // handle success
-          
-        } else {
-          // handle error
-          
-          console.log(response.data.message);
-        }
-        notify(
-          "😁 Message submitted successfully, you will get a response soon"
-        );
-        clearInput();
-      })
-      .catch(function (error) {
-        notify(
-          "😞 Error occur while submitting message, please try again later"
-        );
-        console.log(error);
-      });
-
     e.preventDefault();
+    if (Object.values(formState).some((x) => x === null || x === "")) {
+      notify("😞 Please fill all the input field before clicking on submit");
+      setSubmitText("Submit");
+    } else {
+      setSubmitText("Submiting...");
+      axios
+        .post("https://formcarry.com/s/drM33_-Ro0i", formState, {
+          headers: { Accept: "application/json" },
+        })
+        .then(function (response) {
+          setSubmitText("Submit");
+          // access response.data in order to check formcarry response
+          if (response.data.success) {
+            // handle success
+          } else {
+            // handle error
+
+            console.log(response.data.message);
+          }
+          notify(
+            "😁 Message submitted successfully, you will get a response soon"
+          );
+          clearInput();
+        })
+        .catch(function (error) {
+          setSubmitText("Submit");
+          notify(
+            "😞 Error occur while submitting message, please try again later"
+          );
+          console.log(error);
+        });
+    }
   };
 
   // useEffect(() => {
   //   if (state.submitted && !state.submitting) {
-       
+
   //     setTimeout(() => {
-       
+
   //     }, 2000);
   //     console.log("Helloo", state);
-      
-      
+
   //   }
   // }, [state]);
 
@@ -155,7 +164,7 @@ const Contact: React.FC =  () => {
             <div>
               {/* <div className="btn" onClick={() => submitForm()}></div> */}
               <button className="btn" type="submit">
-                Submit
+                {submitText}
               </button>
             </div>
           </form>

@@ -38,8 +38,13 @@ a {
 }
 
 #fp-nav.fp-right #fp-nav.fp-right:hover {
+  color: var(--color-text) !important;
   cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFTSURBVHgBrZS9UsJAFIWPjC1OrCnc0k4stM4M9vAEArUFWFqJFaVxxNrEF4hvEGobtNLONNZEeID1bFbCXxICyZk5k+xN8u3duzcLJMugBQqSoMe0pJ9RgCzzDNJzQqDEFpmWEuKGqJBSwdYqoWBlBQroTSoM6NHftEk3cgPdAVCvhRl6RhkuryO6Qzd3AlaPgcMyU6uR5OoQN8wi3OZ9Nw5Yhe63ZhqYgHnWj3oC6mQVqJbi8mGLs9rQtTrCBhkH8fH9f6C4vdIv9QYQzqtuZDXuXOrM6hfA72Q5libPPIeUn9rcBMlaReMktxrrv+ashu3hGwJHFzysjdqIXTQD+vRDtw8EE+TSYttYwRT+3RNyaREY0G3rBeDyM2k8TQcqDWnnuo+N8n+Aj6/om0h7Me+qNhqxJ8X9TXx7KJgqDa/vHJ4igwRtY35qr1rFe4g5gf4ApeZ0dUcd+qUAAAAASUVORK5CYII="),
     pointer;
+}
+
+#fp-nav ul li .fp-tooltip.fp-right {
+  color: var(--color-text) !important;
 }
 
 #fp-nav ul,
