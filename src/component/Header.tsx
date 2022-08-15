@@ -216,12 +216,14 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               <p style={{ color: navStyles?.contact }}>Contact</p>
             </a>
             <a
-              href={pdfFile}
-              // attributes-list
-              download="Joshmat_Resume.pdf"
               className="resume"
+              href="https://res.cloudinary.com/jasky/image/upload/fl_attachment:joshmat_cv/v1660558654/joshmat/cv/joshmat_cv1_tuwzhw.pdf"
+              download
+              attributes-list
             >
-              <p className="resume--text">Resume/CV</p>
+              <p className="resume--text" style={{ color: navStyles?.contact }}>
+                Resume/CV
+              </p>
               <i className="fal fa-cloud-download" />
             </a>
             <span
@@ -275,7 +277,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           <div className="mobile-actions">
             <a
               className="resume"
-              href="../assets/file/JoshmatCV.pdf"
+              href="https://res.cloudinary.com/jasky/image/upload/fl_attachment:joshmat_cv/v1660558654/joshmat/cv/joshmat_cv1_tuwzhw.pdf"
               attributes-list
               download
             >

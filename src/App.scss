@@ -78,49 +78,50 @@
       }
     }
 
-    .resume {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-left: 3rem;
-      color: var(--color-text);
-      font-size: 1.5rem;
-      // marginBottom: "0.5rem";
-      height: 2rem;
-      border-radius: 0.5rem;
-      padding: 0 1rem;
-      background-color: var(--color-secondary);
-      // background-color: var(--color-text-3);
+    // .resume {
+    //   display: flex;
+    //   flex-direction: row;
+    //   align-items: center;
+    //   margin-left: 3rem;
+    //   color: var(--color-text);
+    //   font-size: 1.5rem;
+    //   // marginBottom: "0.5rem";
+    //   height: 2rem;
+    //   border-radius: 0.5rem;
+    //   padding: 0 1rem;
+    //   background-color: var(--color-secondary);
+    //   // background-color: var(--color-text-3);
 
-      @include respond(tabLand) {
-        // width: 1.5rem;
-        height: 1.5rem;
-      }
+    //   @include respond(tabLand) {
+    //     // width: 1.5rem;
+    //     height: 1.5rem;
+    //   }
 
-      &:hover {
-        background-color: var(--color-secondary);
-      }
+    //   &:hover {
+    //     background-color: var(--color-secondary);
+    //     color: black;
+    //   }
 
 
-      i {
-        display: flex;
-        width: 2.5rem;
-        height: 2.5rem;
-        justify-content: center;
-        align-items: center;
-        color: var(--color-bg);
-        font-size: 1rem;
+    //   i {
+    //     display: flex;
+    //     width: 2.5rem;
+    //     height: 2.5rem;
+    //     justify-content: center;
+    //     align-items: center;
+    //     color: var(--color-bg);
+    //     font-size: 1rem;
 
-        @include respond(tabLand) {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
+    //     @include respond(tabLand) {
+    //       width: 1.5rem;
+    //       height: 1.5rem;
+    //     }
 
-        @include respond(phone) {
-          font-size: 1rem;
-        }
-      }
-    }
+    //     @include respond(phone) {
+    //       font-size: 1rem;
+    //     }
+    //   }
+    // }
   }
 }
 
@@ -363,4 +364,8 @@
   @include respond(phone) {
     right: 0% !important;
   }
+}
+
+.tippy-popper {
+  z-index: 99999 !important;
 }

@@ -1,122 +1,49 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
-import "./Skills.scss";
+// import "./Skills.scss";
 import { useLocation } from "react-router-dom";
-import SkillCard from "../../component/SkillCard";
-import htmlIcon from "../../assets/svg/html5.svg";
-import cssIcon from "../../assets/svg/css3.svg";
-import sassIcon from "../../assets/svg/sass.svg";
-import reactNativeIcon from "../../assets/svg/react_native.svg";
-import typeScriptIcon from "../../assets/svg/typescript.svg";
-import vueIcon from "../../assets/svg/vue_js.svg";
-import wordpressIcon from "../../assets/svg/wordpress.svg";
-import graphqlIcon from "../../assets/svg/graphql.svg";
-import javascriptIcon from "../../assets/svg/javascript.svg";
-import mongodbIcon from "../../assets/svg/mongodb.svg";
-import nodejsIcon from "../../assets/svg/nodejs.svg";
-import netlifyIcon from "../../assets/svg/netlify.svg";
-import dialogFlowIcon from "../../assets/svg/dialogFlow.svg";
-import firebaseIcon from "../../assets/svg/firebase.svg";
-import ionicIcon from "../../assets/svg/ionic.svg";
-import expoIcon from "../../assets/svg/expo.svg";
+import SkillCard from "./SkillCard";
+import htmlIcon from "../assets/svg/html5.svg";
+import cssIcon from "../assets/svg/css3.svg";
+import sassIcon from "../assets/svg/sass.svg";
+import reactNativeIcon from "../assets/svg/react_native.svg";
+import typeScriptIcon from "../assets/svg/typescript.svg";
+import vueIcon from "../assets/svg/vue_js.svg";
+import wordpressIcon from "../assets/svg/wordpress.svg";
+import graphqlIcon from "../assets/svg/graphql.svg";
+import javascriptIcon from "../assets/svg/javascript.svg";
+import mongodbIcon from "../assets/svg/mongodb.svg";
+import nodejsIcon from "../assets/svg/nodejs.svg";
+import netlifyIcon from "../assets/svg/netlify.svg";
+import dialogFlowIcon from "../assets/svg/dialogFlow.svg";
+import firebaseIcon from "../assets/svg/firebase.svg";
+import ionicIcon from "../assets/svg/ionic.svg";
+import expoIcon from "../assets/svg/expo.svg";
 import { ReactHeight } from "react-height";
 
-import ExperienceCard from "../../component/ExperienceCard";
+import ExperienceCard from "./ExperienceCard";
 import { toast } from "react-toastify";
 import { useModal } from "react-morphing-modal";
-
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
-
-function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowDimensions;
-}
-
 interface Props {
   currentMode?: string;
   getTriggerProps?: any;
-  navState?: string;
-  setNavState?: any;
 }
 
-const Skills: React.FC<Props> = ({
+const SkillAndExperienceModal: React.FC<Props> = ({
   currentMode,
   getTriggerProps,
-  navState,
-  setNavState,
 }) => {
   // const location = useLocation();
   const [navSwitch, setNavSwitch] = useState<string>("experience");
   const [experienceHeight, setExperienceHeight] = useState<number>(0);
-  const [skillHeight, setSkillHeight] = useState<number>(0);
-  const { height, width } = useWindowDimensions();
-  console.log("Nav state---", width);
-
-  useEffect(() => {
-    setNavSwitch(navSwitch);
-  }, [navSwitch]);
 
   return (
-    <div className="section">
-      <div className="skills-nav">
-        <a
-          onClick={() => {
-            setNavState("skills");
-            setNavSwitch("skills");
-          }}
-        >
-          <p
-            style={{
-              borderBottom:
-                navSwitch === "skills"
-                  ? "1px solid var(--color-secondary)"
-                  : "none",
-            }}
-          >
-            Skills
-          </p>
-        </a>
-        <a
-          onClick={() => {
-            setNavState("experience");
-            setNavSwitch("experience");
-          }}
-        >
-          <p
-            style={{
-              borderBottom:
-                navSwitch === "experience"
-                  ? "1px solid var(--color-secondary)"
-                  : "none",
-            }}
-          >
-            Experience
-          </p>
-        </a>
-      </div>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="skills" style={{}}>
-        <div className="skills__header">
-          <h1>Skills & Experience</h1>
-        </div>
-        <div className="skills__section">
+        <div
+          className="skills__section"
+          style={{ overflow: "scroll", marginBottom: "7rem" }}
+        >
           {/* Left Section */}
 
           <ReactHeight
@@ -125,7 +52,6 @@ const Skills: React.FC<Props> = ({
             }
             getElementHeight={(el) => {
               console.log("Real Skill Left Element:++ ", el.clientHeight);
-              setSkillHeight(el.scrollHeight);
             }}
             className="skills__section--left"
             style={{ display: navSwitch === "skills" && "flex" }}
@@ -329,62 +255,8 @@ const Skills: React.FC<Props> = ({
           </ReactHeight>
         </div>
       </div>
-
-      <>
-        <div
-          style={{
-            display:
-              (width >= 900 && skillHeight > window.innerHeight - 158) ||
-              (width >= 900 && experienceHeight > window.innerHeight - 158)
-                ? "block"
-                : "none",
-            width: width,
-            background: "var(--color-bg)",
-            position: "absolute",
-            bottom: 0,
-            left: -80,
-          }}
-          className="bottom-more"
-          // onClick={() => notify("😁 Coming Soon")}
-          {...getTriggerProps({ id: "skill&experience" })}
-        >
-          <p>Show more</p>
-        </div>
-
-        <button
-          style={{
-            display:
-              width < 900 &&
-              navSwitch === "experience" &&
-              experienceHeight > window.innerHeight - 158
-                ? "block"
-                : "none",
-          }}
-          className="bottom-more"
-          // onClick={() => notify("😁 Coming Soon")}
-          {...getTriggerProps({ id: "experience" })}
-        >
-          <p>Show more</p>
-        </button>
-
-        <button
-          style={{
-            display:
-              width < 900 &&
-              navSwitch === "skills" &&
-              skillHeight > window.innerHeight - 158
-                ? "block"
-                : "none",
-          }}
-          className="bottom-more"
-          // onClick={() => notify("😁 Coming Soon")}
-          {...getTriggerProps({ id: "skill" })}
-        >
-          <p>Show more</p>
-        </button>
-      </>
     </div>
   );
 };
 
-export default Skills;
+export default SkillAndExperienceModal;

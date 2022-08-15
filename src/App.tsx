@@ -31,6 +31,7 @@ import jobotsJson from "./assets/json/jobots.json";
 import waveWebJson from "./assets/json/waveWeb.json";
 import ExperienceModal from "./component/ExperienceModal";
 import SkillModal from "./component/SkillModal";
+import SkillAndExperienceModal from "./component/SkillAndExperienceModal";
 
 const LoremIpsum: React.FC = () => {
   const lorem: string[] = [];
@@ -102,6 +103,13 @@ const App: React.FC = () => {
     case "skill":
       componentToRender = (
         <SkillModal currentMode={currentMode === "light" ? "light" : "dark"} />
+      );
+      break;
+    case "skill&experience":
+      componentToRender = (
+        <SkillAndExperienceModal
+          currentMode={currentMode === "light" ? "light" : "dark"}
+        />
       );
       break;
     default:

@@ -51,7 +51,7 @@
 
       &:hover {
         background-color: var(--color-secondary);
-        color: black;
+        color: var(--color-text-5);
       }
 
       p {
@@ -63,7 +63,6 @@
 
       i {
         margin-left: 1rem;
-        color: var(--color-text);
         font-size: 0.95rem;
 
         @include respond(tabLand) {
@@ -124,9 +123,10 @@
         text-decoration: none;
         text-transform: capitalize;
         margin: 0 0 0 2rem;
+        color: var(--color-text);
 
         p {
-          color: var(--color-text);
+          
           position: relative;
           display: inline-block;
           margin: 0;
@@ -490,7 +490,7 @@
    }
    &:hover {
      background-color: var(--color-secondary);
-     color: black;
+     color: var(--color-text-5);
    }
 
    p {

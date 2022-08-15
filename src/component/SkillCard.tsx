@@ -58,6 +58,7 @@ const SkillCard: React.FC<Props> = ({
       {currentMode === "dark" && (
         <Tooltip
           // options
+          sticky={true}
           interactive={true}
           title={title}
           position="bottom"
