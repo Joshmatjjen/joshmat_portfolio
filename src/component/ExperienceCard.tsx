@@ -5,7 +5,10 @@ import logoWhite from "../assets/svg/logo-white.svg";
 import logoBlack from "../assets/svg/logo-black.svg";
 
 interface Props {
-  styling?: React.CSSProperties;
+  styling?: {
+    title?: React.CSSProperties;
+    subtitle?: React.CSSProperties;
+  };
   experience?: any;
   company?: string;
 }
@@ -21,8 +24,8 @@ const ExperienceCard: React.FC<Props> = ({ styling, experience, company }) => {
   // }, [menuOpen]);
   return (
     <div className="skills__section--right__box--rgt__item">
-      <h3>{experience}</h3>
-      <p>{company}</p>
+      <h3 style={{ ...styling?.title }}>{experience}</h3>
+      <p style={{ ...styling?.subtitle }}>{company}</p>
     </div>
   );
 };

@@ -258,11 +258,11 @@ const Skills: React.FC<Props> = ({
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
-                  experience="Snr. React-Native Engineer & App Maintainer"
+                  experience="Snr. React-Native Engineer  "
                   company="Practx"
                 />
                 <ExperienceCard
-                  experience="Snr. React-Native Engineer & App Maintainer"
+                  experience="Snr. React-Native Engineer  "
                   company="Vendoir"
                 />
               </div>
