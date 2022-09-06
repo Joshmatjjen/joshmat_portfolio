@@ -252,18 +252,18 @@ const Skills: React.FC<Props> = ({
           >
             <div className="skills__section--right__box">
               <div className="skills__section--right__box--lft">
-                <p>2021</p>
+                <p>2022</p>
                 <div className="vl"></div>
-                <p style={{ marginBottom: "3rem" }}>2022</p>
+                <p style={{ marginBottom: "3rem" }}>2021</p>
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
-                  experience="Snr. React-Native Engineer  "
-                  company="Practx"
+                  experience="Snr. React Native Engineer"
+                  company="Vendoir"
                 />
                 <ExperienceCard
-                  experience="Snr. React-Native Engineer  "
-                  company="Vendoir"
+                  experience="Snr. React Native Engineer"
+                  company="Practx"
                 />
               </div>
             </div>
@@ -293,11 +293,15 @@ const Skills: React.FC<Props> = ({
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
-                  experience="Mobile & WordPress Developer"
+                  experience="WordPress & React Native Developer"
+                  company="Health Education and Empowerment Initiative (HEDEN)"
+                />
+                <ExperienceCard
+                  experience="Mobile Web & WordPress Developer"
                   company="Freelancing"
                 />
                 <ExperienceCard
-                  experience="Snr. React & React-Native Developer"
+                  experience="Full-Stack Developer (MERN)"
                   company="Cre8tiveTech"
                 />
               </div>

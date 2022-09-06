@@ -178,22 +178,26 @@ const SkillAndExperienceModal: React.FC<Props> = ({
           >
             <div className="skills__section--right__box">
               <div className="skills__section--right__box--lft">
-                <p>2021</p>
+                <p>2022</p>
                 <div className="vl"></div>
-                <p style={{ marginBottom: "3rem" }}>2022</p>
+                <p style={{ marginBottom: "3rem" }}>2021</p>
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
                   styling={{
-                    title: { color: "white" },
-                    subtitle: { color: "#777777" },
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
                   }}
-                  experience="Snr. React-Native Engineer  "
-                  company="Practx"
+                  experience="Snr. React Native Engineer  "
+                  company="Vendoir"
                 />
                 <ExperienceCard
-                  experience="Snr. React-Native Engineer  "
-                  company="Vendoir"
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
+                  experience="Snr. React Native Engineer  "
+                  company="Practx"
                 />
               </div>
             </div>
@@ -203,14 +207,26 @@ const SkillAndExperienceModal: React.FC<Props> = ({
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
                   experience="Full-Stack Developer (MERN)"
                   company="Joshmat"
                 />
                 <ExperienceCard
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
                   experience="Snr. React Developer"
                   company="FXC Invest"
                 />
                 <ExperienceCard
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
                   experience="Full-Stack Developer (MERN)"
                   company="BaseAfrique"
                 />
@@ -223,11 +239,27 @@ const SkillAndExperienceModal: React.FC<Props> = ({
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
-                  experience="Mobile & WordPress Developer"
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
+                  experience="WordPress & React Native Developer"
+                  company="Health Education and Empowerment Initiative (HEDEN)"
+                />
+                <ExperienceCard
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
+                  experience="Mobile Web & WordPress Developer"
                   company="Freelancing"
                 />
                 <ExperienceCard
-                  experience="Snr. React & React-Native Developer"
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
+                  experience="Full-Stack Developer (MERN)"
                   company="Cre8tiveTech"
                 />
               </div>
@@ -239,6 +271,10 @@ const SkillAndExperienceModal: React.FC<Props> = ({
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
                   experience="Scholarship - Google Africa Android (Java)"
                   company="Andela Learning Community"
                 />
@@ -251,6 +287,10 @@ const SkillAndExperienceModal: React.FC<Props> = ({
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
+                  styling={{
+                    title: { color: "var(--color-white)" },
+                    subtitle: { color: "var(--color-gray)" },
+                  }}
                   experience="Php & Web Developer"
                   company="Freelancing"
                 />
