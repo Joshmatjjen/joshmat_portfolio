@@ -217,7 +217,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             </a>
             <a
               className="resume"
-              href="https://res.cloudinary.com/jasky/image/upload/fl_attachment:joshmat_cv/v1660558654/joshmat/cv/joshmat_cv1_tuwzhw.pdf"
+              href="https://res.cloudinary.com/jasky/image/upload/v1662999499/joshmat/cv/JoshmatCv_fdlh4r.pdf"
               download
               attributes-list
             >
@@ -275,7 +275,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           <div className="mobile-actions">
             <a
               className="resume"
-              href="https://res.cloudinary.com/jasky/image/upload/fl_attachment:joshmat_cv/v1660558654/joshmat/cv/joshmat_cv1_tuwzhw.pdf"
+              href="https://res.cloudinary.com/jasky/image/upload/v1662999499/joshmat/cv/JoshmatCv_fdlh4r.pdf"
               attributes-list
               download
             >
