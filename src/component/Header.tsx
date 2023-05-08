@@ -275,7 +275,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           <div className="mobile-actions">
             <a
               className="resume"
-              href="https://res.cloudinary.com/jasky/image/upload/v1662999499/joshmat/cv/JoshmatCv_fdlh4r.pdf"
+              href="https://res.cloudinary.com/jasky/image/upload/v1683582787/joshmat/cv/JoshmatCv_uj23l3.pdf"
               attributes-list
               download
             >

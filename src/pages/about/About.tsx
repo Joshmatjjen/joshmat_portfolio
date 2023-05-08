@@ -6,7 +6,6 @@ import Snowfall from "react-snowfall";
 import Typist from "react-typist";
 import { ReactHeight } from "react-height";
 
-
 const About: React.FC = () => {
   const imgEl = useRef<HTMLImageElement>(null);
   const location = useLocation();
@@ -118,9 +117,9 @@ const About: React.FC = () => {
             console.log("Real About Left Height:++ ", height)
           }
         >
-          <section className="about__section-right">
-            {/*  */}
-            <div className="about__section-right__item">
+          {/*<section className="about__section-right">
+
+             <div className="about__section-right__item">
               <img ref={imgEl} src={AboutImage} alt="" />
               {loaded && <>
               <div className="hexagon">
@@ -149,7 +148,7 @@ const About: React.FC = () => {
               </div>
               </>}
             </div>
-          </section>
+          </section> */}
         </ReactHeight>
         {/* <section className="about__c-container">
           <div className="about__c-container__item">

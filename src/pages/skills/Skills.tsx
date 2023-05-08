@@ -252,21 +252,28 @@ const Skills: React.FC<Props> = ({
           >
             <div className="skills__section--right__box">
               <div className="skills__section--right__box--lft">
-                <p>2022</p>
-                <div className="vl"></div>
+                <p>2021 - 2023</p>
+                {/* <div className="vl"></div> */}
+              </div>
+              <div className="skills__section--right__box--rgt">
+                <ExperienceCard
+                  experience="Snr. React Native Developer"
+                  company="Vendoir"
+                />
+              </div>
+            </div>
+            <div className="skills__section--right__box">
+              <div className="skills__section--right__box--lft">
                 <p style={{ marginBottom: "3rem" }}>2021</p>
               </div>
               <div className="skills__section--right__box--rgt">
                 <ExperienceCard
-                  experience="Snr. React Native Engineer"
-                  company="Vendoir"
-                />
-                <ExperienceCard
-                  experience="Snr. React Native Engineer"
+                  experience="React Native Developer"
                   company="Practx"
                 />
               </div>
             </div>
+
             <div className="skills__section--right__box">
               <div className="skills__section--right__box--lft">
                 <p>2020</p>
