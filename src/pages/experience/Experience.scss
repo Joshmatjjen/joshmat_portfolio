@@ -115,7 +115,6 @@
       flex-wrap: wrap;
       // background: gray;
       margin-top: 1rem;
-      // width: 30%;
       padding: 0 0 0 0;
 
       // @include respond(tabLand) {
@@ -185,14 +184,15 @@
       display: flex;
       flex-direction: column;
       margin: 1.5rem 0;
+      width: 80%;
 
       // justify-content: space-between;
       @include respond(tabLand) {
-        width: 60%;
+        width: 80%;
       }
 
       @include respond(tabPort) {
-        width: 70%;
+        width: 80%;
         overflow: hidden;
         display: none;
         // max-height: 80vh;
@@ -214,6 +214,7 @@
         &--lft {
           align-items: flex-start;
           height: 100%;
+          width: 20%;
           // min-height: 25rem;
           display: flex;
           flex-direction: column;

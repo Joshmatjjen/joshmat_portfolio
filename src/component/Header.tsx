@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/svg/logo-2.svg";
 import logoWhite from "../assets/svg/logo-white.svg";
 import logoBlack from "../assets/svg/logo-black.svg";
-import pdfFile from "../assets/file/JoshmatCV.pdf";
-
 // interface BoxProps {
 //   styles?: React.CSSProperties;
 // }
@@ -16,7 +14,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
   const checkRef: any = useRef<HTMLInputElement>(null);
   const [navStyles, setNavStyles] = useState<any>({});
 
-  //TODO work on dark mode
+  //TODO project on dark mode
   const [mode, setMode] = useState(localStorage.getItem("mode"));
   // const [logout, setLogout] = useState("Logout");
   // const history = useHistory();
@@ -127,23 +125,27 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
     console.log(location);
     location.hash === "#about" || location.hash === "/" || location.hash === ""
       ? setNavStyles({
-          about: "var(--color-secondary)",
+          about: "var(--color-secondary2)",
+        })
+      : location.hash === "#experience"
+      ? setNavStyles({
+          experience: "var(--color-secondary3)",
         })
       : location.hash === "#skills"
       ? setNavStyles({
-          skills: "var(--color-secondary)",
+          skills: "var(--color-secondary3)",
         })
-      : location.hash === "#work"
+      : location.hash === "#project"
       ? setNavStyles({
-          work: "var(--color-secondary)",
+          project: "var(--color-secondary2)",
         })
       : location.hash === "#testimony"
       ? setNavStyles({
-          testimony: "var(--color-secondary)",
+          testimony: "var(--color-secondary2)",
         })
       : location.hash === "#contact"
       ? setNavStyles({
-          contact: "var(--color-secondary)",
+          contact: "var(--color-secondary2)",
         })
       : setNavStyles({});
 
@@ -193,13 +195,50 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           </a>
           <div className="App-header--container__main-nav">
             <a href="/#about">
-              <p style={{ color: navStyles?.about }}>About</p>
+              <p
+                style={{
+                  color: navStyles?.about,
+                  fontWeight:
+                    location.hash === "#about" ||
+                    location.hash === "/" ||
+                    location.hash === ""
+                      ? "bold"
+                      : "normal",
+                }}
+              >
+                About
+              </p>
+            </a>
+            <a href="/#experience">
+              <p
+                style={{
+                  color: navStyles?.experience,
+                  fontWeight:
+                    location.hash === "#experience" ? "bold" : "normal",
+                }}
+              >
+                Experience
+              </p>
             </a>
             <a href="/#skills">
-              <p style={{ color: navStyles?.skills }}>Skills</p>
+              <p
+                style={{
+                  color: navStyles?.skills,
+                  fontWeight: location.hash === "#skills" ? "bold" : "normal",
+                }}
+              >
+                Skills
+              </p>
             </a>
-            <a href="/#work">
-              <p style={{ color: navStyles?.work }}>Work</p>
+            <a href="/#project">
+              <p
+                style={{
+                  color: navStyles?.project,
+                  fontWeight: location.hash === "#project" ? "bold" : "normal",
+                }}
+              >
+                Project
+              </p>
             </a>
             {/* <a href="/#testimony">
               <p
@@ -213,11 +252,18 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               </p>
             </a> */}
             <a href="/#contact">
-              <p style={{ color: navStyles?.contact }}>Contact</p>
+              <p
+                style={{
+                  color: navStyles?.contact,
+                  fontWeight: navStyles?.bold,
+                }}
+              >
+                Contact
+              </p>
             </a>
             <a
               className="resume"
-              href="https://res.cloudinary.com/jasky/image/upload/v1662999499/joshmat/cv/JoshmatCv_fdlh4r.pdf"
+              href="https://drive.google.com/file/d/1aEidiDJ7TWLbezVhvM-wA7AQK8FCs3TL/view?usp=sharing"
               download
               attributes-list
             >
@@ -333,13 +379,13 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             </li>
             <li>
               <a
-                href="/#work"
+                href="/#project"
                 onClick={() => {
                   checkRef.current.checked = !checkRef.current.checked;
                   setMenuOpen(!menuOpen);
                 }}
               >
-                <p style={{ color: navStyles?.portfolio }}>Work</p>
+                <p style={{ color: navStyles?.portfolio }}>Project</p>
               </a>
             </li>
             {/* <li>

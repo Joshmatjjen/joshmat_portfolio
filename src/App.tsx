@@ -230,23 +230,24 @@ const App: React.FC = () => {
           element={
             <>
               {/* <LoremIpsum/> */}
-              {showModal ? (
+              {/* {showModal ? (
                 <FullPageWrapperWork
                   currentMode={currentMode === "light" ? "light" : "dark"}
                   getTriggerProps={getTriggerProps}
                   activeModal={activeModal}
                   currentSlideState={currentSlideState}
+                  scrollOverflow={false}
                 />
-              ) : (
-                <FullPageWrapper
-                  currentMode={currentMode === "light" ? "light" : "dark"}
-                  getTriggerProps={getTriggerProps}
-                  activeModal={activeModal}
-                  navState={navState}
-                  setNavState={setNavState}
-                  currentSlideState={currentSlideState}
-                />
-              )}
+              ) : ( */}
+              <FullPageWrapper
+                currentMode={currentMode === "light" ? "light" : "dark"}
+                getTriggerProps={getTriggerProps}
+                activeModal={activeModal}
+                navState={navState}
+                setNavState={setNavState}
+                currentSlideState={currentSlideState}
+              />
+              {/* )} */}
             </>
           }
         />

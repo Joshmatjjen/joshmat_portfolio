@@ -1,0 +1,48 @@
+@import './themes/mixins.scss';
+
+.glow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  /* Adjust the size as needed */
+  height: 300px;
+  /* Adjust the size as needed */
+  border-radius: 50%;
+  background-color: transparent;
+  /* Set background to black or any other color */
+  box-shadow: 0 0 20px rgba(255, 223, 0, 0.8), 0 0 40px rgba(255, 223, 0, 0.6),
+    0 0 60px rgba(255, 223, 0, 0.4);
+
+  @include respond(tabLand) {
+    width: 250px;
+    height: 250px;
+    justify-content: space-around;
+  }
+
+  @include respond(tabPort) {
+    width: 250px;
+    height: 250px;
+    justify-content: space-around;
+    // max-height: 80vh;
+  }
+
+  @include respond(phone) {
+    width: 150px;
+    height: 150px;
+    justify-content: space-around;
+  }
+}
+
+.glow-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.glow-container:hover .glow-image {
+  box-shadow: 0 0 30px rgba(255, 223, 0, 1), 0 0 60px rgba(255, 223, 0, 0.8),
+    0 0 90px rgba(255, 223, 0, 0.6);
+}

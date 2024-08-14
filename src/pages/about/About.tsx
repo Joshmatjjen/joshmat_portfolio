@@ -5,10 +5,12 @@ import { useLocation } from "react-router-dom";
 import Snowfall from "react-snowfall";
 import Typist from "react-typist";
 import { ReactHeight } from "react-height";
+import GlowingImage from "../../GlowingImage";
 
 const About: React.FC = () => {
   const imgEl = useRef<HTMLImageElement>(null);
   const location = useLocation();
+
   const [loaded, setLoaded] = useState(false);
   const onImageLoaded = () => setLoaded(true);
 
@@ -117,6 +119,15 @@ const About: React.FC = () => {
             console.log("Real About Left Height:++ ", height)
           }
         >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <GlowingImage />
+          </div>
           {/*<section className="about__section-right">
 
              <div className="about__section-right__item">

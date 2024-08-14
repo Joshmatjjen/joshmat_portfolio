@@ -9,6 +9,8 @@ import Skills from "./pages/skills/Skills";
 import Work from "./pages/work/Work";
 // import Testimony from "./pages/testimony/Testimony";
 import Contact from "./pages/contact/Contact";
+import Experience from "./pages/experience/Experience";
+import Testimony from "./pages/testimony/Testimony";
 
 const pluginWrapper = () => {
   require("./extension/fullpage.extensions.min");
@@ -21,6 +23,7 @@ interface Props {
   currentSlideState?: number;
   navState?: string;
   setNavState?: any;
+  scrollOverflow?: boolean;
 }
 
 const FullPageWrapper: React.FC<Props> = ({
@@ -30,11 +33,13 @@ const FullPageWrapper: React.FC<Props> = ({
   currentSlideState,
   navState,
   setNavState,
+  scrollOverflow,
 }) => {
   const [anchors, setLockAnchors] = useState([
     "about",
+    "experience",
     "skills",
-    "work",
+    "project",
     "contact",
   ]);
   const [isActive, setIsActive] = useState(false);
@@ -65,6 +70,12 @@ const FullPageWrapper: React.FC<Props> = ({
         return (
           <div className="fullpage">
             <About />
+            <Experience
+              currentMode={currentMode}
+              getTriggerProps={getTriggerProps}
+              navState={navState}
+              setNavState={setNavState}
+            />
             <Skills
               currentMode={currentMode}
               getTriggerProps={getTriggerProps}
@@ -77,6 +88,7 @@ const FullPageWrapper: React.FC<Props> = ({
               getTriggerProps={getTriggerProps}
               currentSlideState={currentSlideState}
             />
+            {/* <Testimony /> */}
             <Contact />
           </div>
         );
