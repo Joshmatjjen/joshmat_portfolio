@@ -22,6 +22,8 @@ import expoIcon from "../../assets/svg/expo.svg";
 import vendoir from "../../assets/img/vendoirIcon.png";
 import lasoft from "../../assets/img/lasoft.jpeg";
 import heden from "../../assets/img/heden.png";
+import baseAfrique from "../../assets/img/baseafrique.png";
+import cre8tivetech from "../../assets/img/cre8tivetech.png";
 
 import { ReactHeight } from "react-height";
 
@@ -104,6 +106,7 @@ const Experience: React.FC<Props> = ({
         "IOS",
         "AWS",
       ],
+      website: "https://vendoir.com/",
     },
     {
       title: "Frontend Developer",
@@ -127,6 +130,7 @@ const Experience: React.FC<Props> = ({
         "Webflow",
         "jQuery",
       ],
+      website: "https://lasoft.org/",
     },
     {
       title: "Full-Stack & React-Native Developer",
@@ -146,7 +150,7 @@ const Experience: React.FC<Props> = ({
       company: "BaseAfrique",
       location: "Remote, United Kingdom",
       period: "Oct 2022 - Jul 2023",
-      logo: vendoir,
+      logo: baseAfrique,
       description: [
         "Developed responsive web applications using MERN stack technologies (MongoDB, Express.js, React.js, Typescript, Node.js) ",
         "Implemented RESTful APIs to integrate third-party services and enhance the functionality of web applications",
@@ -155,19 +159,20 @@ const Experience: React.FC<Props> = ({
         "Html",
         "CSS",
         "Javascript",
+        "Typescript",
         "React",
         "Nodejs",
         "Express",
         "Firebase",
       ],
-      website: "https://hedenngo.org/",
+      website: "https://www.baseafriquehq.com/",
     },
     {
       title: "Full-Stack developer",
       company: "Cre8tive Tech",
       location: "Remote, United Kingdom",
       period: "Jan 2019 - Mar 2021",
-      logo: vendoir,
+      logo: cre8tivetech,
       description: [
         "Developed responsive web applications using MERN stack technologies (MongoDB, Express.js, React.js, Typescript, Node.js) ",
         "Implemented RESTful APIs to integrate third-party services and enhance the functionality of web applications",
@@ -176,12 +181,13 @@ const Experience: React.FC<Props> = ({
         "Html",
         "CSS",
         "Javascript",
+        "Typescript",
         "React",
         "Nodejs",
         "Express",
         "Firebase",
       ],
-      website: "https://hedenngo.org/",
+      website: "https://cre8tivetech.com/",
     },
   ];
 

@@ -8,10 +8,12 @@ import "./Accordion.scss";
 interface Experience {
   title: string;
   company: string;
+  location: string;
   period: string;
   description: string[];
   logo: string;
   skills: string[];
+  website: string;
 }
 
 interface AccordionProps {
@@ -79,11 +81,11 @@ const Accordion: React.FC<AccordionProps> = ({ experience }) => {
                   id="accordion-body-top-icon"
                   alt="logo"
                 />
-                <p>Remote, United Kingdom</p>
+                <p>{exp.location}</p>
               </div>
               <div className="accordion-body-top-content">
                 <img src={linkIcon} id="accordion-body-top-icon" alt="logo" />
-                <a href="https://vendoir.com">vendoir.com</a>
+                <a href={exp.website}>{exp.website}</a>
               </div>
             </div>
             <ul>
