@@ -89,7 +89,9 @@ const About: React.FC = () => {
                   }}
                   type="submit"
                 >
-                  <a href="#contact">Let's talk</a>
+                  <a target="_blank" href="https://github.com/joshmatjjen">
+                    Git Project&nbsp;<i className="fab fa-github"></i>
+                  </a>
                 </button>
                 <button
                   style={{
@@ -100,11 +102,11 @@ const About: React.FC = () => {
                 >
                   <a
                     target="_blank"
-                    href="https://jobots.herokuapp.com/"
+                    href="https://www.linkedin.com/in/joshmatjjen"
                     style={{ color: "var(--color-bg);" }}
                     rel="noreferrer"
                   >
-                    Chat with &nbsp;<i className="fad fa-robot"></i>
+                    Lets's connect&nbsp;<i className="fab fa-linkedin"></i>
                   </a>
                 </button>
                 <div></div>

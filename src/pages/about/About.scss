@@ -17,7 +17,7 @@
   }
 
   @include respond(phone) {
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   // align-items: center;
@@ -39,7 +39,9 @@
       margin-top: 2.5rem;
     }
 
-
+    @include respond(phone) {
+     margin-top: 2.5rem;
+    }
 
     &--intro {
       flex: 7;
@@ -275,7 +277,7 @@
 }
 
 .btn-left {
-  min-width: 9rem;
+  min-width: 10rem;
 
   @include respond(tabPort) {
     font-size: 0.9rem;
@@ -288,7 +290,7 @@
 }
 
 .btn-right {
-  min-width: 9rem;
+  min-width: 10rem;
 
   @include respond(tabPort) {
     font-size: 0.9rem;

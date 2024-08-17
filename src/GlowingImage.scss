@@ -16,22 +16,16 @@
 
   @include respond(tabLand) {
     width: 250px;
-    height: 250px;
-    justify-content: space-around;
-  }
+    height: 250px;  }
 
   @include respond(tabPort) {
     width: 250px;
-    height: 250px;
-    justify-content: space-around;
-    // max-height: 80vh;
+    height: 250px;    // max-height: 80vh;
   }
 
   @include respond(phone) {
     width: 150px;
-    height: 150px;
-    justify-content: space-around;
-  }
+    height: 150px;  }
 }
 
 .glow-image {
