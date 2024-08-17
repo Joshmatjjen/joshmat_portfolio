@@ -12,6 +12,7 @@ import sweetMother from "../../assets/img/sweetMother.webp";
 import practx from "../../assets/img/practx.png";
 import vendoir from "../../assets/img/vendoir.png";
 import thelightinghaus from "../../assets/img/thelightinghaus.png";
+import palmet from "../../assets/img/palmet.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -147,8 +148,17 @@ const Work: React.FC<Props> = ({
           </SwiperSlide>
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "waveApp" })}
+            {...getTriggerProps({ id: "palmet" })}
             onPress={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
+          >
+            <div className={"swiperSlide__img"}>
+              <img alt="img" src={palmet} />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "waveApp" })}
+            onPress={() => setSelectedSlide(selectedSlide === 2 ? null : 2)}
           >
             <div className={"swiperSlide__img"}>
               <img alt="img" src={waveDownloader} />
@@ -158,7 +168,7 @@ const Work: React.FC<Props> = ({
           <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "sweetmother" })}
-            onPress={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
+            onPress={() => setSelectedSlide(selectedSlide === 3 ? null : 3)}
           >
             <div className={"swiperSlide__img"}>
               <img alt="img" src={sweetMother} />
@@ -168,7 +178,7 @@ const Work: React.FC<Props> = ({
           <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "practx" })}
-            onPress={() => setSelectedSlide(selectedSlide === 3 ? null : 3)}
+            onPress={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
           >
             <div className={"swiperSlide__img"}>
               <img alt="img" src={practx} />
@@ -178,7 +188,7 @@ const Work: React.FC<Props> = ({
           <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "jobots" })}
-            onPress={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
+            onPress={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
           >
             <div className={"swiperSlide__img"}>
               <img alt="img" src={jobots} />
@@ -188,7 +198,7 @@ const Work: React.FC<Props> = ({
           <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "waveWeb" })}
-            onPress={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
+            onPress={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
           >
             <div className={"swiperSlide__img"}>
               <img alt="img" src={waveDownloaderWeb} />
@@ -198,7 +208,9 @@ const Work: React.FC<Props> = ({
           <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "jotours" })}
-            onPress={() => notify("😁 Coming Soon")}
+            onPress={() =>
+              window.open("https://github.com/Joshmatjjen/jotours-frontend")
+            }
           >
             <div
               className={"swiperSlide__img"}
@@ -211,7 +223,9 @@ const Work: React.FC<Props> = ({
           <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "jclothing" })}
-            onPress={() => notify("😁 Coming Soon")}
+            onPress={() =>
+              window.open("https://github.com/Joshmatjjen/jasky-clothing")
+            }
           >
             <div className={"swiperSlide__img"}>
               <img alt="img" src={jclothing} />
@@ -221,7 +235,7 @@ const Work: React.FC<Props> = ({
           <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "thelightinghaus" })}
-            onPress={() => notify("😁 Coming Soon")}
+            onPress={() => window.open("https://thelightinghaus.netlify.app")}
           >
             <div className={"swiperSlide__img"}>
               <img alt="img" src={thelightinghaus} />

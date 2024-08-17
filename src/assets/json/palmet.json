@@ -1,0 +1,19 @@
+{
+  "title": "Palmet",
+  "subtitle": "",
+  "type": "website",
+  "onAndroid": "",
+  "onIOS": "",
+  "onWeb": "https://www.pal-met.com/",
+  "note": "",
+  "myRole": "Full Stack Developer MERN",
+  "platform": "Web",
+  "technologies": "Html, Css, Javascript, JQuery, Webflow, Google/3D-Model-Viewer",
+  "year": "2023",
+  "briefing": "Palmet is a distinguished Ukrainian manufacturer of furniture accessories, established in 2008. Throughout the years, our company has cultivated a diverse array of expertise in various areas, including: Injection molding, Steel processing, Plastic extrusion, Products surface finishing, Die casting of ZAMAK, Product development",
+  "screenshots": [
+    "https://res.cloudinary.com/jasky/image/upload/v1660376253/joshmat/jobots/jobot1_ahdwka.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660376252/joshmat/jobots/jobot2_jvpgjd.png",
+    "https://res.cloudinary.com/jasky/image/upload/v1660376252/joshmat/jobots/jobot3_g3ibzg.png"
+  ]
+}
