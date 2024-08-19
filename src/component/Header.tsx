@@ -127,6 +127,10 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
       ? setNavStyles({
           about: "var(--color-secondary2)",
         })
+      : location.hash === "#certification"
+      ? setNavStyles({
+          certification: "var(--color-secondary3)",
+        })
       : location.hash === "#experience"
       ? setNavStyles({
           experience: "var(--color-secondary3)",
@@ -212,7 +216,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             <a href="/#certification">
               <p
                 style={{
-                  color: navStyles?.experience,
+                  color: navStyles?.certification,
                   fontWeight:
                     location.hash === "#certification" ? "bold" : "normal",
                 }}
@@ -375,6 +379,17 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 }}
               >
                 <p style={{ color: navStyles?.about }}>About</p>
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#certification"
+                onClick={() => {
+                  checkRef.current.checked = !checkRef.current.checked;
+                  setMenuOpen(!menuOpen);
+                }}
+              >
+                <p style={{ color: navStyles?.about }}>Certification</p>
               </a>
             </li>
             <li>

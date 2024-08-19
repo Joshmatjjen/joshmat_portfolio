@@ -83,8 +83,10 @@
     margin-bottom: 1rem;
 
     @include respond(tabPort) {
-      // justify-content: space-around;
-      display: none;
+      justify-content: center;
+      display: flex;
+      margin-top: 0.1rem;
+      margin-bottom: 0.1rem;
     }
 
     h1 {
