@@ -11,6 +11,7 @@ import Work from "./pages/work/Work";
 import Contact from "./pages/contact/Contact";
 import Experience from "./pages/experience/Experience";
 import Testimony from "./pages/testimony/Testimony";
+import Certification from "./pages/certification/Certification";
 
 const pluginWrapper = () => {
   require("./extension/fullpage.extensions.min");
@@ -37,6 +38,7 @@ const FullPageWrapper: React.FC<Props> = ({
 }) => {
   const [anchors, setLockAnchors] = useState([
     "about",
+    "certification",
     "experience",
     "skills",
     "project",
@@ -70,6 +72,11 @@ const FullPageWrapper: React.FC<Props> = ({
         return (
           <div className="fullpage">
             <About />
+            <Certification
+              currentMode={currentMode}
+              getTriggerProps={getTriggerProps}
+              currentSlideState={currentSlideState}
+            />
             <Experience
               currentMode={currentMode}
               getTriggerProps={getTriggerProps}

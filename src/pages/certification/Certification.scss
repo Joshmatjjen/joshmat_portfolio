@@ -33,7 +33,7 @@
   background-size: cover;
   //background-color: gray;
   width: 50rem !important;
-  height: 30rem !important;
+  height: 20rem !important;
   //overflow: hidden;
   border-radius: 1rem !important;
   -webkit-border-radius: 1rem !important;
@@ -42,7 +42,7 @@
   -o-border-radius: 1rem !important;
 
   @include respond(bigDesktop) {
-    width: 80% !important;
+    width: 50% !important;
     height: 30rem !important;
   }
 

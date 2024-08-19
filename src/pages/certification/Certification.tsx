@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "./Work.scss";
+import "./Certification.scss";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import waveDownloader from "../../assets/img/waveDownloader.webp";
-import waveDownloaderWeb from "../../assets/img/wavedownloader.png";
-import jobots from "../../assets/img/jobots.png";
-import jotours from "../../assets/img/jotours.png";
-import jclothing from "../../assets/img/jclothing.png";
-import sweetMother from "../../assets/img/sweetMother.webp";
-import practx from "../../assets/img/practx.png";
-import vendoir from "../../assets/img/vendoir.png";
-import thelightinghaus from "../../assets/img/thelightinghaus.png";
-import palmet from "../../assets/img/palmet.png";
+import versionControlMeta from "../../assets/certifications/versionControlMeta.png";
+import nodejsBEAppIBM from "../../assets/certifications/nodejsBEAppIBM.png";
+import introCloudComputingIBM from "../../assets/certifications/introCloudComputingIBM.png";
+import introWebDevIBM from "../../assets/certifications/introWebDevIBM.png";
+import reactBasicMeta from "../../assets/certifications/reactBasicMeta.png";
+import programmingWithJsMeta from "../../assets/certifications/programmingWithJsMeta.png";
+import devFEAppReactIBM from "../../assets/certifications/devFEAppReactIBM.png";
+import introMobileDevMeta from "../../assets/certifications/introMobileDevMeta.png";
+import gitGithubIBM from "../../assets/certifications/gitGithubIBM.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -40,7 +39,7 @@ interface TechProps {
   bgColor?: string;
 }
 
-const Work: React.FC<Props> = ({
+const Certification: React.FC<Props> = ({
   currentMode,
   getTriggerProps,
   currentSlideState,
@@ -105,7 +104,7 @@ const Work: React.FC<Props> = ({
     <div className="section">
       <div className="work">
         <section className="work__top">
-          <h1>My Projects</h1>
+          <h1>Certification (9)</h1>
         </section>
 
         <Swiper
@@ -127,7 +126,7 @@ const Work: React.FC<Props> = ({
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
-            depth: 300,
+            depth: 210,
             modifier: 1,
             slideShadows: true,
           }}
@@ -139,100 +138,132 @@ const Work: React.FC<Props> = ({
         >
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "vendoir" })}
-            onPress={() => setSelectedSlide(selectedSlide === 0 ? null : 0)}
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/90b0fe1f5b65733af0388c11b5618528"
+              )
+            }
           >
             <div className={"swiperSlide__img"}>
-              <img alt="img" src={vendoir} />
+              <img alt="img" src={programmingWithJsMeta} />
             </div>
           </SwiperSlide>
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "palmet" })}
-            onPress={() => setSelectedSlide(selectedSlide === 1 ? null : 1)}
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/2289175d47b789f23be12ac9c0cdeb30"
+              )
+            }
           >
             <div className={"swiperSlide__img"}>
-              <img alt="img" src={palmet} />
+              <img alt="img" src={nodejsBEAppIBM} />
             </div>
           </SwiperSlide>
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "waveApp" })}
-            onPress={() => setSelectedSlide(selectedSlide === 2 ? null : 2)}
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/c76d329210177324cfc499e3c4a35ef5"
+              )
+            }
           >
             <div className={"swiperSlide__img"}>
-              <img alt="img" src={waveDownloader} />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide
-            className={"swiperSlide"}
-            {...getTriggerProps({ id: "sweetmother" })}
-            onPress={() => setSelectedSlide(selectedSlide === 3 ? null : 3)}
-          >
-            <div className={"swiperSlide__img"}>
-              <img alt="img" src={sweetMother} />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide
-            className={"swiperSlide"}
-            {...getTriggerProps({ id: "practx" })}
-            onPress={() => setSelectedSlide(selectedSlide === 4 ? null : 4)}
-          >
-            <div className={"swiperSlide__img"}>
-              <img alt="img" src={practx} />
+              <img alt="img" src={devFEAppReactIBM} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "jobots" })}
-            onPress={() => setSelectedSlide(selectedSlide === 5 ? null : 5)}
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/9ecb223284bcfcc1045ebad1065052b8"
+              )
+            }
           >
             <div className={"swiperSlide__img"}>
-              <img alt="img" src={jobots} />
+              <img alt="img" src={versionControlMeta} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "waveWeb" })}
-            onPress={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/fd6041eaf223837e30ad90bc588898a3"
+              )
+            }
           >
             <div className={"swiperSlide__img"}>
-              <img alt="img" src={waveDownloaderWeb} />
+              <img alt="img" src={reactBasicMeta} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "jotours" })}
-            onPress={() =>
-              window.open("https://github.com/Joshmatjjen/jotours-frontend")
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/7f3b9c4c4a390554560ef4c41c26f044"
+              )
+            }
+          >
+            <div className={"swiperSlide__img"}>
+              <img alt="img" src={introCloudComputingIBM} />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/caeba58b47ed5aedcaf026ea6630a7b6"
+              )
+            }
+          >
+            <div className={"swiperSlide__img"}>
+              <img alt="img" src={introWebDevIBM} />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide
+            className={"swiperSlide"}
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/c51af5df511c28ec24de9467a9dedad6"
+              )
             }
           >
             <div
               className={"swiperSlide__img"}
               // onClick={() => setSelectedSlide(selectedSlide === 6 ? null : 6)}
             >
-              <img alt="img" src={jotours} />
+              <img alt="img" src={introMobileDevMeta} />
             </div>
           </SwiperSlide>
 
           <SwiperSlide
             className={"swiperSlide"}
-            {...getTriggerProps({ id: "jclothing" })}
-            onPress={() =>
-              window.open("https://github.com/Joshmatjjen/jasky-clothing")
+            {...getTriggerProps({ id: "" })}
+            onClick={() =>
+              window.open(
+                "https://coursera.org/share/cd425a94c426f9975bb44d1a5cb30179"
+              )
             }
           >
             <div className={"swiperSlide__img"}>
-              <img alt="img" src={jclothing} />
+              <img alt="img" src={gitGithubIBM} />
             </div>
           </SwiperSlide>
 
-          <SwiperSlide
+          {/* <SwiperSlide
             className={"swiperSlide"}
             {...getTriggerProps({ id: "thelightinghaus" })}
             onPress={() => window.open("https://thelightinghaus.netlify.app")}
@@ -240,7 +271,7 @@ const Work: React.FC<Props> = ({
             <div className={"swiperSlide__img"}>
               <img alt="img" src={thelightinghaus} />
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
 
         <section className="work__bottom">
@@ -253,4 +284,4 @@ const Work: React.FC<Props> = ({
   );
 };
 
-export default Work;
+export default Certification;

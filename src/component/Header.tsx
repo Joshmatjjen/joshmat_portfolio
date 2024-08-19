@@ -209,6 +209,17 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 About
               </p>
             </a>
+            <a href="/#certification">
+              <p
+                style={{
+                  color: navStyles?.experience,
+                  fontWeight:
+                    location.hash === "#certification" ? "bold" : "normal",
+                }}
+              >
+                Certification
+              </p>
+            </a>
             <a href="/#experience">
               <p
                 style={{
