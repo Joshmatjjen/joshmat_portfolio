@@ -86,7 +86,33 @@ const Experience: React.FC<Props> = ({
       title: "Software Engineer",
       company: "Vendoir",
       location: "Remote, United Kingdom",
-      period: "Jan 2020 - Present",
+      period: "Jan 2020 - Nov 2024",
+      logo: vendoir,
+      description: [
+        "Led the development of a multi-platform mobile app using (Android, IOS, Web ), using HTML, CSS, JavaScript, React, React Native, Typescript, Redux, AWS, Stripe, Sentry.",
+        "Implemented CI/CD pipelines to automate testing and deployment.",
+        "Mentored junior developers and led code review sessions.",
+      ],
+      skills: [
+        "Javascript",
+        "Html",
+        "Css",
+        "React",
+        "React Native",
+        "Typescript",
+        "Redux",
+        "Nodejs",
+        "Android",
+        "IOS",
+        "AWS",
+      ],
+      website: "https://vendoir.com/",
+    },
+    {
+      title: "Full-Stack React Developer",
+      company: "Niyo Fest",
+      location: "Remote, United Kingdom (Contract)",
+      period: "Aug 2024 - Oct 2024",
       logo: vendoir,
       description: [
         "Led the development of a multi-platform mobile app using (Android, IOS, Web ), using HTML, CSS, JavaScript, React, React Native, Typescript, Redux, AWS, Stripe, Sentry.",
@@ -136,7 +162,7 @@ const Experience: React.FC<Props> = ({
       title: "Full-Stack & React-Native Developer",
       company: "HEDEN",
       location: "Remote, Nigeria",
-      period: "Aug 2015 - Apr 2017",
+      period: "Jan 2019 - Mar 2021",
       logo: heden,
       description: [
         "Developed and maintained mobile applications using React-Native, ensuring optimal performance and user experience, which result in an increase in user engagement and a reduction in crash rates.",
@@ -170,7 +196,7 @@ const Experience: React.FC<Props> = ({
     {
       title: "Full-Stack developer",
       company: "Cre8tive Tech",
-      location: "Remote, United Kingdom",
+      location: "Remote, Nigeria",
       period: "Jan 2019 - Mar 2021",
       logo: cre8tivetech,
       description: [

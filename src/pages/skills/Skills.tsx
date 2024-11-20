@@ -8,6 +8,7 @@ import cssIcon from "../../assets/svg/css3.svg";
 import sassIcon from "../../assets/svg/sass.svg";
 import reactNativeIcon from "../../assets/svg/react_native.svg";
 import typeScriptIcon from "../../assets/svg/typescript.svg";
+import nextJsIcon from "../../assets/svg/nextjs.svg";
 import vueIcon from "../../assets/svg/vue_js.svg";
 import wordpressIcon from "../../assets/svg/wordpress.svg";
 import graphqlIcon from "../../assets/svg/graphql.svg";
@@ -149,6 +150,12 @@ const Skills: React.FC<Props> = ({
                 title="TypeScript"
                 img={typeScriptIcon}
                 bgColor="#1976D213"
+              />
+              <SkillCard
+                currentMode={currentMode}
+                title="Next.js"
+                img={nextJsIcon}
+                bgColor="#ffffff96"
               />
               <SkillCard
                 currentMode={currentMode}

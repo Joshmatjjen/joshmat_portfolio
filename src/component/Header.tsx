@@ -152,16 +152,6 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           contact: "var(--color-secondary2)",
         })
       : setNavStyles({});
-
-    // if (menuOpen) {
-    //   elem?.ATTRIBUTE_NODE
-    //   // elem?.style?.backgroundColor = "var(--color-primary)";
-    //   // const elem = document
-    //   //   .querySelector<HTMLInputElement>(".header")
-    //   //   ?.value("var(--color-primary)");
-    // } else {
-    //   // elem?.style?.backgroundColor = "transparent";
-    // }
   }, [location]);
 
   console.log("Locations----", navStyles);
@@ -278,7 +268,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             </a>
             <a
               className="resume"
-              href="https://drive.google.com/file/d/1kWHgiDYDUAjJMvQstqPSRfhjcY5HemEY/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1Et_YH6QvzLJ-JHoNhVJsPSKBoEFCL8hL/view?usp=sharing"
               download
               attributes-list
             >
@@ -336,7 +326,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           <div className="mobile-actions">
             <a
               className="resume"
-              href="https://drive.google.com/file/d/1kWHgiDYDUAjJMvQstqPSRfhjcY5HemEY/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1Et_YH6QvzLJ-JHoNhVJsPSKBoEFCL8hL/view?usp=sharing"
               attributes-list
               download
             >
