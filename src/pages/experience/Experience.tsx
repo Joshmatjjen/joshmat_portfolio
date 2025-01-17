@@ -86,7 +86,7 @@ const Experience: React.FC<Props> = ({
       title: "Software Engineer",
       company: "Vendoir",
       location: "Remote, United Kingdom",
-      period: "Jan 2020 - Nov 2024",
+      period: "Jan 2020 - Jan 2025",
       logo: vendoir,
       description: [
         "Led the development of a multi-platform mobile app using (Android, IOS, Web ), using HTML, CSS, JavaScript, React, React Native, Typescript, Redux, AWS, Stripe, Sentry.",

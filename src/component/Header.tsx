@@ -268,7 +268,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
             </a>
             <a
               className="resume"
-              href="https://drive.google.com/file/d/1Et_YH6QvzLJ-JHoNhVJsPSKBoEFCL8hL/view?usp=sharing"
+              href="https://drive.google.com/file/d/1H0mnfJhc58f_FxOnsGnoJjPxL_86-grx/view?usp=sharing"
               download
               attributes-list
             >
@@ -326,7 +326,7 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
           <div className="mobile-actions">
             <a
               className="resume"
-              href="https://drive.google.com/file/d/1Et_YH6QvzLJ-JHoNhVJsPSKBoEFCL8hL/view?usp=sharing"
+              href="https://drive.google.com/file/d/1H0mnfJhc58f_FxOnsGnoJjPxL_86-grx/view?usp=sharing"
               attributes-list
               download
             >
