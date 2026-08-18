@@ -145,7 +145,8 @@
     justify-content: center;
 
     p {
-      font-family: NicoMoji-Regular;
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
       font-size: 2.8rem;
       color: white;
       margin: 0 -0.5rem;
@@ -269,7 +270,8 @@
   // left: 0;
   z-index: 0;
   color: var(--color-secondary);
-  font-family: Comfortaa-Light;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 300;
   font-size: 0.8rem;
   transform: rotate(270deg);
   -webkit-transform: rotate(270deg);

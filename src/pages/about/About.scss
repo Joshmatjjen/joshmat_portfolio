@@ -63,7 +63,8 @@
         p {
           color: var(--color-secondary);
           font-size: 1rem;
-          font-family: Comfortaa-Bold;
+          font-family: 'Comfortaa', sans-serif;
+          font-weight: 700;
 
           @include respond(phone) {
             font-size: 0.7rem;
@@ -81,7 +82,8 @@
       &__name {
         font-size: 3rem;
         color: var(--color-text);
-        font-family: Comfortaa-Bold;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 700;
         text-align: left;
         margin: 2rem 0 1rem 0;
 
@@ -102,7 +104,8 @@
         font-size: 1rem;
         line-height: 2rem;
         color: var(--color-text);
-        font-family: Comfortaa-Light;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 300;
         text-align: left;
 
         @include respond(tabPort) {
@@ -311,7 +314,8 @@
   vertical-align: middle;
   text-align: center;
   display: flex;
-  font-family: Comfortaa-Bold;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
   // margin-left: auto;
   margin-right: 1rem;
   justify-content: center;

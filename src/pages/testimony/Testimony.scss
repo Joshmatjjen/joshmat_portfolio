@@ -18,7 +18,8 @@
     h1 {
       font-size: 1.6rem;
       color: var(--color-secondary);
-      font-family: Comfortaa-Bold;
+      font-family: 'Comfortaa', sans-serif;
+      font-weight: 700;
       margin: 1rem 0.5rem;
 
       @include respond(tabLand) {
@@ -36,7 +37,8 @@
     p {
       color: white;
       margin: 0 0.5rem;
-      font-family: Comfortaa-Light;
+      font-family: 'Comfortaa', sans-serif;
+      font-weight: 300;
 
       @include respond(phone) {
         font-size: 0.8rem;
@@ -72,7 +74,8 @@
         color: white;
         font-size: 4rem;
         margin: 0;
-        font-family: Comfortaa-Bold;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 700;
         text-align: right;
 
         @include respond(tabLand) {
@@ -82,7 +85,8 @@
 
       p {
         color: white;
-        font-family: Comfortaa-Regular;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 400;
         margin-top: 0;
 
         @include respond(tabLand) {

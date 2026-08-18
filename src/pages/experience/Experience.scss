@@ -26,7 +26,8 @@
 
   p {
     font-size: 1rem;
-    font-family: Comfortaa-Bold;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
     padding: 1rem 0;
     color: var(--color-text);
     // border-bottom: 1px solid var(--color-secondary);
@@ -57,7 +58,8 @@
 
   p {
     font-size: 0.91rem;
-    font-family: Comfortaa-Bold;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 700;
     color: var(--color-secondary);
   }
 }
@@ -234,7 +236,8 @@
             font-size: 0.9rem;
             color: var(--color-secondary);
             margin: 0;
-            font-family: Comfortaa-Bold;
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 700;
 
             @include respond(phone) {
               // height: 80vh;
@@ -323,7 +326,8 @@
             font-size: 1rem;
             line-height: 2rem;
             color: white;
-            font-family: Comfortaa-Light;
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 300;
             text-align: left;
 
             @include respond(phone) {
