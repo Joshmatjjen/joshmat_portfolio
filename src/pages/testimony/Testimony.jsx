@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
 import "./Testimony.scss";
 import "react-toastify/dist/ReactToastify.css";
 import ItemsCarousel from "react-items-carousel";
@@ -104,9 +105,13 @@ const Testimony = () => {
             </ItemsCarousel>
           </div>
           <div className="testimony__content--scroll">
-            <i className="fad fa-long-arrow-alt-left" />
+            <i>
+              <Icon icon="ph:arrow-left" />
+            </i>
             <p>Swipe</p>
-            <i className="fad fa-long-arrow-alt-right" />
+            <i>
+              <Icon icon="ph:arrow-right" />
+            </i>
           </div>
         </section>
       </div>

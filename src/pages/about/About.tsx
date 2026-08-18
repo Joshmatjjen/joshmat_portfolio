@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Icon } from "@iconify/react";
 import "./About.scss";
 import AboutImage from "../../assets/img/Profile.png";
 import { useLocation } from "react-router-dom";
@@ -90,7 +91,7 @@ const About: React.FC = () => {
                   type="submit"
                 >
                   <a target="_blank" href="https://github.com/joshmatjjen">
-                    Git Project&nbsp;<i className="fab fa-github"></i>
+                    Git Project&nbsp;<i><Icon icon="simple-icons:github" /></i>
                   </a>
                 </button>
                 <button
@@ -106,7 +107,7 @@ const About: React.FC = () => {
                     style={{ color: "var(--color-bg);" }}
                     rel="noreferrer"
                   >
-                    Lets's connect&nbsp;<i className="fab fa-linkedin"></i>
+                    Lets's connect&nbsp;<i><Icon icon="simple-icons:linkedin" /></i>
                   </a>
                 </button>
                 <div></div>
@@ -187,7 +188,7 @@ const About: React.FC = () => {
         </section> */}
       </div>
       <div className="mouseScroll">
-        <i className="fal fa-mouse-alt"></i>
+        <i className="mouse-icon"><Icon icon="ph:mouse-simple" /></i>
       </div>
     </div>
   );

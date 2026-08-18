@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
 import "./Work.scss";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -244,9 +245,13 @@ const Work: React.FC<Props> = ({
         </Swiper>
 
         <section className="work__bottom">
-          <i className="fad fa-long-arrow-left" />
+          <i>
+            <Icon icon="ph:arrow-left" />
+          </i>
           <p>Click or Swipe</p>
-          <i className="fad fa-long-arrow-right" />
+          <i>
+            <Icon icon="ph:arrow-right" />
+          </i>
         </section>
       </div>
     </div>

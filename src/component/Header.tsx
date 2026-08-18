@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Icon } from "@iconify/react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/svg/logo-2.svg";
 import logoWhite from "../assets/svg/logo-white.svg";
@@ -273,7 +274,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               attributes-list
             >
               <p className="resume--text">Resume/CV</p>
-              <i className="fal fa-cloud-download" />
+              <i>
+                <Icon icon="ph:cloud-arrow-down" />
+              </i>
             </a>
             <span
               className="toggle"
@@ -291,14 +294,13 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               }}
             >
               <i
-                className={
-                  mode === "light" ? "fad fa-moon-stars " : "fad fa-sun"
-                }
                 style={{
                   color: "var(--color-mode-icon)",
                   fontSize: "1.2rem",
                 }}
-              />
+              >
+                <Icon icon={mode === "light" ? "ph:moon-stars" : "ph:sun"} />
+              </i>
             </span>
           </div>
         </div>
@@ -331,20 +333,21 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
               download
             >
               <p className="resume--text">Resume/CV</p>
-              <i className="fal fa-cloud-download" />
+              <i>
+                <Icon icon="ph:cloud-arrow-down" />
+              </i>
             </a>
 
             <span className="mobile-toggle" onClick={toggleMode}>
               <i
-                className={
-                  mode === "light" ? "fad fa-moon-stars" : "fad fa-sun"
-                }
                 style={{
                   color: "var(--color-mode-icon)",
                   fontSize: "1.2rem",
                   // marginBottom: "0.5rem",
                 }}
-              />
+              >
+                <Icon icon={mode === "light" ? "ph:moon-stars" : "ph:sun"} />
+              </i>
             </span>
           </div>
 
@@ -445,7 +448,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 rel="noopener noreferrer"
                 href="https://github.com/Joshmatjjen"
               >
-                <i className="fab fa-github"></i>
+                <i>
+                  <Icon icon="simple-icons:github" />
+                </i>
               </a>
               <a
                 className="mobile-social--content--link"
@@ -453,7 +458,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fab fa-linkedin"></i>
+                <i>
+                  <Icon icon="simple-icons:linkedin" />
+                </i>
               </a>
               <a
                 className="mobile-social--content--link"
@@ -461,7 +468,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fab fa-instagram"></i>
+                <i>
+                  <Icon icon="simple-icons:instagram" />
+                </i>
               </a>
               {/* <a
                 className="mobile-social--content--link"
@@ -469,7 +478,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fab fa-facebook"></i>
+                <i>
+                  <Icon icon="simple-icons:facebook" />
+                </i>
               </a> */}
               {/* <a
                 className="mobile-social--content--link"
@@ -477,7 +488,9 @@ const Header: React.FC<any | null> = ({ setCurrentMode }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fab fa-twitter"></i>
+                <i>
+                  <Icon icon="simple-icons:twitter" />
+                </i>
               </a> */}
             </div>
           </div>

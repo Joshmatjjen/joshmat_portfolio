@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import logo from "./assets/svg/ball.svg";
 import logoWhite from "./assets/svg/logo-white.svg";
 import "./App.scss";
@@ -187,7 +188,9 @@ const App: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i className="fab fa-github"></i>
+            <i>
+              <Icon icon="simple-icons:github" />
+            </i>
           </a>
           <a
             className="social--content--link"
@@ -195,7 +198,9 @@ const App: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i className="fab fa-linkedin"></i>
+            <i>
+              <Icon icon="simple-icons:linkedin" />
+            </i>
           </a>
 
           <a
@@ -204,7 +209,9 @@ const App: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i className="fab fa-instagram"></i>
+            <i>
+              <Icon icon="simple-icons:instagram" />
+            </i>
           </a>
           {/* <a
             className="social--content--link"
@@ -212,7 +219,9 @@ const App: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i className="fab fa-facebook"></i>
+            <i>
+              <Icon icon="simple-icons:facebook" />
+            </i>
           </a> */}
           {/* <a
             className="social--content--link"
@@ -220,7 +229,9 @@ const App: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <i className="fab fa-twitter"></i>
+            <i>
+              <Icon icon="simple-icons:twitter" />
+            </i>
           </a> */}
         </div>
       </div>
